@@ -16,6 +16,7 @@ export function defaultSettings(): Settings {
     perTypeEnabled,
     perSiteMutes: [],
     dismissals,
+    toastsEnabled: true,
     fieldSuggestionsEnabled: true,
     fieldMutedSites: [],
     fieldDismissals,
@@ -58,6 +59,7 @@ export function decide(input: DecideInput): DecideResult {
     // protections surface for users whose saved settings predate them. In practice settings are
     // always merged over defaultSettings(), so every known LeakClass is present.
     const suppressed =
+      settings.toastsEnabled === false ||
       siteMuted ||
       settings.perTypeEnabled[hit.leakClass] === false ||
       (settings.dismissals[hit.leakClass] ?? 0) >= AUTO_QUIET_AFTER;

@@ -62,6 +62,13 @@ describe("decide", () => {
     expect(r.toasts).toHaveLength(0);
     expect(r.badge).toBe(1);
   });
+  it("suppresses all toasts when on-page alerts are globally disabled (badge still counts)", () => {
+    const r = decide({ ...ctx, hits: [fpHit, telHit], doneMoveIds: new Set(), settings: base({ toastsEnabled: false }) });
+    expect(r.toasts).toHaveLength(0);
+    expect(r.overflow).toHaveLength(0);
+    expect(r.all).toHaveLength(2);
+    expect(r.badge).toBe(2);
+  });
   it("badge counts distinct threats; multiple classes produce multiple toasts", () => {
     const r = decide({ ...ctx, hits: [fpHit, telHit], doneMoveIds: new Set() });
     expect(r.badge).toBe(2);

@@ -43,7 +43,10 @@ async function render() {
     <div style="margin-bottom:10px;">${BRAND_HEADER_HTML}</div>
     <div style="color:${C.muted};line-height:1.5;margin-bottom:10px;font-size:12px;">Watching this page for trackers and naming the Atlas move that defends each. All on-device — nothing leaves your browser.</div>
     <div style="margin-bottom:8px;color:${C.muted};font-size:12px;">Site: <code style="font-family:${FONT.mono};color:${C.teal};">${host || "—"}</code> ${muted ? `<span style="color:${C.muted3};">(muted)</span>` : ""}</div>
-    <button id="toggleMute" style="font-family:${FONT.mono};font-size:11px;background:${C.surface};border:1px solid ${C.border};color:${C.text};border-radius:20px;padding:6px 12px;cursor:pointer;">${muted ? "Unmute this site" : "Mute this site"}</button>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+      <button id="toggleMute" style="font-family:${FONT.mono};font-size:11px;background:${C.surface};border:1px solid ${C.border};color:${C.text};border-radius:20px;padding:6px 12px;cursor:pointer;">${muted ? "Unmute this site" : "Mute this site"}</button>
+      <button id="toggleToasts" title="Show or hide on-page alert pop-ups (all sites). The toolbar badge still counts either way." style="font-family:${FONT.mono};font-size:11px;background:${C.surface};border:1px solid ${C.border};color:${settings.toastsEnabled ? C.text : C.amber};border-radius:20px;padding:6px 12px;cursor:pointer;">${settings.toastsEnabled ? "Turn off pop-ups" : "Turn on pop-ups"}</button>
+    </div>
     <div style="margin-top:14px;margin-bottom:4px;font-family:${FONT.mono};font-size:11px;color:${C.muted2};text-transform:uppercase;letter-spacing:.6px;">Risks on this page</div>
     <div style="border-top:1px solid ${C.border};padding-top:10px;">
       ${riskListHtml}
@@ -58,6 +61,16 @@ async function render() {
     });
     // Clear visible toasts on the page when muting (no-op if content script isn't present).
     if (tabId !== undefined) {
+      browser.tabs.sendMessage(tabId, { type: "clearToasts" }).catch(() => {});
+    }
+    void render();
+  });
+
+  document.getElementById("toggleToasts")!.addEventListener("click", async () => {
+    const turningOff = settings.toastsEnabled; // captured pre-flip: true → we're switching alerts off
+    await updateSettings((s) => { s.toastsEnabled = !s.toastsEnabled; });
+    // Clear any pop-ups already on the page when switching off (no-op if no content script).
+    if (turningOff && tabId !== undefined) {
       browser.tabs.sendMessage(tabId, { type: "clearToasts" }).catch(() => {});
     }
     void render();

@@ -66,6 +66,7 @@ export interface Settings {
   perTypeEnabled: Record<LeakClass, boolean>;
   perSiteMutes: string[];                 // hostnames
   dismissals: Record<LeakClass, number>;  // per-type dismissal counter (auto-quiet at >=3)
+  toastsEnabled: boolean;                        // global on/off for on-page alert toasts (default true)
   fieldSuggestionsEnabled: boolean;              // global on/off for field suggestions (default true)
   fieldMutedSites: string[];                     // hostnames where field suggestions are silenced ("don't suggest here")
   fieldDismissals: Record<FieldContext, number>; // per-context dismissals (auto-quiet at >=3)
