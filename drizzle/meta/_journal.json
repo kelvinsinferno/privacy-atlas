@@ -1,0 +1,34 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1781442866535,
+      "tag": "0000_loud_prism",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1781482799705,
+      "tag": "0001_uneven_fenris",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1781493928099,
+      "tag": "0002_numerous_scarlet_witch",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1781563408186,
+      "tag": "0003_omniscient_darkstar",
+      "breakpoints": true
+    }
+  ]
+}

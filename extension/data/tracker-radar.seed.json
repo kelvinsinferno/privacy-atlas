@@ -1,0 +1,21 @@
+{
+  "google-analytics.com": { "entity": "Google LLC", "categories": ["analytics"] },
+  "www.google-analytics.com": { "entity": "Google LLC", "categories": ["analytics"] },
+  "doubleclick.net": { "entity": "Google LLC", "categories": ["advertising"] },
+  "googletagmanager.com": { "entity": "Google LLC", "categories": ["analytics", "advertising"] },
+  "googlesyndication.com": { "entity": "Google LLC", "categories": ["advertising"] },
+  "connect.facebook.net": { "entity": "Meta Platforms, Inc.", "categories": ["social", "advertising"] },
+  "facebook.com": { "entity": "Meta Platforms, Inc.", "categories": ["social"] },
+  "analytics.tiktok.com": { "entity": "ByteDance Ltd.", "categories": ["advertising", "analytics"] },
+  "static.hotjar.com": { "entity": "Hotjar Ltd.", "categories": ["session-replay"] },
+  "script.hotjar.com": { "entity": "Hotjar Ltd.", "categories": ["session-replay"] },
+  "cdn.mxpnl.com": { "entity": "Mixpanel, Inc.", "categories": ["analytics"] },
+  "fullstory.com": { "entity": "FullStory, Inc.", "categories": ["session-replay"] },
+  "cdn.segment.com": { "entity": "Segment.io, Inc.", "categories": ["analytics"] },
+  "scorecardresearch.com": { "entity": "Comscore, Inc.", "categories": ["analytics", "advertising"] },
+  "amazon-adsystem.com": { "entity": "Amazon.com, Inc.", "categories": ["advertising"] },
+  "adnxs.com": { "entity": "Microsoft Corporation", "categories": ["advertising"] },
+  "criteo.com": { "entity": "Criteo SA", "categories": ["advertising"] },
+  "bat.bing.com": { "entity": "Microsoft Corporation", "categories": ["advertising", "analytics"] },
+  "clarity.ms": { "entity": "Microsoft Corporation", "categories": ["session-replay"] }
+}

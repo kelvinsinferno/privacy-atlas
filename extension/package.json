@@ -1,0 +1,31 @@
+{
+  "name": "privacy-atlas-extension",
+  "private": true,
+  "type": "module",
+  "version": "1.0.0",
+  "license": "AGPL-3.0-only",
+  "scripts": {
+    "dev": "wxt",
+    "build": "wxt build",
+    "build:firefox": "wxt build -b firefox",
+    "build:safari": "wxt build -b safari",
+    "zip": "wxt zip",
+    "sync": "node sync.mjs",
+    "typecheck": "wxt prepare && tsc --noEmit",
+    "lint": "eslint .",
+    "test": "vitest run --passWithNoTests",
+    "audit": "npm audit --omit=dev --audit-level=high",
+    "gate": "npm run typecheck && npm run lint && npm test && npm run audit",
+    "e2e": "playwright test"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.4",
+    "@playwright/test": "^1.60.0",
+    "@types/node": "^25.9.3",
+    "eslint": "^9.39.4",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.61.0",
+    "vitest": "^4.1.8",
+    "wxt": "^0.20.26"
+  }
+}

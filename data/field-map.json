@@ -1,0 +1,6 @@
+{
+  "email": ["email-aliasing"],
+  "payment": ["masked-cards"],
+  "phone": ["compartmented-phone"],
+  "address": ["cmra-mail-decoupling", "delivery-hygiene"]
+}

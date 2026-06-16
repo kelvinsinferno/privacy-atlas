@@ -1,0 +1,27 @@
+{
+  "name": "privacy-atlas-mcp-server",
+  "version": "1.0.0",
+  "license": "AGPL-3.0-only",
+  "description": "MCP server exposing the Privacy Atlas knowledge graph (moves, threats, paths) so any MCP-capable AI can query a user's privacy options with full context — the user's own AI, the user's tokens, nothing on Atlas servers.",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": { "privacy-atlas-mcp-server": "dist/index.js" },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "start:http": "TRANSPORT=http node dist/index.js",
+    "dev": "tsc --watch",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "express": "^4.21.2",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.0",
+    "typescript": "^5.7.2",
+    "vitest": "^4.1.8"
+  }
+}

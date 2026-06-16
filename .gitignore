@@ -1,0 +1,63 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# Claude Code tooling scratch (agent worktrees, session files) — never push
+.claude/
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+!.env.example
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+.env.local
+.env*.local
+/reference/*.zip
+
+# playwright
+/test-results/
+/playwright-report/
+/playwright/.cache/
+
+# mcp-server — separate Node project, do not commit build output or deps
+mcp-server/node_modules
+mcp-server/dist
+
+# extension — separate wxt project, do not commit build output or deps
+extension/node_modules
+extension/.wxt
+extension/.output

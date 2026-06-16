@@ -1,0 +1,6015 @@
+{
+  "version": "0.2.4",
+  "defaultRegion": "US",
+  "generated": "2026-06-01",
+  "tiers": [
+    {
+      "tier": 1,
+      "label": "Hygiene",
+      "adversary": "Breaches & opportunistic fraud"
+    },
+    {
+      "tier": 2,
+      "label": "Ad-tech",
+      "adversary": "Advertisers, data brokers, casual snooping"
+    },
+    {
+      "tier": 3,
+      "label": "Doxxing",
+      "adversary": "Acquaintances, employers, online mobs"
+    },
+    {
+      "tier": 4,
+      "label": "Targeted",
+      "adversary": "A determined individual or institution"
+    },
+    {
+      "tier": 5,
+      "label": "Disappear",
+      "adversary": "Sophisticated, persistent adversary"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "threat-model",
+      "label": "Know your adversaries (threat model)",
+      "domain": "foundation",
+      "tier": 1,
+      "weight": 5,
+      "regionScope": "global",
+      "cadence": {
+        "type": "recurring",
+        "everyDays": 365,
+        "reason": "Adversaries and life circumstances change"
+      },
+      "summary": "Decide who you're guarding against, what you want to protect, and how much hassle you'll accept. This first step sets how far you take everything else.",
+      "cost": {
+        "money": "none",
+        "friction": "low",
+        "maintenance": "periodic"
+      },
+      "failureMode": "Outdated model → defending the wrong thing; revisit as life/adversary changes.",
+      "actors": [
+        "advertiser",
+        "broker",
+        "acquaintance",
+        "stalker",
+        "criminal",
+        "local-le",
+        "federal",
+        "state-actor",
+        "platform"
+      ],
+      "sources": [
+        {
+          "title": "EFF SSD — Your Security Plan (threat modeling)",
+          "url": "https://ssd.eff.org/module/your-security-plan",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "password-manager",
+      "label": "Password manager",
+      "domain": "foundation",
+      "tier": 1,
+      "weight": 5,
+      "regionScope": "global",
+      "cadence": {
+        "type": "once"
+      },
+      "summary": "The bedrock. It's also where you safely keep every freeze PIN, alias login, and document the other moves create.",
+      "cost": {
+        "money": "low",
+        "friction": "low",
+        "maintenance": "ongoing"
+      },
+      "failureMode": "Master password lost → locked out of everything; manager breach → broad exposure. Keep secure backup of vault + recovery.",
+      "actors": [
+        "criminal",
+        "broker"
+      ],
+      "sources": [
+        {
+          "title": "Privacy Guides — Password Managers",
+          "url": "https://www.privacyguides.org/en/passwords/",
+          "kind": "org"
+        },
+        {
+          "title": "EFF SSD — Creating Strong Passwords",
+          "url": "https://ssd.eff.org/module/creating-strong-passwords",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "unique-passwords",
+      "label": "Unique passwords everywhere",
+      "domain": "foundation",
+      "tier": 1,
+      "weight": 4,
+      "regionScope": "global",
+      "cadence": {
+        "type": "once"
+      },
+      "summary": "A different random password per account so one breach can't cascade.",
+      "cost": {
+        "money": "none",
+        "friction": "low",
+        "maintenance": "ongoing"
+      },
+      "failureMode": "Reused password slips back in → one breach cascades.",
+      "actors": [
+        "criminal"
+      ],
+      "sources": [
+        {
+          "title": "EFF SSD — Creating Strong Passwords",
+          "url": "https://ssd.eff.org/module/creating-strong-passwords",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "strong-2fa",
+      "label": "Add 2FA, passkeys & hardware keys",
+      "domain": "foundation",
+      "tier": 1,
+      "weight": 4,
+      "regionScope": "global",
+      "cadence": {
+        "type": "once"
+      },
+      "summary": "Prefer app/hardware factors over SMS, which re-ties the account to a phone number.",
+      "tags": [
+        "sms-avoid"
+      ],
+      "cost": {
+        "money": "low",
+        "friction": "med",
+        "maintenance": "periodic"
+      },
+      "failureMode": "Lose the only key/device → account lockout; SMS-2FA → SIM-swap bypass. Keep backup factor + recovery codes.",
+      "actors": [
+        "criminal",
+        "platform"
+      ],
+      "sources": [
+        {
+          "title": "Privacy Guides — Multifactor Authentication",
+          "url": "https://www.privacyguides.org/en/multi-factor-authentication/",
+          "kind": "org"
+        },
+        {
+          "title": "EFF SSD — How to Enable Two-Factor Authentication",
+          "url": "https://ssd.eff.org/module/how-enable-two-factor-authentication",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "exposure-inventory",
+      "label": "Map where your data leaks (exposure inventory)",
+      "domain": "foundation",
+      "tier": 1,
+      "weight": 5,
+      "regionScope": "global",
+      "cadence": {
+        "type": "recurring",
+        "everyDays": 180,
+        "reason": "New leaks and listings appear continuously"
+      },
+      "summary": "Map where your name, home address, phone, email, and SSN already appear. Almost every removal task depends on this first.",
+      "cost": {
+        "money": "none",
+        "friction": "med",
+        "maintenance": "periodic"
+      },
+      "failureMode": "Stale inventory → you defend leaks you've already plugged and miss new ones.",
+      "actors": [
+        "broker",
+        "stalker"
+      ],
+      "sources": [
+        {
+          "title": "EFF SSD — Your Security Plan (assessing assets/threats)",
+          "url": "https://ssd.eff.org/module/your-security-plan",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "email-aliasing",
+      "label": "Mask your email with aliases",
+      "domain": "digital",
+      "tier": 2,
+      "weight": 5,
+      "regionScope": "global",
+      "cadence": {
+        "type": "once"
+      },
+      "summary": "Use a different email for each service, so your address can't be used to link your accounts. Real aliases beat plus-addressing (name+tag@), which trackers just strip off.",
+      "cost": {
+        "money": "low",
+        "friction": "low",
+        "maintenance": "ongoing"
+      },
+      "failureMode": "Alias provider shutdown → inbound mail lost; forgetting which alias maps where → confusion.",
+      "actors": [
+        "advertiser",
+        "broker",
+        "criminal"
+      ],
+      "sources": [
+        {
+          "title": "Privacy Guides — Email Aliasing",
+          "url": "https://www.privacyguides.org/en/email-aliasing/",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "private-email",
+      "label": "Switch to a private email provider",
+      "domain": "digital",
+      "tier": 3,
+      "weight": 3,
+      "regionScope": "global",
+      "cadence": {
+        "type": "once"
+      },
+      "summary": "Move primary email off ad-funded ecosystems toward a privacy-respecting provider.",
+      "cost": {
+        "money": "low",
+        "friction": "med",
+        "maintenance": "once"
+      },
+      "failureMode": "Migration mistakes → lost mail/lockout; provider in hostile jurisdiction → false security.",
+      "actors": [
+        "advertiser",
+        "platform"
+      ],
+      "sources": [
+        {
+          "title": "Privacy Guides — Email Providers",
+          "url": "https://www.privacyguides.org/en/email/",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "encrypted-messaging",
+      "label": "Use encrypted messaging (Signal)",
+      "domain": "digital",
+      "tier": 2,
+      "weight": 4,
+      "regionScope": "global",
+      "cadence": {
+        "type": "once"
+      },
+      "summary": "End-to-end encrypted comms with minimal metadata. High payoff, low effort.",
+      "caveat": "Metadata (who/when) still leaks even when content is encrypted. Bigger trap: if message PREVIEWS are on, the OS caches decrypted incoming content in a notification database outside the app's control — forensically recoverable after deletion. See 'Disable notification message previews'.",
+      "cost": {
+        "money": "none",
+        "friction": "low",
+        "maintenance": "once"
+      },
+      "failureMode": "Contact not on it → conversation falls back to insecure channel; metadata still leaks.",
+      "actors": [
+        "advertiser",
+        "criminal",
+        "federal",
+        "state-actor"
+      ],
+      "sources": [
+        {
+          "title": "Signal",
+          "url": "https://signal.org/",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "browser-hardening",
+      "label": "Block trackers in your browser",
+      "domain": "digital",
+      "tier": 2,
+      "weight": 4,
+      "regionScope": "global",
+      "cadence": {
+        "type": "once"
+      },
+      "summary": "Block trackers, third-party cookies, and fingerprinting to shrink the passive surveillance surface.",
+      "cost": {
+        "money": "none",
+        "friction": "med",
+        "maintenance": "periodic"
+      },
+      "failureMode": "Over-hardening → site breakage AND a more unique fingerprint.",
+      "actors": [
+        "advertiser",
+        "broker",
+        "platform"
+      ],
+      "sources": [
+        {
+          "title": "Privacy Guides — Desktop Browsers",
+          "url": "https://www.privacyguides.org/en/desktop-browsers/",
+          "kind": "org"
+        },
+        {
+          "title": "EFF Cover Your Tracks (fingerprinting test)",
+          "url": "https://coveryourtracks.eff.org/",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "compartmented-phone",
+      "label": "Get a second phone number",
+      "domain": "digital",
+      "tier": 3,
+      "weight": 4,
+      "regionScope": "global",
+      "cadence": {
+        "type": "once"
+      },
+      "summary": "A secondary VoIP/eSIM number for accounts, 2FA, and deliveries, decoupled from your real SIM. A cross-domain hub.",
+      "cost": {
+        "money": "med",
+        "friction": "med",
+        "maintenance": "ongoing"
+      },
+      "failureMode": "Number lapses/ported → 2FA & account-recovery break; cross-use links it back to you.",
+      "actors": [
+        "broker",
+        "stalker",
+        "criminal"
+      ],
+      "sources": [
+        {
+          "title": "EFF SSD — Choosing the VPN/communication tools & phone numbers",
+          "url": "https://ssd.eff.org/",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "network-privacy",
+      "label": "Shield your traffic (VPN & DNS)",
+      "domain": "digital",
+      "tier": 3,
+      "weight": 3,
+      "regionScope": "global",
+      "cadence": {
+        "type": "once"
+      },
+      "summary": "Control who can see your traffic and lookups.",
+      "caveat": "Relocates trust to the VPN/DNS provider; it is not anonymity.",
+      "cost": {
+        "money": "low",
+        "friction": "low",
+        "maintenance": "ongoing"
+      },
+      "failureMode": "Trust shifts to the VPN/DNS provider; a logging or compromised provider sees everything.",
+      "actors": [
+        "advertiser",
+        "local-le",
+        "federal",
+        "state-actor"
+      ],
+      "sources": [
+        {
+          "title": "Privacy Guides — VPN Providers",
+          "url": "https://www.privacyguides.org/en/vpn/",
+          "kind": "org"
+        },
+        {
+          "title": "Privacy Guides — DNS Resolvers",
+          "url": "https://www.privacyguides.org/en/dns/",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "device-os-hardening",
+      "label": "Harden your devices (encryption & OS)",
+      "domain": "digital",
+      "tier": 4,
+      "weight": 3,
+      "regionScope": "global",
+      "cadence": {
+        "type": "once"
+      },
+      "summary": "Full-disk encryption and a de-Googled / hardened mobile OS.",
+      "caveat": "Trades convenience and account recoverability for control.",
+      "cost": {
+        "money": "med",
+        "friction": "high",
+        "maintenance": "periodic"
+      },
+      "failureMode": "Lost recovery key → unrecoverable device; aggressive config → broken apps, lockout.",
+      "actors": [
+        "criminal",
+        "local-le",
+        "federal",
+        "state-actor"
+      ],
+      "sources": [
+        {
+          "title": "Privacy Guides — Android / iOS / Desktop overview",
+          "url": "https://www.privacyguides.org/en/tools/",
+          "kind": "org"
+        },
+        {
+          "title": "EFF Surveillance Self-Defense",
+          "url": "https://ssd.eff.org/",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "location-metadata-hygiene",
+      "label": "Stop leaking your location (EXIF & permissions)",
+      "domain": "digital",
+      "tier": 3,
+      "weight": 3,
+      "regionScope": "global",
+      "cadence": {
+        "type": "recurring",
+        "everyDays": 90,
+        "reason": "Apps reset permissions; new photos carry new metadata"
+      },
+      "summary": "Strip EXIF/GPS from media and prune app location permissions. Bridges digital into physical.",
+      "cost": {
+        "money": "none",
+        "friction": "med",
+        "maintenance": "ongoing"
+      },
+      "failureMode": "One un-stripped photo or re-enabled permission re-exposes location.",
+      "actors": [
+        "broker",
+        "stalker",
+        "advertiser"
+      ],
+      "sources": [
+        {
+          "title": "Byron Tau, 'Means of Control' (2024)",
+          "url": "https://en.wikipedia.org/wiki/Means_of_Control",
+          "kind": "reference"
+        }
+      ]
+    },
+    {
+      "id": "data-broker-removal",
+      "label": "Remove yourself from people-search sites",
+      "domain": "digital",
+      "tier": 3,
+      "weight": 4,
+      "regionScope": "localized",
+      "cadence": {
+        "type": "recurring",
+        "everyDays": 90,
+        "reason": "Brokers re-list you from fresh public records"
+      },
+      "summary": "Remove yourself from people-search sites. Effort varies enormously by jurisdiction.",
+      "cost": {
+        "money": "med",
+        "friction": "high",
+        "maintenance": "ongoing"
+      },
+      "failureMode": "Stop the recurring cycle → you silently re-list within months.",
+      "actors": [
+        "broker",
+        "stalker",
+        "acquaintance"
+      ],
+      "sources": [
+        {
+          "title": "California DELETE Act / DROP (CPPA)",
+          "url": "https://cppa.ca.gov/",
+          "kind": "org"
+        },
+        {
+          "title": "EFF — Street-Level Surveillance",
+          "url": "https://www.eff.org/issues/street-level-surveillance",
+          "kind": "org"
+        },
+        {
+          "title": "Byron Tau, 'Means of Control' (2024)",
+          "url": "https://en.wikipedia.org/wiki/Means_of_Control",
+          "kind": "reference"
+        }
+      ]
+    },
+    {
+      "id": "identity-compartmentalization",
+      "label": "Run separate identities (compartmentalization)",
+      "domain": "digital",
+      "tier": 5,
+      "weight": 1,
+      "regionScope": "global",
+      "cadence": {
+        "type": "managed",
+        "reason": "Compartments must be actively maintained"
+      },
+      "summary": "Distinct personas with no shared phone, email, payment, or device fingerprint. The deep end of digital.",
+      "caveat": "High ongoing daily friction; easy to break a compartment by accident.",
+      "cost": {
+        "money": "med",
+        "friction": "high",
+        "maintenance": "ongoing"
+      },
+      "failureMode": "One cross-contamination (shared device/payment/login) collapses all personas at once.",
+      "actors": [
+        "broker",
+        "federal",
+        "state-actor",
+        "platform"
+      ],
+      "sources": [
+        {
+          "title": "EFF SSD — Creating separate identities / compartmentalization",
+          "url": "https://ssd.eff.org/",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "social-media-minimization",
+      "label": "Sanitize your social media",
+      "domain": "digital",
+      "tier": 2,
+      "weight": 3,
+      "regionScope": "global",
+      "cadence": {
+        "type": "recurring",
+        "everyDays": 180,
+        "reason": "New posts and tags accumulate"
+      },
+      "summary": "Reduce and sanitize public posts that reveal location, routine, and relationships.",
+      "cost": {
+        "money": "none",
+        "friction": "med",
+        "maintenance": "periodic"
+      },
+      "failureMode": "New posts/tags re-accumulate; others tag you regardless.",
+      "actors": [
+        "acquaintance",
+        "stalker",
+        "broker"
+      ],
+      "sources": [
+        {
+          "title": "EFF SSD — Protecting Yourself on Social Networks",
+          "url": "https://ssd.eff.org/module/protecting-yourself-social-networks",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "search-cache-deindex",
+      "label": "De-index yourself from search engines",
+      "domain": "digital",
+      "tier": 3,
+      "weight": 2,
+      "regionScope": "global",
+      "cadence": {
+        "type": "recurring",
+        "everyDays": 180,
+        "reason": "Caches repopulate"
+      },
+      "summary": "Removing a source page doesn't remove the cached copy; de-indexing is a separate step.",
+      "cost": {
+        "money": "none",
+        "friction": "high",
+        "maintenance": "periodic"
+      },
+      "failureMode": "Source returns or cache refreshes → re-indexed; whack-a-mole.",
+      "actors": [
+        "acquaintance",
+        "stalker"
+      ],
+      "sources": [
+        {
+          "title": "Google — Remove your personal info from Search",
+          "url": "https://support.google.com/websearch/answer/9673730",
+          "kind": "docs"
+        }
+      ]
+    },
+    {
+      "id": "credit-freeze-big3",
+      "label": "Freeze your credit (big three)",
+      "domain": "economic",
+      "tier": 1,
+      "weight": 5,
+      "regionScope": "localized",
+      "cadence": {
+        "type": "managed",
+        "reason": "Must thaw before applying for credit, then re-freeze"
+      },
+      "summary": "Free and reversible. Stops new accounts opening in your name. Also a real anti-stalking measure.",
+      "caveat": "Remember which bureaus are frozen — you must thaw before related applications.",
+      "cost": {
+        "money": "none",
+        "friction": "low",
+        "maintenance": "periodic"
+      },
+      "failureMode": "Forget to thaw → blocked at the worst moment (loan, rental, job check). Manage PINs.",
+      "actors": [
+        "criminal",
+        "stalker"
+      ],
+      "sources": [
+        {
+          "title": "CFPB — Place or lift a security freeze",
+          "url": "https://www.consumerfinance.gov/ask-cfpb/what-is-a-security-freeze-en-1353/",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "secondary-bureau-freezes",
+      "label": "Freeze the hidden bureaus",
+      "domain": "economic",
+      "tier": 3,
+      "weight": 3,
+      "regionScope": "localized",
+      "cadence": {
+        "type": "managed",
+        "reason": "Thaw/re-freeze management across many bureaus"
+      },
+      "summary": "Freeze the bureaus utilities, banks, and telecoms actually check (Innovis, NCTUE, ChexSystems, LexisNexis/SageStream, Clarity, TeleCheck, CoreLogic).",
+      "caveat": "Some gate everyday services — see sequencing warnings before freezing.",
+      "cost": {
+        "money": "none",
+        "friction": "med",
+        "maintenance": "periodic"
+      },
+      "failureMode": "Freezing before setting up utilities/bank → application blocked; many bureaus to track.",
+      "actors": [
+        "criminal"
+      ],
+      "sources": [
+        {
+          "title": "CFPB — Fraud alerts & security freezes (incl. specialty bureaus)",
+          "url": "https://www.consumerfinance.gov/consumer-tools/credit-reports-and-scores/",
+          "kind": "org"
+        },
+        {
+          "title": "CFPB — List of consumer reporting companies",
+          "url": "https://www.consumerfinance.gov/consumer-tools/credit-reports-and-scores/consumer-reporting-companies/",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "masked-cards",
+      "label": "Pay with masked / virtual cards",
+      "domain": "economic",
+      "tier": 2,
+      "weight": 3,
+      "regionScope": "localized",
+      "cadence": {
+        "type": "once"
+      },
+      "summary": "Single-use or per-merchant card numbers limit breach blast radius and cross-merchant tracking.",
+      "cost": {
+        "money": "none",
+        "friction": "low",
+        "maintenance": "ongoing"
+      },
+      "failureMode": "Provider shutdown → recurring charges fail; not accepted everywhere.",
+      "actors": [
+        "advertiser",
+        "broker",
+        "criminal"
+      ],
+      "sources": [
+        {
+          "title": "Privacy Guides — Payments (privacy of payments)",
+          "url": "https://www.privacyguides.org/en/financial-services/",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "cash-sensitive",
+      "label": "Use cash for sensitive purchases",
+      "domain": "economic",
+      "tier": 2,
+      "weight": 3,
+      "regionScope": "global",
+      "cadence": {
+        "type": "once"
+      },
+      "summary": "The original private payment rail: no ledger, no profile, no merchant data sale.",
+      "cost": {
+        "money": "none",
+        "friction": "med",
+        "maintenance": "ongoing"
+      },
+      "failureMode": "Cashless venues/limits shrink usability; large cash itself draws scrutiny.",
+      "actors": [
+        "advertiser",
+        "broker"
+      ],
+      "sources": [
+        {
+          "title": "IRS — Form 8300, Report of Cash Payments Over $10,000",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/form-8300-and-reporting-cash-payments-of-over-10000",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "compartmented-bank",
+      "label": "Open a separate bank account",
+      "domain": "economic",
+      "tier": 3,
+      "weight": 3,
+      "regionScope": "localized",
+      "cadence": {
+        "type": "once"
+      },
+      "summary": "Isolate sensitive financial activity from your primary identity.",
+      "cost": {
+        "money": "low",
+        "friction": "med",
+        "maintenance": "once"
+      },
+      "failureMode": "Pattern linking the accounts re-joins them; KYC still applies.",
+      "actors": [
+        "broker",
+        "criminal",
+        "platform"
+      ],
+      "sources": [
+        {
+          "title": "CFPB — How banking & consumer financial data is used",
+          "url": "https://www.consumerfinance.gov/",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "drop-loyalty-programs",
+      "label": "Drop loyalty / tracking programs",
+      "domain": "economic",
+      "tier": 2,
+      "weight": 2,
+      "regionScope": "global",
+      "cadence": {
+        "type": "once"
+      },
+      "summary": "Loyalty data is a quiet firehose of purchase history sold onward to brokers.",
+      "cost": {
+        "money": "low",
+        "friction": "low",
+        "maintenance": "once"
+      },
+      "failureMode": "Lose discounts/perks; little downside otherwise.",
+      "actors": [
+        "advertiser",
+        "broker"
+      ],
+      "sources": [
+        {
+          "title": "FTC — How retailers track & use shopper data",
+          "url": "https://www.ftc.gov/business-guidance/privacy-security",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "anonymous-llc",
+      "label": "Hold assets in an anonymous LLC",
+      "domain": "economic",
+      "tier": 4,
+      "weight": 3,
+      "regionScope": "localized",
+      "legalSensitive": true,
+      "cadence": {
+        "type": "recurring",
+        "everyDays": 365,
+        "reason": "Annual filings / registered-agent renewal"
+      },
+      "summary": "A lawful entity to hold assets, property, or services so your name isn't on every public record.",
+      "caveat": "Public-facing privacy only — pierced by subpoena and visible to the IRS and banks.",
+      "cost": {
+        "money": "high",
+        "friction": "high",
+        "maintenance": "periodic"
+      },
+      "failureMode": "Missed annual filing → dissolved/public; pierced by subpoena anyway.",
+      "actors": [
+        "acquaintance",
+        "stalker",
+        "broker"
+      ],
+      "sources": [
+        {
+          "title": "FinCEN Beneficial Ownership Information",
+          "url": "https://www.fincen.gov/boi",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "privacy-trust",
+      "label": "Shield assets with a trust",
+      "domain": "economic",
+      "tier": 4,
+      "weight": 2,
+      "regionScope": "localized",
+      "legalSensitive": true,
+      "cadence": {
+        "type": "once"
+      },
+      "summary": "Often paired with a holding entity (entity owned by the trust) for layered ownership privacy.",
+      "cost": {
+        "money": "high",
+        "friction": "high",
+        "maintenance": "once"
+      },
+      "failureMode": "Bad drafting → invalid or exposed; needs a professional.",
+      "actors": [
+        "acquaintance",
+        "broker"
+      ],
+      "sources": [
+        {
+          "title": "FinCEN — Beneficial Ownership Information (entity transparency)",
+          "url": "https://www.fincen.gov/boi",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "asset-income-structuring",
+      "label": "Advanced asset / income structuring",
+      "domain": "economic",
+      "tier": 5,
+      "weight": 1,
+      "regionScope": "localized",
+      "legalSensitive": true,
+      "cadence": {
+        "type": "managed",
+        "reason": "Ongoing professional maintenance"
+      },
+      "summary": "Advanced lawful structuring.",
+      "caveat": "Get a professional. Privacy is lawful; concealment from courts or tax is not.",
+      "cost": {
+        "money": "high",
+        "friction": "high",
+        "maintenance": "ongoing"
+      },
+      "failureMode": "Done wrong → unlawful (tax/court); requires ongoing professional upkeep.",
+      "actors": [
+        "acquaintance",
+        "federal"
+      ],
+      "sources": [
+        {
+          "title": "IRS — Structuring & Bank Secrecy Act overview",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/bank-secrecy-act",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "cmra-mail-decoupling",
+      "label": "Get a mail address that isn't home (CMRA)",
+      "domain": "physical",
+      "tier": 2,
+      "weight": 5,
+      "regionScope": "localized",
+      "cadence": {
+        "type": "once"
+      },
+      "summary": "A receiving address that isn't your home. The single highest-leverage cross-domain hub.",
+      "caveat": "Mailing address only; does not satisfy a bank's residential-address (KYC) requirement.",
+      "cost": {
+        "money": "low",
+        "friction": "med",
+        "maintenance": "once"
+      },
+      "failureMode": "CMRA flagged by banks (KYC); business closes → mail disruption.",
+      "actors": [
+        "broker",
+        "stalker",
+        "acquaintance"
+      ],
+      "sources": [
+        {
+          "title": "USPS — PS Form 1583 (Delivery of Mail Through Agent)",
+          "url": "https://about.usps.com/forms/ps1583.pdf",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "domicile-residency",
+      "label": "Choose your domicile deliberately",
+      "domain": "physical",
+      "tier": 4,
+      "weight": 3,
+      "regionScope": "localized",
+      "cadence": {
+        "type": "once"
+      },
+      "summary": "Ties address, tax, voter, and vehicle registration together. Supplies the real residential address a CMRA can't be.",
+      "cost": {
+        "money": "med",
+        "friction": "high",
+        "maintenance": "once"
+      },
+      "failureMode": "Improper domicile → tax/legal challenge; ties many records together if mishandled.",
+      "actors": [
+        "broker",
+        "local-le"
+      ],
+      "sources": [
+        {
+          "title": "EFF SSD — Manage Your Digital Footprint",
+          "url": "https://ssd.eff.org/module/how-to-manage-your-digital-footprint",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "scrub-public-records",
+      "label": "Scrub public & property records",
+      "domain": "physical",
+      "tier": 3,
+      "weight": 3,
+      "regionScope": "localized",
+      "cadence": {
+        "type": "recurring",
+        "everyDays": 180,
+        "reason": "Records repopulate from new filings"
+      },
+      "summary": "Reduce home-address exposure in voter, property, and court records where lawfully possible.",
+      "cost": {
+        "money": "low",
+        "friction": "high",
+        "maintenance": "ongoing"
+      },
+      "failureMode": "Records repopulate from new filings; never fully done.",
+      "actors": [
+        "stalker",
+        "acquaintance",
+        "broker"
+      ],
+      "sources": [
+        {
+          "title": "EFF — Doxxing: Tips to Protect Yourself Online",
+          "url": "https://www.eff.org/deeplinks/2020/12/doxxing-tips-protect-yourself-online-how-minimize-harm",
+          "kind": "org"
+        },
+        {
+          "title": "EFF SSD — Manage Your Digital Footprint",
+          "url": "https://ssd.eff.org/module/how-to-manage-your-digital-footprint",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "home-network-iot-audit",
+      "label": "Audit what's watching inside your home",
+      "domain": "physical",
+      "tier": 2,
+      "weight": 3,
+      "regionScope": "global",
+      "cadence": {
+        "type": "recurring",
+        "everyDays": 365,
+        "reason": "New devices get added over time"
+      },
+      "summary": "Inventory what watches and listens inside your walls and what it phones home.",
+      "cost": {
+        "money": "none",
+        "friction": "med",
+        "maintenance": "periodic"
+      },
+      "failureMode": "New device added later re-opens the hole; neighbors' devices unaffected.",
+      "actors": [
+        "advertiser",
+        "platform",
+        "local-le"
+      ],
+      "sources": [
+        {
+          "title": "FTC — Securing your home network / IoT",
+          "url": "https://consumer.ftc.gov/articles/how-secure-your-home-wi-fi-network",
+          "kind": "org"
+        },
+        {
+          "title": "Mozilla *Privacy Not Included (IoT guide)",
+          "url": "https://foundation.mozilla.org/en/privacynotincluded/",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "property-utilities-entity",
+      "label": "Put property & utilities under an entity",
+      "domain": "physical",
+      "tier": 4,
+      "weight": 2,
+      "regionScope": "localized",
+      "cadence": {
+        "type": "once"
+      },
+      "summary": "Hold utilities, leases, and registrations in an entity or alias rather than your personal name.",
+      "cost": {
+        "money": "med",
+        "friction": "high",
+        "maintenance": "once"
+      },
+      "failureMode": "Entity setup errors → ownership still traceable; NCTUE freeze blocks new utilities.",
+      "actors": [
+        "stalker",
+        "broker"
+      ],
+      "sources": [
+        {
+          "title": "FinCEN — Beneficial Ownership Information",
+          "url": "https://www.fincen.gov/boi",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "delivery-hygiene",
+      "label": "Ship packages away from your home",
+      "domain": "physical",
+      "tier": 3,
+      "weight": 3,
+      "regionScope": "global",
+      "cadence": {
+        "type": "once"
+      },
+      "summary": "Ship under an alias and/or route to the CMRA so deliveries don't tie packages to your home.",
+      "cost": {
+        "money": "none",
+        "friction": "med",
+        "maintenance": "ongoing"
+      },
+      "failureMode": "One delivery to home address re-links it.",
+      "actors": [
+        "broker",
+        "stalker"
+      ],
+      "sources": [
+        {
+          "title": "EFF — Doxxing: Tips to Protect Yourself Online",
+          "url": "https://www.eff.org/deeplinks/2020/12/doxxing-tips-protect-yourself-online-how-minimize-harm",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "travel-privacy",
+      "label": "Travel & biometric awareness",
+      "domain": "physical",
+      "tier": 4,
+      "weight": 2,
+      "regionScope": "global",
+      "cadence": {
+        "type": "once"
+      },
+      "summary": "Understand ANPR, face recognition, and booking trails. Awareness first, mitigation second.",
+      "cost": {
+        "money": "low",
+        "friction": "med",
+        "maintenance": "periodic"
+      },
+      "failureMode": "Mostly awareness; biometric/booking trails persist regardless.",
+      "actors": [
+        "federal",
+        "state-actor",
+        "local-le"
+      ],
+      "sources": [
+        {
+          "title": "EFF — Digital Privacy at the U.S. Border",
+          "url": "https://www.eff.org/wp/digital-privacy-us-border-2017",
+          "kind": "org"
+        },
+        {
+          "title": "EFF SSD — Attending a Protest / crossing borders guidance",
+          "url": "https://ssd.eff.org/",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "self-osint-check",
+      "label": "Search yourself like an investigator (OSINT)",
+      "domain": "physical",
+      "tier": 3,
+      "weight": 3,
+      "regionScope": "global",
+      "cadence": {
+        "type": "recurring",
+        "everyDays": 90,
+        "reason": "Verify removals actually held"
+      },
+      "summary": "Run yourself through people-search and search engines to measure real exposure. Closes the loop and feeds the next inventory.",
+      "cost": {
+        "money": "none",
+        "friction": "med",
+        "maintenance": "periodic"
+      },
+      "failureMode": "Skip it → you don't know whether removals held.",
+      "actors": [
+        "stalker",
+        "acquaintance",
+        "broker"
+      ],
+      "sources": [
+        {
+          "title": "EFF — Doxxing: self-assessment of your exposure",
+          "url": "https://www.eff.org/deeplinks/2020/12/doxxing-tips-protect-yourself-online-how-minimize-harm",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "home-address-ghost",
+      "label": "Make your home address unfindable",
+      "domain": "physical",
+      "tier": 5,
+      "weight": 1,
+      "regionScope": "localized",
+      "cadence": {
+        "type": "managed",
+        "reason": "Continuous vigilance to keep the address out of every record"
+      },
+      "summary": "The deep end: no public record, account, or delivery resolves to where you actually sleep.",
+      "cost": {
+        "money": "high",
+        "friction": "high",
+        "maintenance": "ongoing"
+      },
+      "failureMode": "A single record/delivery/utility leak undoes it; continuous vigilance required.",
+      "actors": [
+        "stalker",
+        "federal",
+        "state-actor"
+      ],
+      "sources": [
+        {
+          "title": "EFF SSD — Manage Your Digital Footprint",
+          "url": "https://ssd.eff.org/module/how-to-manage-your-digital-footprint",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "self-custody",
+      "label": "Hold your own crypto keys (self-custody)",
+      "domain": "economic",
+      "tier": 3,
+      "weight": 5,
+      "regionScope": "global",
+      "cadence": {
+        "type": "managed",
+        "reason": "Key security is ongoing"
+      },
+      "summary": "Hold your own keys; move assets off custodial exchanges. The foundational sovereignty move — without it crypto's privacy ceiling collapses to the custodial (≈ bank) level.",
+      "caveat": "All security/recovery burden shifts to you; key loss is irreversible.",
+      "ceiling": "sovereign",
+      "cost": {
+        "money": "low",
+        "friction": "high",
+        "maintenance": "ongoing"
+      },
+      "failureMode": "Lost keys/seed = permanent, total loss; theft if poorly secured. No recovery, no support line.",
+      "actors": [
+        "criminal",
+        "platform",
+        "federal",
+        "state-actor"
+      ],
+      "sources": [
+        {
+          "title": "EFF SSD — keeping data safe",
+          "url": "https://ssd.eff.org/",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "non-kyc-rails",
+      "label": "Buy & spend without ID checks (non-KYC)",
+      "domain": "economic",
+      "tier": 4,
+      "weight": 4,
+      "regionScope": "localized",
+      "legalSensitive": true,
+      "cadence": {
+        "type": "managed",
+        "reason": "Rails and rules shift"
+      },
+      "summary": "Acquire/spend value while minimizing passage through KYC chokepoints (P2P, ATMs, earning in crypto, spending where accepted). The pivotal on/off-ramp boundary.",
+      "caveat": "About privacy, not evading lawful tax/reporting; AML rules vary.",
+      "ceiling": "sovereign",
+      "cost": {
+        "money": "med",
+        "friction": "high",
+        "maintenance": "ongoing"
+      },
+      "failureMode": "Rails close/regulate; mistakes can be unlawful; liquidity gaps.",
+      "actors": [
+        "federal",
+        "platform"
+      ],
+      "sources": [
+        {
+          "title": "FinCEN — money services business / KYC rules",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/money-services-business-msb-information-center",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "privacy-coin",
+      "label": "Privacy coin (Monero)",
+      "domain": "economic",
+      "tier": 4,
+      "weight": 4,
+      "regionScope": "localized",
+      "cadence": {
+        "type": "once"
+      },
+      "summary": "Private-by-default ledger (amounts/parties/origins opaque). Top of the sovereign ceiling; answers chain analysis that defeats transparent-ledger Bitcoin.",
+      "caveat": "Liquidity/acceptance and exchange-delisting risk; legality varies by jurisdiction.",
+      "ceiling": "sovereign",
+      "cost": {
+        "money": "low",
+        "friction": "med",
+        "maintenance": "once"
+      },
+      "failureMode": "Exchange delisting/illiquidity; legality varies by jurisdiction.",
+      "actors": [
+        "federal",
+        "state-actor",
+        "platform"
+      ],
+      "sources": [
+        {
+          "title": "Monero",
+          "url": "https://www.getmonero.org/",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "bitcoin-privacy-technique",
+      "label": "Make Bitcoin harder to trace",
+      "domain": "economic",
+      "tier": 4,
+      "weight": 2,
+      "regionScope": "global",
+      "cadence": {
+        "type": "managed",
+        "reason": "Tooling churns; methods change"
+      },
+      "summary": "Make transparent-chain Bitcoin less linkable: coinjoin/collaborative tx, no address reuse, separation from KYC'd coins.",
+      "caveat": "Moving target; some tools have faced legal pressure.",
+      "ceiling": "sovereign",
+      "cost": {
+        "money": "low",
+        "friction": "high",
+        "maintenance": "ongoing"
+      },
+      "failureMode": "Tooling churns/abandoned; one linkage to KYC retroactively exposes history.",
+      "actors": [
+        "federal",
+        "state-actor"
+      ],
+      "sources": [
+        {
+          "title": "Bitcoin privacy (Bitcoin Wiki)",
+          "url": "https://en.bitcoin.it/wiki/Privacy",
+          "kind": "reference"
+        }
+      ]
+    },
+    {
+      "id": "bearer-assets",
+      "label": "Precious metals & stones",
+      "domain": "economic",
+      "tier": 3,
+      "weight": 3,
+      "regionScope": "localized",
+      "legalSensitive": true,
+      "cadence": {
+        "type": "once"
+      },
+      "summary": "Physical bearer assets: crypto-like sovereignty (no ledger, no intermediary) but with a physical storage/portability problem instead of a digital one. Stones = highest value density; metals = more liquid.",
+      "caveat": "Buy-side is private; SELL-side and STORAGE are the exposure points (1099-B on sale of certain items; vault storage re-adds a third party). Capital gains apply; structuring under $10k cash thresholds is unlawful.",
+      "ceiling": "sovereign-immovable",
+      "cost": {
+        "money": "high",
+        "friction": "high",
+        "maintenance": "ongoing"
+      },
+      "failureMode": "Theft/loss of physical asset; sale triggers reporting/KYC; vault re-adds an intermediary.",
+      "actors": [
+        "criminal",
+        "federal"
+      ],
+      "sources": [
+        {
+          "title": "IRS — capital gains & reporting on collectibles/metals",
+          "url": "https://www.irs.gov/taxtopics/tc409",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "anti-facial-recognition",
+      "label": "Defeat facial recognition",
+      "domain": "biometric",
+      "tier": 3,
+      "weight": 3,
+      "regionScope": "global",
+      "cadence": {
+        "type": "managed",
+        "reason": "Arms race; methods obsolesce in months"
+      },
+      "summary": "Occlude or disrupt face capture. Graded: masks (best) > IR illuminators > subtle landmark makeup > adversarial fashion > CV-dazzle (largely obsolete).",
+      "caveat": "Defeating cameras often makes you MORE visible to humans; none of it touches gait. Mask laws vary; active IR may be unlawful near secure sites. Sell exposure-reduction, never invisibility.",
+      "legalSensitive": true,
+      "cost": {
+        "money": "low",
+        "friction": "med",
+        "maintenance": "ongoing"
+      },
+      "failureMode": "Obsoletes in months; makes you conspicuous to humans; doesn't touch gait.",
+      "actors": [
+        "local-le",
+        "federal",
+        "state-actor",
+        "platform"
+      ],
+      "sources": [
+        {
+          "title": "How to defeat facial recognition (overview)",
+          "url": "https://stateofsurveillance.org/news/how-to-defeat-facial-recognition/",
+          "kind": "reference"
+        }
+      ]
+    },
+    {
+      "id": "gait-obfuscation",
+      "label": "Know your walk identifies you (gait)",
+      "domain": "biometric",
+      "tier": 4,
+      "weight": 1,
+      "regionScope": "global",
+      "cadence": {
+        "type": "managed",
+        "reason": "Posture; not a one-time fix"
+      },
+      "summary": "Alter walking signature via footwear/load/clothing. Gait IDs at up to ~200m, through masks, at low resolution.",
+      "caveat": "NO reliable consumer defense exists. Primary value is AWARENESS that face-covering alone is insufficient.",
+      "actionability": "awareness",
+      "cost": {
+        "money": "none",
+        "friction": "high",
+        "maintenance": "ongoing"
+      },
+      "failureMode": "No reliable consumer defense; alteration is hard to sustain and may itself flag.",
+      "actors": [
+        "state-actor",
+        "federal",
+        "local-le"
+      ],
+      "sources": [
+        {
+          "title": "Gait recognition ends anonymity (overview)",
+          "url": "https://smarterarticles.co.uk/your-walk-betrays-you-how-ai-gait-recognition-ends-anonymity",
+          "kind": "reference"
+        }
+      ]
+    },
+    {
+      "id": "voice-privacy",
+      "label": "Limit your voiceprint exposure",
+      "domain": "biometric",
+      "tier": 3,
+      "weight": 2,
+      "regionScope": "global",
+      "cadence": {
+        "type": "managed",
+        "reason": "Ongoing exposure"
+      },
+      "summary": "Limit voiceprint harvesting: minimize voice-assistant use, beware recorded calls, avoid posting voice publicly.",
+      "caveat": "Once a voiceprint exists it's a durable identifier.",
+      "cost": {
+        "money": "none",
+        "friction": "med",
+        "maintenance": "ongoing"
+      },
+      "failureMode": "Once a voiceprint exists it's durable; assistants/recordings re-capture.",
+      "actors": [
+        "platform",
+        "federal",
+        "state-actor"
+      ],
+      "sources": [
+        {
+          "title": "Mozilla *Privacy Not Included — smart speakers",
+          "url": "https://foundation.mozilla.org/en/privacynotincluded/",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "behavioral-digital-defense",
+      "label": "Keystroke/mouse profiling defense",
+      "domain": "biometric",
+      "tier": 4,
+      "weight": 1,
+      "regionScope": "global",
+      "cadence": {
+        "type": "managed",
+        "reason": "Ongoing"
+      },
+      "summary": "Resist behavioral profiling of how you type/move the mouse, used to de-anonymize across accounts even through a VPN.",
+      "caveat": "Largely unsolved for consumers. Demonstrates 'biometric' spans digital AND physical.",
+      "actionability": "awareness",
+      "cost": {
+        "money": "none",
+        "friction": "high",
+        "maintenance": "ongoing"
+      },
+      "failureMode": "Largely unsolved; profiling persists across accounts/VPN.",
+      "actors": [
+        "platform",
+        "broker",
+        "state-actor"
+      ],
+      "sources": [
+        {
+          "title": "EFF — Behavioral/biometric tracking (Street Level Surveillance)",
+          "url": "https://sls.eff.org/",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "faraday",
+      "label": "Block your devices' signals (Faraday)",
+      "domain": "physical",
+      "tier": 3,
+      "weight": 3,
+      "regionScope": "global",
+      "cadence": {
+        "type": "once"
+      },
+      "summary": "Block device radio emanation (cell/GPS/Wi-Fi/BT/NFC) for phones, key fobs, passports — defeats location broadcast and IMSI-catcher harvesting.",
+      "caveat": "Only works while sealed; a phone in use is a phone tracked.",
+      "cost": {
+        "money": "low",
+        "friction": "low",
+        "maintenance": "ongoing"
+      },
+      "failureMode": "Only works while sealed; a phone in use is tracked; forget to bag it → no protection.",
+      "actors": [
+        "local-le",
+        "federal",
+        "stalker",
+        "state-actor"
+      ],
+      "sources": [
+        {
+          "title": "EFF — Cell-Site Simulators / IMSI Catchers",
+          "url": "https://sls.eff.org/technologies/cell-site-simulators-imsi-catchers",
+          "kind": "org"
+        },
+        {
+          "title": "EFF — Rayhunter (detect cellular spying)",
+          "url": "https://www.eff.org/deeplinks/2025/03/meet-rayhunter-new-open-source-tool-eff-detect-cellular-spying",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "vehicle-data-privacy",
+      "label": "Stop your car reporting on you",
+      "domain": "physical",
+      "tier": 3,
+      "weight": 3,
+      "regionScope": "global",
+      "cadence": {
+        "type": "once"
+      },
+      "summary": "Cars as surveillance devices: disable/remove the car's cellular modem, wipe paired-phone data before sale. Distinct from ALPR (the plate) — this is the car itself reporting.",
+      "caveat": "Disabling connectivity may disable safety/emergency features; legality varies.",
+      "cost": {
+        "money": "low",
+        "friction": "med",
+        "maintenance": "once"
+      },
+      "failureMode": "Disabling connectivity may kill safety features; automaker data already sent.",
+      "actors": [
+        "broker",
+        "local-le",
+        "criminal"
+      ],
+      "sources": [
+        {
+          "title": "Mozilla *Privacy Not Included — Cars (2023 report)",
+          "url": "https://foundation.mozilla.org/en/privacynotincluded/articles/its-official-cars-are-the-worst-product-category-we-have-ever-reviewed-for-privacy/",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "offgrid-mesh-radio",
+      "label": "Off-grid LoRa mesh (Meshtastic/MeshCore)",
+      "domain": "comms",
+      "tier": 3,
+      "weight": 4,
+      "regionScope": "localized",
+      "cadence": {
+        "type": "once"
+      },
+      "infraIndependence": 4,
+      "anonymity": 3,
+      "summary": "Encrypted text/GPS device-to-device over unlicensed LoRa — no internet or cell towers, self-routing mesh, several km/hop. Meshtastic (floods, plug-and-play) vs MeshCore (routes, scales).",
+      "caveat": "Text only. Default channel key is PUBLIC — needs custom PSK. No perfect-forward-secrecy (harvest-now-decrypt-later). Node IDs/topology are metadata. MQTT bridge silently re-adds internet + leaks approx location. Encrypted ≠ unlocatable.",
+      "legalSensitive": true,
+      "cost": {
+        "money": "low",
+        "friction": "high",
+        "maintenance": "periodic"
+      },
+      "failureMode": "Default key = no privacy; no forward secrecy (harvest-now); RF locatable; MQTT re-adds internet.",
+      "actors": [
+        "state-actor",
+        "federal",
+        "local-le"
+      ],
+      "sources": [
+        {
+          "title": "Meshtastic",
+          "url": "https://meshtastic.org/",
+          "kind": "primary"
+        },
+        {
+          "title": "MeshCore",
+          "url": "https://meshcore.co.uk/",
+          "kind": "primary"
+        },
+        {
+          "title": "Meshtastic encryption limitations",
+          "url": "https://meshtastic.org/docs/about/overview/encryption/limitations/",
+          "kind": "docs"
+        }
+      ]
+    },
+    {
+      "id": "offline-mesh-messenger",
+      "label": "Message without internet (mesh apps)",
+      "domain": "comms",
+      "tier": 2,
+      "weight": 3,
+      "regionScope": "global",
+      "cadence": {
+        "type": "once"
+      },
+      "infraIndependence": 3,
+      "anonymity": 3,
+      "summary": "Phone-only mesh (Briar, Bitchat) — no hardware/account, useful in crowds or during shutdowns. Briar = activist-grade (E2EE, Tor when online); Bitchat = fast-growing but treat as unaudited.",
+      "caveat": "Short range; needs local user density. Privacy varies hugely by app; some leak metadata once internet returns.",
+      "cost": {
+        "money": "none",
+        "friction": "med",
+        "maintenance": "once"
+      },
+      "failureMode": "Short range; needs user density; some apps leak metadata once online.",
+      "actors": [
+        "local-le",
+        "federal",
+        "state-actor"
+      ],
+      "sources": [
+        {
+          "title": "Briar",
+          "url": "https://briarproject.org/",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "licensed-radio",
+      "label": "Ham / GMRS / CB radio",
+      "domain": "comms",
+      "tier": 3,
+      "weight": 2,
+      "regionScope": "localized",
+      "cadence": {
+        "type": "once"
+      },
+      "infraIndependence": 4,
+      "anonymity": 0,
+      "summary": "Two-way radio for grid-independent voice/reach, especially emergencies.",
+      "caveat": "Ham FORBIDS encryption and requires your call sign — non-private, non-anonymous BY LAW. Value is sovereign reach/resilience, not secrecy.",
+      "legalSensitive": true,
+      "cost": {
+        "money": "med",
+        "friction": "high",
+        "maintenance": "periodic"
+      },
+      "failureMode": "No encryption allowed; call-sign required → non-private by law; RF locatable.",
+      "actors": [
+        "state-actor",
+        "federal",
+        "local-le"
+      ],
+      "sources": [
+        {
+          "title": "FCC — Amateur Radio Service (Part 97)",
+          "url": "https://www.fcc.gov/wireless/bureau-divisions/mobility-division/amateur-radio-service",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "hf-long-range",
+      "label": "HF / NVIS long-range radio",
+      "domain": "comms",
+      "tier": 4,
+      "weight": 2,
+      "regionScope": "localized",
+      "cadence": {
+        "type": "once"
+      },
+      "infraIndependence": 5,
+      "anonymity": 0,
+      "summary": "HF (esp. NVIS) gives regional-to-worldwide range with no infrastructure; modern data modes (VARA/JS8Call/Winlink) move email/files over RF.",
+      "caveat": "Encryption illegal on amateur bands; call-sign ID required. Lawful encrypted RF needs a Part 90 commercial license. Content is public by law.",
+      "legalSensitive": true,
+      "cost": {
+        "money": "med",
+        "friction": "high",
+        "maintenance": "ongoing"
+      },
+      "failureMode": "Encryption illegal on ham; content public; RF locatable; skill-intensive.",
+      "actors": [
+        "state-actor",
+        "federal"
+      ],
+      "sources": [
+        {
+          "title": "FCC Part 97 — encryption/identification rules (eCFR)",
+          "url": "https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-97",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "satellite-messaging",
+      "label": "Satellite messaging (TRAP)",
+      "domain": "comms",
+      "tier": 3,
+      "weight": 1,
+      "regionScope": "global",
+      "cadence": {
+        "type": "once"
+      },
+      "infraIndependence": 3,
+      "anonymity": 0,
+      "summary": "Garmin inReach / phone-to-satellite: terrestrial-independent and excellent for emergencies.",
+      "caveat": "PRIVACY TRAP: account-linked, subscription-gated, continuously location-logged; provider has a law-enforcement location-request process. Use for safety, NEVER for privacy.",
+      "actionability": "trap",
+      "cost": {
+        "money": "med",
+        "friction": "low",
+        "maintenance": "ongoing"
+      },
+      "failureMode": "TRAP: account-linked, location-logged, LE-requestable. Resilient, not private.",
+      "actors": [
+        "federal",
+        "state-actor",
+        "platform"
+      ],
+      "sources": [
+        {
+          "title": "Garmin inReach (privacy/LE location requests)",
+          "url": "https://en.wikipedia.org/wiki/Garmin_inReach",
+          "kind": "reference"
+        }
+      ]
+    },
+    {
+      "id": "rf-emission-discipline",
+      "label": "RF emission discipline",
+      "domain": "comms",
+      "tier": 5,
+      "weight": 1,
+      "regionScope": "global",
+      "cadence": {
+        "type": "managed",
+        "reason": "Operational discipline"
+      },
+      "infraIndependence": 5,
+      "anonymity": 2,
+      "summary": "Reduce locatability when transmitting: frequency hopping, burst transmission, power minimization, directional antennas, mobility.",
+      "caveat": "RF FINGERPRINTING (identifying your specific radio by emission quirks, via deep learning) is largely unsolved for consumers — the radio twin of gait. Mostly awareness + discipline.",
+      "actionability": "awareness",
+      "cost": {
+        "money": "med",
+        "friction": "high",
+        "maintenance": "ongoing"
+      },
+      "failureMode": "RF fingerprinting largely unsolved for consumers; discipline lapses → located.",
+      "actors": [
+        "state-actor",
+        "federal"
+      ],
+      "sources": [
+        {
+          "title": "Radio direction finding & countermeasures (overview)",
+          "url": "https://www.offgridweb.com/preparation/radio-direction-finding/",
+          "kind": "reference"
+        }
+      ]
+    },
+    {
+      "id": "physical-data-transport",
+      "label": "Sneakernet / physical transport",
+      "domain": "comms",
+      "tier": 4,
+      "weight": 2,
+      "regionScope": "global",
+      "cadence": {
+        "type": "managed",
+        "reason": "Per-transfer hygiene"
+      },
+      "infraIndependence": 5,
+      "anonymity": 5,
+      "summary": "Move encrypted media by hand (USB, dead drops) — the ultimate air-gap and most metadata-free channel that exists.",
+      "caveat": "Relocates risk to physical handling + endpoint: untrusted media is an attack vector (use once dirty→clean, consider galvanic isolation); dead-drop spots carry physical-surveillance/mugging risk.",
+      "cost": {
+        "money": "low",
+        "friction": "high",
+        "maintenance": "ongoing"
+      },
+      "failureMode": "Media lost/stolen/tampered; untrusted media is itself an attack vector; dead-drop physical risk.",
+      "actors": [
+        "state-actor",
+        "federal"
+      ],
+      "sources": [
+        {
+          "title": "Schneier on Security — Air Gaps",
+          "url": "https://www.schneier.com/blog/archives/2013/10/air_gaps.html",
+          "kind": "reference"
+        }
+      ]
+    },
+    {
+      "id": "dns-blocking",
+      "label": "Block trackers network-wide (DNS)",
+      "domain": "digital",
+      "tier": 2,
+      "weight": 3,
+      "regionScope": "global",
+      "cadence": {
+        "type": "once"
+      },
+      "summary": "Network-wide tracker/ad blocking and encrypted DNS (Pi-hole, NextDNS) to stop ISP snooping and cross-app tracking.",
+      "caveat": "Relocates DNS trust to the resolver you choose.",
+      "cost": {
+        "money": "low",
+        "friction": "med",
+        "maintenance": "once"
+      },
+      "failureMode": "Trust moves to the resolver; breaks some sites; bypassed by hardcoded DNS in apps.",
+      "actors": [
+        "advertiser",
+        "broker",
+        "local-le"
+      ],
+      "sources": [
+        {
+          "title": "Privacy Guides — DNS Resolvers",
+          "url": "https://www.privacyguides.org/en/dns/",
+          "kind": "org"
+        },
+        {
+          "title": "Pi-hole",
+          "url": "https://pi-hole.net/",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "outbound-firewall",
+      "label": "Stop apps phoning home (firewall)",
+      "domain": "digital",
+      "tier": 3,
+      "weight": 2,
+      "regionScope": "global",
+      "cadence": {
+        "type": "once"
+      },
+      "summary": "Block apps/programs from phoning home (e.g. Little Snitch). Controls telemetry at the egress point.",
+      "cost": {
+        "money": "low",
+        "friction": "high",
+        "maintenance": "ongoing"
+      },
+      "failureMode": "Alert fatigue → allow-all; only as good as your rules.",
+      "actors": [
+        "advertiser",
+        "platform"
+      ],
+      "sources": [
+        {
+          "title": "Privacy Guides — desktop tooling",
+          "url": "https://www.privacyguides.org/en/tools/",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "local-ai",
+      "label": "Run AI locally instead of the cloud",
+      "domain": "digital",
+      "tier": 3,
+      "weight": 2,
+      "regionScope": "global",
+      "cadence": {
+        "type": "once"
+      },
+      "summary": "Run models locally (Ollama) instead of sending queries to cloud chatbots that log/train on them.",
+      "cost": {
+        "money": "med",
+        "friction": "med",
+        "maintenance": "once"
+      },
+      "failureMode": "Weaker than cloud models; hardware cost; misconfig can still leak.",
+      "actors": [
+        "platform",
+        "advertiser"
+      ],
+      "sources": [
+        {
+          "title": "Ollama (run models locally)",
+          "url": "https://ollama.com/",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "encrypted-containers",
+      "label": "Lock files in encrypted containers",
+      "domain": "digital",
+      "tier": 3,
+      "weight": 2,
+      "regionScope": "global",
+      "cadence": {
+        "type": "once"
+      },
+      "summary": "VeraCrypt-style encrypted volumes for selective file encryption, distinct from full-disk encryption.",
+      "cost": {
+        "money": "none",
+        "friction": "med",
+        "maintenance": "once"
+      },
+      "failureMode": "Forgotten passphrase = permanent data loss; container existence may be detectable.",
+      "actors": [
+        "criminal",
+        "local-le",
+        "federal"
+      ],
+      "sources": [
+        {
+          "title": "VeraCrypt — official",
+          "url": "https://veracrypt.io/",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "tracking-link-stripping",
+      "label": "Strip tracking from links you share",
+      "domain": "digital",
+      "tier": 2,
+      "weight": 2,
+      "regionScope": "global",
+      "cadence": {
+        "type": "once"
+      },
+      "summary": "Remove utm/click-tracking parameters before sharing links.",
+      "cost": {
+        "money": "none",
+        "friction": "low",
+        "maintenance": "ongoing"
+      },
+      "failureMode": "Miss one link → tracked; minor downside.",
+      "actors": [
+        "advertiser",
+        "broker"
+      ],
+      "sources": [
+        {
+          "title": "Privacy Guides — Browser Extensions",
+          "url": "https://www.privacyguides.org/en/browser-extensions/",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "update-discipline",
+      "label": "Keep everything updated",
+      "domain": "foundation",
+      "tier": 1,
+      "weight": 4,
+      "regionScope": "global",
+      "cadence": {
+        "type": "recurring",
+        "everyDays": 30,
+        "reason": "Patches release continuously"
+      },
+      "summary": "Keep OS/apps patched. Named by a cryptographer as the single biggest security behavior (most exploits hit known, patched vulns).",
+      "cost": {
+        "money": "none",
+        "friction": "low",
+        "maintenance": "ongoing"
+      },
+      "failureMode": "Skipped update → known exploit hits you; rare bad update can break things.",
+      "actors": [
+        "criminal",
+        "state-actor"
+      ],
+      "sources": [
+        {
+          "title": "CISA — Update Software (Secure Our World)",
+          "url": "https://www.cisa.gov/secure-our-world/update-software",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "third-party-leak-awareness",
+      "label": "Third-party data-leak awareness",
+      "domain": "digital",
+      "tier": 2,
+      "weight": 2,
+      "regionScope": "global",
+      "cadence": {
+        "type": "managed",
+        "reason": "Ongoing"
+      },
+      "summary": "Your data leaks via OTHERS — address-book uploads, tagged photos, AI scraping. 'This data isn't yours to give away.'",
+      "caveat": "Largely outside your control; partly a consent/civic issue.",
+      "cost": {
+        "money": "none",
+        "friction": "med",
+        "maintenance": "ongoing"
+      },
+      "failureMode": "Mostly outside your control; others keep uploading your data.",
+      "actors": [
+        "broker",
+        "platform",
+        "advertiser"
+      ],
+      "sources": [
+        {
+          "title": "Garcia — Leaking privacy & shadow profiles (Science Advances)",
+          "url": "https://www.science.org/doi/10.1126/sciadv.1701172",
+          "kind": "research"
+        }
+      ]
+    },
+    {
+      "id": "civic-action",
+      "label": "Civic / policy action (umbrella)",
+      "domain": "civic",
+      "tier": 3,
+      "weight": 3,
+      "regionScope": "localized",
+      "cadence": {
+        "type": "managed",
+        "reason": "Ongoing engagement"
+      },
+      "summary": "Umbrella for collective/policy action — the durable lever where individual technical defense is weak. See the specific civic nodes for concrete mechanisms.",
+      "caveat": "Collective, slow, jurisdiction-bound — but often the ONLY real lever for whole threat classes.",
+      "cost": {
+        "money": "none",
+        "friction": "high",
+        "maintenance": "ongoing"
+      },
+      "failureMode": "Slow, collective, may fail; but the only lever for some threat classes.",
+      "actors": [
+        "local-le",
+        "federal",
+        "state-actor",
+        "platform"
+      ],
+      "sources": [
+        {
+          "title": "EFF",
+          "url": "https://www.eff.org/",
+          "kind": "org"
+        },
+        {
+          "title": "ACLU",
+          "url": "https://www.aclu.org/",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "communications-sovereignty",
+      "label": "Communications sovereignty",
+      "domain": "comms",
+      "tier": 5,
+      "weight": 1,
+      "regionScope": "global",
+      "cadence": {
+        "type": "managed",
+        "reason": "Maintained capability"
+      },
+      "infraIndependence": 5,
+      "anonymity": 3,
+      "summary": "Capstone: ability to communicate with no permissioned infrastructure. Comms analogue of home-address-ghost and self-custody.",
+      "cost": {
+        "money": "high",
+        "friction": "high",
+        "maintenance": "ongoing"
+      },
+      "failureMode": "Capstone: any single dependent link reintroduced breaks the property.",
+      "actors": [
+        "federal",
+        "state-actor"
+      ],
+      "sources": [
+        {
+          "title": "EFF Surveillance Self-Defense",
+          "url": "https://ssd.eff.org/",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "physical-anonymity",
+      "label": "Physical anonymity",
+      "domain": "biometric",
+      "tier": 5,
+      "weight": 1,
+      "regionScope": "global",
+      "cadence": {
+        "type": "managed",
+        "reason": "Continuous"
+      },
+      "summary": "Capstone: move through public space without being identified by face, gait, voice, or device emanation. Physical analogue of identity-compartmentalization.",
+      "caveat": "Against modern fusion + biometrics, only partially achievable; heavily civic-dependent.",
+      "cost": {
+        "money": "high",
+        "friction": "high",
+        "maintenance": "ongoing"
+      },
+      "failureMode": "Capstone: only partially achievable vs fusion+biometrics; one slip re-identifies.",
+      "actors": [
+        "federal",
+        "state-actor",
+        "local-le"
+      ],
+      "sources": [
+        {
+          "title": "EFF — Street Level Surveillance (overview)",
+          "url": "https://sls.eff.org/",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "data-minimization",
+      "label": "Data minimization",
+      "domain": "foundation",
+      "tier": 1,
+      "weight": 4,
+      "regionScope": "global",
+      "cadence": {
+        "type": "managed",
+        "reason": "A standing discipline, not a task"
+      },
+      "summary": "Give out as little data as possible by default. It's the idea behind keeping things separate — and the best defense against companies piecing your profile together.",
+      "cost": {
+        "money": "none",
+        "friction": "med",
+        "maintenance": "ongoing"
+      },
+      "failureMode": "A standing discipline; every over-share permanently adds to the fusion profile.",
+      "actors": [
+        "broker",
+        "advertiser",
+        "platform",
+        "state-actor"
+      ],
+      "sources": [
+        {
+          "title": "EFF Surveillance Self-Defense",
+          "url": "https://ssd.eff.org/",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "ssn-lock",
+      "label": "Lock your SSN against misuse",
+      "domain": "economic",
+      "tier": 1,
+      "weight": 4,
+      "regionScope": "localized",
+      "cadence": {
+        "type": "recurring",
+        "everyDays": 365,
+        "reason": "E-Verify Self Lock lasts 1 year"
+      },
+      "summary": "Block electronic access to your Social Security record and turn on E-Verify Self Lock to stop job and identity fraud tied to your SSN. This is separate from a credit freeze — do both.",
+      "caveat": "SSN was never designed as a secret identifier and is widely leaked; locking limits misuse, not exposure. Unlock before a new job. (US-specific.)",
+      "legalSensitive": true,
+      "cost": {
+        "money": "none",
+        "friction": "low",
+        "maintenance": "periodic"
+      },
+      "failureMode": "Forget to unlock → blocks your own new job/credit; doesn't reduce existing exposure.",
+      "actors": [
+        "criminal"
+      ],
+      "sources": [
+        {
+          "title": "E-Verify myE-Verify Self Lock",
+          "url": "https://www.e-verify.gov/employees/mye-verify",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "address-confidentiality-program",
+      "label": "Address Confidentiality Program (ACP)",
+      "domain": "physical",
+      "tier": 3,
+      "weight": 4,
+      "regionScope": "localized",
+      "cadence": {
+        "type": "once"
+      },
+      "summary": "State-run substitute legal address that government agencies must accept on records (DL, voter, court), with mail forwarding. Free; for DV/stalking/trafficking survivors (and, in some states, reproductive-health workers).",
+      "caveat": "Only works if you relocate BEFORE your address hits public record; cannot scrub existing records. ~5 states/4 territories have none. (US, state-specific.)",
+      "legalSensitive": true,
+      "cost": {
+        "money": "none",
+        "friction": "med",
+        "maintenance": "once"
+      },
+      "failureMode": "Only works if you relocate first; can't scrub existing records; not in every state.",
+      "actors": [
+        "stalker",
+        "acquaintance"
+      ],
+      "sources": [
+        {
+          "title": "Example ACP (WA Secretary of State)",
+          "url": "https://www.sos.wa.gov/statewide-programs/address-confidentiality-program-acp",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "name-variant-control",
+      "label": "Legal name & name-variant control",
+      "domain": "physical",
+      "tier": 4,
+      "weight": 2,
+      "regionScope": "localized",
+      "cadence": {
+        "type": "once"
+      },
+      "summary": "Manage how your legal name appears across records; lawful name change where appropriate; minimize linkage between name variants.",
+      "caveat": "A name change creates its own paper trail and does not erase prior records.",
+      "legalSensitive": true,
+      "cost": {
+        "money": "low",
+        "friction": "high",
+        "maintenance": "once"
+      },
+      "failureMode": "Name change creates its own trail; prior records persist.",
+      "actors": [
+        "stalker",
+        "acquaintance",
+        "broker"
+      ],
+      "sources": [
+        {
+          "title": "EFF SSD — Manage Your Digital Footprint",
+          "url": "https://ssd.eff.org/module/how-to-manage-your-digital-footprint",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "identity-document-data",
+      "label": "ID document data minimization",
+      "domain": "physical",
+      "tier": 3,
+      "weight": 3,
+      "regionScope": "localized",
+      "cadence": {
+        "type": "managed",
+        "reason": "Ongoing as IDs are presented"
+      },
+      "summary": "Limit what's exposed via driver's license / passport / Real ID — scanning, copying, and the data encoded; understand mDL/digital-ID tradeoffs.",
+      "caveat": "Government-mandated presentation often can't be refused; this reduces over-sharing, not lawful requirements.",
+      "cost": {
+        "money": "none",
+        "friction": "med",
+        "maintenance": "ongoing"
+      },
+      "failureMode": "Mandated presentation often can't be refused; reduces over-share only.",
+      "actors": [
+        "local-le",
+        "federal",
+        "platform"
+      ],
+      "sources": [
+        {
+          "title": "EPIC — Identification & biometrics / REAL ID",
+          "url": "https://epic.org/issues/surveillance-oversight/real-id/",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "second-residency",
+      "label": "Second residency / citizenship",
+      "domain": "physical",
+      "tier": 5,
+      "weight": 1,
+      "regionScope": "localized",
+      "legalSensitive": true,
+      "cadence": {
+        "type": "once"
+      },
+      "summary": "Lawful second residency/citizenship as jurisdictional diversification — options under pressure, mobility, and reduced single-state dependence.",
+      "caveat": "Expensive, complex, heavily fraud-adjacent if done wrong; tax/reporting obligations follow you. Must be done lawfully — not identity concealment.",
+      "cost": {
+        "money": "high",
+        "friction": "high",
+        "maintenance": "once"
+      },
+      "failureMode": "Expensive/complex; tax obligations follow; fraud-adjacent if done wrong.",
+      "actors": [
+        "federal",
+        "state-actor"
+      ],
+      "sources": [
+        {
+          "title": "U.S. State Dept — Dual Nationality",
+          "url": "https://travel.state.gov/content/travel/en/legal/travel-legal-considerations/Advice-about-Possible-Loss-of-US-Nationality-Dual-Nationality/Dual-Nationality.html",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "health-records-privacy",
+      "label": "Medical records & HIPAA limits",
+      "domain": "digital",
+      "tier": 2,
+      "weight": 3,
+      "regionScope": "localized",
+      "cadence": {
+        "type": "managed",
+        "reason": "Each provider interaction"
+      },
+      "summary": "Learn what HIPAA does and doesn't cover. Ask for restrictions, control who your records go to, and know that many health-related companies (apps, advertisers) aren't bound by HIPAA at all.",
+      "caveat": "HIPAA covers providers/insurers, NOT most health apps, wearables, or data brokers — a huge gap people assume is protected.",
+      "cost": {
+        "money": "none",
+        "friction": "med",
+        "maintenance": "ongoing"
+      },
+      "failureMode": "HIPAA doesn't cover apps/brokers; assuming it does = false security.",
+      "actors": [
+        "broker",
+        "criminal",
+        "platform"
+      ],
+      "sources": [
+        {
+          "title": "HHS — HIPAA for Individuals",
+          "url": "https://www.hhs.gov/hipaa/for-individuals/index.html",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "health-app-wearable-data",
+      "label": "Health app & wearable data control",
+      "domain": "digital",
+      "tier": 2,
+      "weight": 3,
+      "regionScope": "global",
+      "cadence": {
+        "type": "recurring",
+        "everyDays": 180,
+        "reason": "Apps change terms/permissions"
+      },
+      "summary": "Limit fitness/cycle/sleep/wearable data sharing; prefer local-only or E2EE health apps; audit permissions and data sales.",
+      "caveat": "Most consumer health data is outside HIPAA and freely monetized; some is subpoenable.",
+      "cost": {
+        "money": "none",
+        "friction": "med",
+        "maintenance": "periodic"
+      },
+      "failureMode": "Most data outside HIPAA, freely sold; some subpoenable.",
+      "actors": [
+        "broker",
+        "advertiser",
+        "platform"
+      ],
+      "sources": [
+        {
+          "title": "FTC — Health apps & your privacy / Health Breach Notification Rule",
+          "url": "https://www.ftc.gov/business-guidance/resources/complying-ftcs-health-breach-notification-rule",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "genetic-privacy",
+      "label": "Genetic / DNA data privacy",
+      "domain": "biometric",
+      "tier": 4,
+      "weight": 3,
+      "regionScope": "localized",
+      "cadence": {
+        "type": "once"
+      },
+      "summary": "Avoid or carefully control consumer DNA testing; understand that your genetic data exposes blood relatives who never consented, and persists indefinitely.",
+      "caveat": "Familial DNA databases enable identification of relatives via law enforcement; deletion is often incomplete; bankruptcy can transfer the database (23andMe). Irreversible like a face.",
+      "cost": {
+        "money": "none",
+        "friction": "med",
+        "maintenance": "once"
+      },
+      "failureMode": "Irreversible; a relative's test exposes you; deletion often incomplete; bankruptcy transfers DB.",
+      "actors": [
+        "broker",
+        "local-le",
+        "federal",
+        "state-actor"
+      ],
+      "sources": [
+        {
+          "title": "EFF — genetic privacy issues",
+          "url": "https://www.eff.org/issues/genetic-information-privacy",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "reproductive-health-privacy",
+      "label": "Reproductive-health data privacy",
+      "domain": "digital",
+      "tier": 3,
+      "weight": 3,
+      "regionScope": "localized",
+      "cadence": {
+        "type": "managed",
+        "reason": "Ongoing, law-dependent"
+      },
+      "summary": "Protect cycle-tracking, location near clinics, search history, and purchase data where reproductive health is legally contested.",
+      "caveat": "Highly jurisdiction- and time-sensitive; data can become evidence. Pairs with location-metadata-hygiene and ACP.",
+      "legalSensitive": true,
+      "cost": {
+        "money": "none",
+        "friction": "high",
+        "maintenance": "ongoing"
+      },
+      "failureMode": "Jurisdiction/time-sensitive; data can become evidence.",
+      "actors": [
+        "local-le",
+        "federal",
+        "stalker"
+      ],
+      "sources": [
+        {
+          "title": "EFF — reproductive/abortion privacy guidance",
+          "url": "https://www.eff.org/deeplinks/2022/05/security-and-privacy-tips-people-seeking-abortion",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "household-privacy",
+      "label": "Household operational privacy",
+      "domain": "foundation",
+      "tier": 2,
+      "weight": 3,
+      "regionScope": "global",
+      "cadence": {
+        "type": "managed",
+        "reason": "Ongoing household practice"
+      },
+      "summary": "Run privacy as a household: shared devices/accounts, kids, elders, and a partner who may not be bought in. Threat-model the weakest-link member, because their exposure becomes yours.",
+      "caveat": "The least-careful member sets real exposure (e.g. one person's contact-upload leaks everyone). Can't be solved purely technically; needs buy-in and shared norms.",
+      "cost": {
+        "money": "none",
+        "friction": "high",
+        "maintenance": "ongoing"
+      },
+      "failureMode": "The least-careful member sets exposure; can't be solved technically alone.",
+      "actors": [
+        "stalker",
+        "broker",
+        "platform"
+      ],
+      "researched": true,
+      "sources": [
+        {
+          "title": "EFF SSD — security planning for groups/households",
+          "url": "https://ssd.eff.org/module/your-security-plan",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "children-privacy",
+      "label": "Children's privacy & sharenting",
+      "domain": "foundation",
+      "tier": 2,
+      "weight": 3,
+      "regionScope": "global",
+      "cadence": {
+        "type": "managed",
+        "reason": "Ongoing as kids grow/post"
+      },
+      "summary": "Limit what's posted about kids and manage their devices/data. A UK study estimated ~70,000 posts about a person by age 18; a child's footprint often starts with an ultrasound. Barclays projected sharenting could drive two-thirds of identity fraud by 2030.",
+      "caveat": "Children can't consent and the footprint is permanent; geotagged photos near home/school leak location. Schools also post students' images. Strip location, lock down audiences, teach age-appropriate habits.",
+      "cost": {
+        "money": "none",
+        "friction": "high",
+        "maintenance": "ongoing"
+      },
+      "failureMode": "Footprint created before consent; school tech outside your control.",
+      "actors": [
+        "broker",
+        "platform",
+        "acquaintance"
+      ],
+      "researched": true,
+      "sources": [
+        {
+          "title": "FTC — 2025 COPPA Rule update",
+          "url": "https://www.ftc.gov/legal-library/browse/rules/childrens-online-privacy-protection-rule-coppa",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "digital-inheritance",
+      "label": "Digital & crypto inheritance",
+      "domain": "economic",
+      "tier": 3,
+      "weight": 3,
+      "regionScope": "global",
+      "cadence": {
+        "type": "once"
+      },
+      "summary": "Plan succession for accounts, encrypted data, and especially self-custodied crypto keys, so assets aren't lost or exposed at death/incapacity. Use platform legacy-contact features and a tested key-recovery scheme (e.g. Shamir split / multisig).",
+      "caveat": "The self-custody time-bomb: keys nobody can recover = permanent loss; naive sharing = a live exposure today. Hard to test without triggering it. (Legal-sensitive: coordinate with estate planning.)",
+      "legalSensitive": true,
+      "cost": {
+        "money": "low",
+        "friction": "high",
+        "maintenance": "periodic"
+      },
+      "failureMode": "Keys nobody can recover = permanent loss; naive sharing = live exposure. Hard to test.",
+      "actors": [
+        "criminal",
+        "acquaintance"
+      ],
+      "researched": true,
+      "sources": [
+        {
+          "title": "Apple — Digital Legacy / legacy contact",
+          "url": "https://support.apple.com/en-us/HT212360",
+          "kind": "docs"
+        }
+      ]
+    },
+    {
+      "id": "eldercare-privacy",
+      "label": "Eldercare & dependent privacy",
+      "domain": "foundation",
+      "tier": 2,
+      "weight": 2,
+      "regionScope": "global",
+      "cadence": {
+        "type": "managed",
+        "reason": "Ongoing caregiving"
+      },
+      "summary": "Protect dependents who can't manage their own privacy (elders, disabled adults) from scams, over-monitoring, and exposure, balancing legitimate oversight with autonomy.",
+      "caveat": "Tension between caregiving oversight and the dependent's dignity/autonomy; monitoring tools used for 'safety' can themselves be an exposure or control vector.",
+      "cost": {
+        "money": "low",
+        "friction": "high",
+        "maintenance": "ongoing"
+      },
+      "failureMode": "Tension between oversight and the dependent's autonomy; scam exposure.",
+      "actors": [
+        "criminal",
+        "acquaintance"
+      ],
+      "researched": true,
+      "sources": [
+        {
+          "title": "FTC — Protecting older adults from fraud/scams",
+          "url": "https://consumer.ftc.gov/features/protecting-older-consumers",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "workplace-surveillance",
+      "label": "Workplace device/network monitoring",
+      "domain": "digital",
+      "tier": 2,
+      "weight": 3,
+      "regionScope": "localized",
+      "cadence": {
+        "type": "managed",
+        "reason": "Ongoing employment"
+      },
+      "summary": "Understand employer monitoring: ~74% of US employers use tracking tools and many capture keystrokes, screenshots, app/web usage, and webcam/mic; ~67% collect biometric data. Often bundled invisibly in MDM/device-management profiles and hard to detect.",
+      "caveat": "On an employer device/network you have little expectation of privacy; monitoring can be covert and may not show in task manager. Reliable defense is separation, not configuration. (Disclosure rules vary by jurisdiction.)",
+      "cost": {
+        "money": "none",
+        "friction": "med",
+        "maintenance": "ongoing"
+      },
+      "failureMode": "On their device/network you have little privacy; only separation works.",
+      "actors": [
+        "platform"
+      ],
+      "researched": true,
+      "sources": [
+        {
+          "title": "EFF — Bossware / workplace surveillance",
+          "url": "https://www.eff.org/issues/workplace-surveillance",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "byod-separation",
+      "label": "Personal/work device separation",
+      "domain": "digital",
+      "tier": 2,
+      "weight": 3,
+      "regionScope": "global",
+      "cadence": {
+        "type": "once"
+      },
+      "summary": "Keep a hard line between personal and work devices and accounts. Enrolling your own phone in a work management system (MDM) can let your employer inspect it, push policies, and even wipe it.",
+      "caveat": "Review what an MDM profile permits BEFORE enrolling a personal device; assume work-managed = employer-visible. Monitoring damages trust (tracked workers ~2x more likely to job-hunt) but that's culture, not your defense.",
+      "cost": {
+        "money": "med",
+        "friction": "med",
+        "maintenance": "once"
+      },
+      "failureMode": "BYOD enrollment can grant employer wipe/inspection over your personal device.",
+      "actors": [
+        "platform"
+      ],
+      "researched": true,
+      "sources": [
+        {
+          "title": "EFF — workplace surveillance / MDM concerns",
+          "url": "https://www.eff.org/issues/workplace-surveillance",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "school-surveillance",
+      "label": "School / proctoring surveillance",
+      "domain": "digital",
+      "tier": 2,
+      "weight": 2,
+      "regionScope": "localized",
+      "cadence": {
+        "type": "managed",
+        "reason": "Ongoing enrollment"
+      },
+      "summary": "Manage school-issued devices, exam proctoring, and edtech data for students. The 2025 COPPA overhaul (enforceable Apr 22 2026) expanded protected data to biometrics, DNA, and gait, banned indefinite retention, and requires separate parental opt-in before sharing kids' data with advertisers/AI.",
+      "caveat": "School tech is often mandatory; the FTC did NOT codify the school-authorization consent exception, leaving edtech consent murky. Some states delete school biometrics on a clock (CO: 18 months) or ban school facial recognition (NY). Defense is awareness + separation + civic pressure.",
+      "cost": {
+        "money": "none",
+        "friction": "med",
+        "maintenance": "ongoing"
+      },
+      "failureMode": "Usually mandatory; defense is awareness + separation + civic pressure.",
+      "actors": [
+        "platform"
+      ],
+      "researched": true,
+      "sources": [
+        {
+          "title": "EFF — Surveillance in schools / student privacy",
+          "url": "https://www.eff.org/issues/student-privacy",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "social-graph-privacy",
+      "label": "Social-graph & relationship privacy",
+      "domain": "digital",
+      "tier": 3,
+      "weight": 3,
+      "regionScope": "global",
+      "cadence": {
+        "type": "managed",
+        "reason": "Ongoing"
+      },
+      "summary": "Limit relationship inference and SHADOW PROFILES — platforms build dossiers on people via others' contact uploads, tags, and metadata. Peer-reviewed work confirms platforms can predict private attributes (even sexual orientation, relationship status) of NON-users, with a 'privacy leak factor' that multiplies with network size and others' disclosure.",
+      "caveat": "Largely created by OTHERS' behavior — you cannot unilaterally fix it (individual opt-out is near-useless once your network is on a platform). Mitigations: ask contacts to disable contact-sync, block trackers, minimize tagging — but this is fundamentally collective/civic.",
+      "cost": {
+        "money": "none",
+        "friction": "high",
+        "maintenance": "ongoing"
+      },
+      "failureMode": "Created by OTHERS' behavior; can't be unilaterally fixed.",
+      "actors": [
+        "broker",
+        "platform",
+        "acquaintance",
+        "state-actor"
+      ],
+      "researched": true,
+      "sources": [
+        {
+          "title": "Garcia — Leaking privacy & shadow profiles (Science Advances)",
+          "url": "https://www.science.org/doi/10.1126/sciadv.1701172",
+          "kind": "research"
+        }
+      ]
+    },
+    {
+      "id": "obituary-genealogy-privacy",
+      "label": "Obituary & genealogy exposure",
+      "domain": "physical",
+      "tier": 3,
+      "weight": 2,
+      "regionScope": "global",
+      "cadence": {
+        "type": "managed",
+        "reason": "Triggered by life events"
+      },
+      "summary": "Manage identity/relationship data leaked by obituaries, genealogy sites, and family-tree/DNA uploads — maiden names, relatives, DOBs, birthplaces: a goldmine for security-question attacks and identity fraud.",
+      "caveat": "Usually posted by relatives without your input; intersects genetic-privacy via DNA genealogy (a relative's upload exposes the family). Hard to remove once aggregated.",
+      "cost": {
+        "money": "none",
+        "friction": "med",
+        "maintenance": "periodic"
+      },
+      "failureMode": "Posted by relatives; maiden names/DOBs feed security-question attacks; ties to DNA genealogy.",
+      "actors": [
+        "criminal",
+        "stalker",
+        "broker"
+      ],
+      "researched": true,
+      "sources": [
+        {
+          "title": "FTC — How identity thieves use your info / security questions",
+          "url": "https://consumer.ftc.gov/features/identity-theft",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "compartmentalized-os",
+      "label": "Compartmentalized OS (Qubes)",
+      "domain": "digital",
+      "tier": 5,
+      "weight": 2,
+      "regionScope": "global",
+      "cadence": {
+        "type": "managed",
+        "reason": "Disciplined daily use + updates"
+      },
+      "summary": "Security-by-compartmentalization: Qubes OS runs each activity (email, browsing, untrusted files, an anonymous persona) in its own isolated Xen VM ('qube'), so a compromise in one domain can't cross-contaminate the others. The desktop-grade answer to data fusion and targeted malware at the OS level.",
+      "caveat": "Steep learning curve, specific hardware requirements, and disciplined habits required; a compromised hypervisor can still cascade. Isolation, not anonymity, unless paired with Whonix.",
+      "actionability": "action",
+      "cost": {
+        "money": "med",
+        "friction": "high",
+        "maintenance": "ongoing"
+      },
+      "failureMode": "Misconfiguration or cross-qube copy/paste habits collapse the isolation; hardware incompatibility blocks install entirely.",
+      "actors": [
+        "criminal",
+        "local-le",
+        "federal",
+        "state-actor",
+        "platform"
+      ],
+      "researched": true,
+      "sources": [
+        {
+          "title": "Qubes OS — official",
+          "url": "https://www.qubes-os.org/",
+          "kind": "primary"
+        },
+        {
+          "title": "Whonix: Comparison with Others (attack analysis)",
+          "url": "https://www.whonix.org/wiki/Comparison_with_Others",
+          "kind": "docs"
+        }
+      ]
+    },
+    {
+      "id": "amnesic-os",
+      "label": "Amnesic live OS (Tails)",
+      "domain": "digital",
+      "tier": 4,
+      "weight": 2,
+      "regionScope": "global",
+      "cadence": {
+        "type": "managed",
+        "reason": "Update drive; rebuild persistence carefully"
+      },
+      "summary": "A live operating system (Tails) that boots from USB, routes all traffic through Tor by default, and is amnesic — leaves no trace on the host after shutdown unless you opt into an encrypted persistent volume. Ideal for high-risk, occasional sessions on an untrusted machine; device seizure yields nothing.",
+      "caveat": "Slow, portable-only, rebuilt each boot; persistent-volume use erodes the amnesic benefit; endpoint exploits over Tor can still de-anonymize within a session.",
+      "actionability": "action",
+      "cost": {
+        "money": "low",
+        "friction": "high",
+        "maintenance": "periodic"
+      },
+      "failureMode": "Enabling persistence and storing identifying data defeats amnesia; lost/forgotten LUKS passphrase = persistent data gone.",
+      "actors": [
+        "acquaintance",
+        "stalker",
+        "local-le",
+        "federal",
+        "state-actor"
+      ],
+      "researched": true,
+      "sources": [
+        {
+          "title": "Tails — official",
+          "url": "https://tails.net/",
+          "kind": "primary"
+        },
+        {
+          "title": "Whonix vs Tails threat-model comparison",
+          "url": "https://www.whonix.org/wiki/Comparison_with_Others",
+          "kind": "docs"
+        }
+      ]
+    },
+    {
+      "id": "tor-routed-os",
+      "label": "Tor-routed gateway OS (Whonix)",
+      "domain": "digital",
+      "tier": 4,
+      "weight": 2,
+      "regionScope": "global",
+      "cadence": {
+        "type": "managed",
+        "reason": "VM updates"
+      },
+      "summary": "Whonix splits the system into a Gateway VM (runs Tor) and a Workstation VM (isolated from the network), so the workstation never learns your real IP — making IP leaks structurally impossible even if an app is compromised. Persistent, unlike Tails; integrates with Qubes for added compartmentalization.",
+      "caveat": "Anonymity (Tor) not isolation against host compromise; a compromised host/hypervisor can cascade. Persistent state can accumulate identifiers.",
+      "actionability": "action",
+      "cost": {
+        "money": "low",
+        "friction": "high",
+        "maintenance": "periodic"
+      },
+      "failureMode": "Host OS compromise undermines the whole model; persistent workstation can leak identifying state over time.",
+      "actors": [
+        "acquaintance",
+        "stalker",
+        "local-le",
+        "federal",
+        "state-actor"
+      ],
+      "researched": true,
+      "sources": [
+        {
+          "title": "Whonix — official",
+          "url": "https://www.whonix.org/",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "deniable-encryption",
+      "label": "Deniable encryption / hidden volumes",
+      "domain": "digital",
+      "tier": 5,
+      "weight": 1,
+      "regionScope": "localized",
+      "legalSensitive": true,
+      "cadence": {
+        "type": "once"
+      },
+      "summary": "Hidden VeraCrypt volumes / hidden operating systems let you reveal a decoy password under coercion while a second, concealed volume stays hidden; an encrypted volume appears as indistinguishable random data. Aims at the 'compelled to unlock' threat.",
+      "caveat": "Deeply jurisdiction-dependent and contested: in the US, compelled password disclosure is often (not always) Fifth-Amendment-protected; some countries have key-disclosure laws that jail you for refusal. Academic work shows hidden OSes can be DETECTED via cross-drive analysis and multi-snapshot attacks; against a torturer it can make things worse. Often a safer move is to carry a clean device and restore later.",
+      "actionability": "awareness",
+      "cost": {
+        "money": "none",
+        "friction": "high",
+        "maintenance": "ongoing"
+      },
+      "failureMode": "Detection of the hidden volume (forensic artifacts, leaks) removes deniability and may increase suspicion/harm; forgotten passphrase = permanent loss.",
+      "actors": [
+        "local-le",
+        "federal",
+        "state-actor",
+        "criminal"
+      ],
+      "researched": true,
+      "sources": [
+        {
+          "title": "VeraCrypt — Plausible Deniability (official docs)",
+          "url": "https://veracrypt.io/en/Plausible%20Deniability.html",
+          "kind": "docs"
+        },
+        {
+          "title": "Deniable encryption (overview)",
+          "url": "https://en.wikipedia.org/wiki/Deniable_encryption",
+          "kind": "reference"
+        },
+        {
+          "title": "Defeating Plausible Deniability of VeraCrypt Hidden OSes (research)",
+          "url": "https://www.researchgate.net/publication/318155607_Defeating_Plausible_Deniability_of_VeraCrypt_Hidden_Operating_Systems",
+          "kind": "research"
+        }
+      ]
+    },
+    {
+      "id": "anti-stylometry",
+      "label": "Anti-stylometry (writing-style obfuscation)",
+      "domain": "biometric",
+      "tier": 5,
+      "weight": 1,
+      "regionScope": "global",
+      "cadence": {
+        "type": "managed",
+        "reason": "Every piece of writing"
+      },
+      "summary": "Resist authorship attribution: stylometry can de-anonymize a writer from style alone and LINK a pseudonym to your real identity even in large author pools. Defenses ('adversarial stylometry') include deliberate obfuscation, imitation, and careful editing of distinctive habits.",
+      "caveat": "Manual obfuscation works but is laborious and degrades over long texts; automated round-trip translation is unreliable and mangles meaning. Replication studies suggest effectiveness is often OVERSTATED. The threat grows as ML/LLMs improve — a frontier, awareness-first node.",
+      "actionability": "awareness",
+      "cost": {
+        "money": "none",
+        "friction": "high",
+        "maintenance": "ongoing"
+      },
+      "failureMode": "A single un-obfuscated sample, or consistent habits across personas, re-links identities; the defense is only as good as your discipline on every text.",
+      "actors": [
+        "acquaintance",
+        "platform",
+        "federal",
+        "state-actor"
+      ],
+      "researched": true,
+      "sources": [
+        {
+          "title": "Brennan, Afroz, Greenstadt — Adversarial Stylometry (ACM, 2012)",
+          "url": "https://dl.acm.org/doi/10.1145/2382448.2382450",
+          "kind": "research"
+        },
+        {
+          "title": "Reproduction & Replication of an Adversarial Stylometry Experiment (arXiv 2022)",
+          "url": "https://arxiv.org/abs/2208.07395",
+          "kind": "research"
+        },
+        {
+          "title": "Adversarial stylometry (overview)",
+          "url": "https://en.wikipedia.org/wiki/Adversarial_stylometry",
+          "kind": "reference"
+        }
+      ]
+    },
+    {
+      "id": "anti-forensics",
+      "label": "Anti-forensics & secure deletion",
+      "domain": "digital",
+      "tier": 4,
+      "weight": 2,
+      "regionScope": "global",
+      "cadence": {
+        "type": "managed",
+        "reason": "Ongoing hygiene"
+      },
+      "summary": "Reduce recoverable traces: secure deletion/wiping, metadata scrubbing of files before sharing, clearing forensic artifacts, and minimizing what's written to disk in the first place. Pairs with amnesic OS and encrypted containers.",
+      "caveat": "Flash/SSD wear-leveling makes true secure-erase unreliable (data can persist in spare blocks); full-disk encryption from the start is more dependable than wiping after the fact. Aggressive wiping can itself look suspicious.",
+      "actionability": "action",
+      "cost": {
+        "money": "none",
+        "friction": "med",
+        "maintenance": "ongoing"
+      },
+      "failureMode": "SSD remnants or backups/cloud copies survive deletion; metadata missed in one file re-identifies you.",
+      "actors": [
+        "local-le",
+        "federal",
+        "state-actor",
+        "criminal"
+      ],
+      "researched": true,
+      "sources": [
+        {
+          "title": "EFF Surveillance Self-Defense",
+          "url": "https://ssd.eff.org/",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "civic-ban-legislation",
+      "label": "Support surveillance bans & legislation",
+      "domain": "civic",
+      "tier": 3,
+      "weight": 3,
+      "regionScope": "localized",
+      "cadence": {
+        "type": "managed",
+        "reason": "Ongoing legislative cycles"
+      },
+      "summary": "Back municipal/state/federal limits on surveillance tech. Proven model: CCOPS ordinances (Community Control of Police Surveillance) now in 26+ jurisdictions covering ~18M people; San Francisco was first to ban government facial recognition (2019); Oakland banned even distance-biometrics including GAIT recognition. Federal: the Facial Recognition & Biometric Technology Moratorium Act.",
+      "caveat": "Slow, reversible (cities have weakened ordinances under pressure), and jurisdiction-bound — but the ONLY real lever for whole threat classes (ALPR, facial recognition, gait, drones).",
+      "actionability": "action",
+      "cost": {
+        "money": "none",
+        "friction": "med",
+        "maintenance": "ongoing"
+      },
+      "failureMode": "Bans get repealed/weakened, or carve-outs (emergency exceptions) swallow the rule; vigilance must be continuous.",
+      "actors": [
+        "local-le",
+        "federal",
+        "state-actor",
+        "platform"
+      ],
+      "researched": true,
+      "sources": [
+        {
+          "title": "EFF — Community Control of Police Surveillance (CCOPS)",
+          "url": "https://www.eff.org/issues/community-control-police-surveillance-ccops",
+          "kind": "org"
+        },
+        {
+          "title": "ACLU — Community Control Over Police Surveillance",
+          "url": "https://www.aclu.org/community-control-over-police-surveillance",
+          "kind": "org"
+        },
+        {
+          "title": "EFF — The Movement to Ban Government Use of Face Recognition",
+          "url": "https://www.eff.org/deeplinks/2022/05/movement-ban-government-use-face-recognition",
+          "kind": "org"
+        },
+        {
+          "title": "EPIC — State Facial Recognition Policy",
+          "url": "https://epic.org/state-facial-recognition-policy/",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "civic-foia-transparency",
+      "label": "FOIA / public-records transparency",
+      "domain": "civic",
+      "tier": 3,
+      "weight": 2,
+      "regionScope": "localized",
+      "cadence": {
+        "type": "managed",
+        "reason": "Per-request, ongoing"
+      },
+      "summary": "Use Freedom-of-Information and public-records laws to expose what surveillance tech local agencies have bought and how it's used — the factual basis that makes bans and litigation possible. Journalists and groups like EFF/404 Media used records to expose Flock ALPR abuse (12M+ searches by 3,900+ agencies).",
+      "caveat": "Agencies stall, redact, or route tech through private 'police foundations' to dodge records laws (though courts have pushed back); requires persistence.",
+      "actionability": "action",
+      "cost": {
+        "money": "low",
+        "friction": "med",
+        "maintenance": "ongoing"
+      },
+      "failureMode": "Requests denied/over-redacted; private intermediaries used to evade disclosure.",
+      "actors": [
+        "local-le",
+        "federal",
+        "platform"
+      ],
+      "researched": true,
+      "sources": [
+        {
+          "title": "EFF — investigations into Flock ALPR (2025 review)",
+          "url": "https://www.eff.org/deeplinks/2025/12/effs-investigations-expose-flock-safetys-surveillance-abuses-2025-review",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "civic-litigation-support",
+      "label": "Support strategic litigation",
+      "domain": "civic",
+      "tier": 3,
+      "weight": 2,
+      "regionScope": "localized",
+      "cadence": {
+        "type": "managed",
+        "reason": "Ongoing cases"
+      },
+      "summary": "Back the organizations litigating surveillance limits (EFF, ACLU, EPIC, Institute for Justice). Courts have forced disclosure of facial-recognition algorithms to defendants and are testing geofence/reverse warrants against the Fourth Amendment.",
+      "caveat": "Slow, outcome-uncertain, precedent can cut either way; complements but doesn't replace legislation.",
+      "actionability": "action",
+      "cost": {
+        "money": "low",
+        "friction": "low",
+        "maintenance": "ongoing"
+      },
+      "failureMode": "Adverse precedent can entrench surveillance; wins are narrow and jurisdiction-specific.",
+      "actors": [
+        "local-le",
+        "federal",
+        "state-actor"
+      ],
+      "researched": true,
+      "sources": [
+        {
+          "title": "EFF — Street-Level Surveillance",
+          "url": "https://www.eff.org/issues/street-level-surveillance",
+          "kind": "org"
+        },
+        {
+          "title": "EPIC",
+          "url": "https://epic.org/",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "civic-community-defense",
+      "label": "Community / mutual defense",
+      "domain": "civic",
+      "tier": 3,
+      "weight": 2,
+      "regionScope": "global",
+      "cadence": {
+        "type": "managed",
+        "reason": "Ongoing organizing"
+      },
+      "summary": "Collective practices that reduce everyone's exposure: helping neighbors disable contact-sync (shrinking shadow profiles), community education, mutual-aid digital-security trainings, and pressuring local institutions. Directly answers the shadow-profile finding that individual opt-out is near-useless once your network is on a platform.",
+      "caveat": "Depends on collective buy-in; effects are diffuse and slow; the least-engaged members cap the benefit.",
+      "actionability": "action",
+      "cost": {
+        "money": "none",
+        "friction": "med",
+        "maintenance": "ongoing"
+      },
+      "failureMode": "Low participation → little effect; organizing fatigue.",
+      "actors": [
+        "broker",
+        "platform",
+        "advertiser",
+        "acquaintance"
+      ],
+      "researched": true,
+      "sources": [
+        {
+          "title": "EFF — Surveillance Self-Defense (security education)",
+          "url": "https://ssd.eff.org/",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "ad-id-reset",
+      "label": "Reset / disable mobile advertising ID",
+      "domain": "digital",
+      "tier": 2,
+      "weight": 3,
+      "regionScope": "global",
+      "cadence": {
+        "type": "recurring",
+        "everyDays": 90,
+        "reason": "Reset periodically; apps rebuild profiles"
+      },
+      "summary": "Reset or turn off your phone's advertising ID (Apple IDFA / Google Advertising ID) — the fixed tag ad companies and brokers use to tie your location and app use together. 'Means of Control' calls this ID the linchpin that makes commercial tracking possible.",
+      "caveat": "Apps and SDKs can rebuild profiles via fingerprinting/other identifiers; resetting limits but does not eliminate linkage.",
+      "actionability": "action",
+      "cost": {
+        "money": "none",
+        "friction": "low",
+        "maintenance": "periodic"
+      },
+      "failureMode": "Fingerprinting and account logins re-link you even after a reset; one app with location permission re-seeds the trail.",
+      "actors": [
+        "advertiser",
+        "broker",
+        "federal",
+        "local-le"
+      ],
+      "researched": true,
+      "sources": [
+        {
+          "title": "Byron Tau, 'Means of Control' (2024)",
+          "url": "https://en.wikipedia.org/wiki/Means_of_Control",
+          "kind": "reference"
+        },
+        {
+          "title": "Apple — About the advertising identifier (IDFA)",
+          "url": "https://support.apple.com/en-us/HT202074",
+          "kind": "docs"
+        }
+      ]
+    },
+    {
+      "id": "notification-preview-hardening",
+      "label": "Disable notification message previews",
+      "domain": "digital",
+      "tier": 2,
+      "weight": 4,
+      "regionScope": "global",
+      "cadence": {
+        "type": "once"
+      },
+      "summary": "Stop the OS from caching decrypted message content. When an encrypted-messaging app shows message text in a notification, the OS decrypts it to render the preview and writes that plaintext into an internal notification database — recoverable by forensic tools even after the app and the message are deleted. Turning previews off at BOTH the OS and the app level keeps content out of that cache.",
+      "caveat": "Two layers required: OS-level (iOS Settings > Notifications > Show Previews > Never; Android: disable Notification History) AND in-app (Signal: Notifications > Notification Content > No Name or Content). The in-app setting alone is not sufficient on all versions.",
+      "cost": {
+        "money": "none",
+        "friction": "low",
+        "maintenance": "once"
+      },
+      "failureMode": "Only protects content that hasn't already been cached — past previews may still be recoverable for ~30 days (or until overwritten). Does nothing against full-device forensic extraction of the app's own data while installed; this specifically closes the notification-cache side channel.",
+      "actionability": "action",
+      "actors": [
+        "local-le",
+        "federal",
+        "state-actor",
+        "criminal"
+      ],
+      "researched": true,
+      "sources": [
+        {
+          "title": "404 Media — FBI recovered deleted Signal messages from iPhone notification database (via Schneier)",
+          "url": "https://www.schneier.com/blog/archives/2026/04/fbi-extracts-deleted-signal-messages-from-iphone-notification-database.html",
+          "kind": "news"
+        },
+        {
+          "title": "Apple iOS 26.4.2 — fix for notifications unexpectedly retained (The Hacker News)",
+          "url": "https://thehackernews.com/2026/04/apple-patches-ios-flaw-that-stored.html",
+          "kind": "news"
+        },
+        {
+          "title": "iOS notification forensics — mechanism & mitigation (Andrea Fortuna)",
+          "url": "https://andreafortuna.org/2026/04/11/signal-fbi-iphone-notifications-forensics/",
+          "kind": "research"
+        }
+      ]
+    },
+    {
+      "id": "sandbox-bigtech-apps",
+      "label": "Sandbox Google / big-tech apps",
+      "domain": "digital",
+      "tier": 4,
+      "weight": 4,
+      "regionScope": "global",
+      "cadence": {
+        "type": "once"
+      },
+      "summary": "Keep using the apps you actually depend on, but contain what they can see. The realistic in-between between 'leaking everywhere' and 'full de-Google': run Google/Meta apps in an isolated profile or sandbox so they can't read the rest of your device. On GrapheneOS this means sandboxed Google Play Services confined to a separate user/work profile; on stock Android use a Work Profile (e.g. Shelter); on iOS, separate Apple IDs/profiles and aggressive per-app permission limits.",
+      "caveat": "Containment, not elimination — a sandboxed Google app still sees what YOU put into it; it just can't reach everything else. Strongest on GrapheneOS; weaker on stock iOS/Android where the OS vendor is itself the data collector.",
+      "cost": {
+        "money": "none",
+        "friction": "med",
+        "maintenance": "periodic"
+      },
+      "failureMode": "Crossing data between the sandbox and your main profile re-links them; people gradually relax the boundary out of convenience.",
+      "actionability": "action",
+      "actors": [
+        "advertiser",
+        "broker",
+        "platform"
+      ],
+      "researched": true,
+      "sources": [
+        {
+          "title": "GrapheneOS — sandboxed Google Play",
+          "url": "https://grapheneos.org/usage#sandboxed-google-play",
+          "kind": "docs"
+        },
+        {
+          "title": "GrapheneOS — user profiles for isolation",
+          "url": "https://grapheneos.org/features#improved-user-profiles",
+          "kind": "docs"
+        },
+        {
+          "title": "Privacy Guides — Android (work profile / isolation)",
+          "url": "https://www.privacyguides.org/en/android/",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "de-google-services",
+      "label": "De-Google: replace core services",
+      "domain": "digital",
+      "tier": 5,
+      "weight": 2,
+      "regionScope": "global",
+      "cadence": {
+        "type": "ongoing"
+      },
+      "summary": "Swap the Google/big-tech services at the root of your data exhaust for privacy-respecting alternatives: email, maps/navigation, search, browser, cloud storage, docs, photos. The deepest phone-privacy stage — and the one most people never fully finish, because the convenience and lock-in are real.",
+      "caveat": "Ongoing and rarely 'complete' — most people pick-and-choose and keep one or two Google services indefinitely. That's fine; partial de-Googling still cuts real exposure. Sandboxing (previous step) is the pragmatic substitute for what you can't give up.",
+      "cost": {
+        "money": "low",
+        "friction": "high",
+        "maintenance": "ongoing"
+      },
+      "failureMode": "Lock-in (history, contacts, photos, shared docs) drags you back; half-migrations leave data in both places.",
+      "actionability": "action",
+      "actors": [
+        "advertiser",
+        "broker",
+        "platform"
+      ],
+      "researched": true,
+      "sources": [
+        {
+          "title": "Privacy Guides — recommended alternatives by category",
+          "url": "https://www.privacyguides.org/en/tools/",
+          "kind": "org"
+        },
+        {
+          "title": "Privacy Guides — Email / Search / Browser / Cloud",
+          "url": "https://www.privacyguides.org/en/",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "adversarial-clothing",
+      "label": "Adversarial anti-recognition clothing",
+      "domain": "biometric",
+      "tier": 3,
+      "weight": 2,
+      "regionScope": "global",
+      "cadence": {
+        "type": "once"
+      },
+      "summary": "Garments knit or printed with adversarial patterns that lower an AI vision system's confidence — at best the wearer is misclassified (e.g. as 'not a person') by object detectors like YOLO. A fashion-forward expression of the anti-facial-recognition move.",
+      "caveat": "Effectiveness is real but narrow and decays fast: patterns target specific, rapidly-evolving models, so a garment effective today may not be next year. Mozilla's 2025 testing found mixed real-world results. Treat it as statement + partial disruption, not a cloak.",
+      "cost": {
+        "money": "med",
+        "friction": "low",
+        "maintenance": "none"
+      },
+      "failureMode": "Doesn't touch face/gait/IR systems; works only against the object-detection models it was tuned for; conspicuous to humans.",
+      "actionability": "action",
+      "actors": [
+        "platform",
+        "state-actor"
+      ],
+      "researched": true,
+      "sources": [
+        {
+          "title": "Mozilla — Anti-Surveillance Fashion tested (2025)",
+          "url": "https://www.mozillafoundation.org/en/nothing-personal/anti-surveillance-fashion-privacy-review/",
+          "kind": "research"
+        },
+        {
+          "title": "Cap_able — adversarial knitwear",
+          "url": "https://www.capable.design/",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "signal-blocking-edc",
+      "label": "Signal-blocking everyday carry",
+      "domain": "physical",
+      "tier": 2,
+      "weight": 3,
+      "regionScope": "global",
+      "cadence": {
+        "type": "once"
+      },
+      "summary": "Wallets, card sleeves, key-fob cases and bags with built-in Faraday/RFID shielding — the wearable, everyday version of the Faraday move. Blocks RFID/NFC skimming of cards & passports and stops key-fob relay theft; phone sleeves cut cellular/GPS/Bluetooth when you want to go dark.",
+      "caveat": "RFID-blocking wallets address a relatively minor threat (modern cards are largely chip/EMV); the real value is the key-fob case (relay theft is common) and phone Faraday sleeves. Marketing often overstates everyday RFID risk.",
+      "cost": {
+        "money": "low",
+        "friction": "low",
+        "maintenance": "none"
+      },
+      "failureMode": "A phone only goes dark while actually sealed in the sleeve; a wallet does nothing for your phone's own radios.",
+      "actionability": "action",
+      "actors": [
+        "criminal",
+        "advertiser"
+      ],
+      "researched": true,
+      "sources": [
+        {
+          "title": "Silent Pocket / SLNT — Faraday EDC",
+          "url": "https://silent-pocket.com/",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "privacy-eyewear",
+      "label": "Privacy eyewear (everyday)",
+      "domain": "biometric",
+      "tier": 3,
+      "weight": 3,
+      "regionScope": "global",
+      "cadence": {
+        "type": "once"
+      },
+      "summary": "Everyday glasses/sunglasses engineered for privacy — IR-blocking/reflective lenses that defeat infrared face-mapping and iris scanning while looking like normal frames. The wearable anchor of the anti-facial-recognition kit.",
+      "caveat": "Defeats infrared systems (Face ID, IR iris scan, IR-illuminated cameras) but NOT ordinary visible-light 2D recognition in daylight — lowers match confidence, not a cloak.",
+      "cost": {
+        "money": "med",
+        "friction": "low",
+        "maintenance": "none"
+      },
+      "failureMode": "No effect on gait/body recognition or visible-light 2D FR; reflective frames mainly help in low light.",
+      "actionability": "action",
+      "actors": [
+        "platform",
+        "state-actor",
+        "local-le"
+      ],
+      "researched": true,
+      "sources": [
+        {
+          "title": "Reflectacles",
+          "url": "https://www.reflectacles.com",
+          "kind": "org"
+        },
+        {
+          "title": "Mozilla — anti-surveillance fashion review",
+          "url": "https://www.mozillafoundation.org/en/nothing-personal/anti-surveillance-fashion-privacy-review/",
+          "kind": "research"
+        }
+      ]
+    },
+    {
+      "id": "device-disposal",
+      "label": "Wipe devices before they leave you",
+      "domain": "digital",
+      "tier": 2,
+      "weight": 4,
+      "regionScope": "global",
+      "cadence": {
+        "type": "periodic"
+      },
+      "summary": "Get rid of devices without giving away your life. Devices leave with far more than photos: logged-in accounts, saved Wi-Fi passwords, browser sessions, eSIMs, message databases, and — in smart gear and cars — your network credentials, contacts, and location history. The good news: on an ENCRYPTED device, a factory reset destroys the encryption key (crypto-erase), making the data permanently unreadable — free, fast, and NIST-recognized. The whole game is encryption-before-wipe and sign-out-before-reset.",
+      "caveat": "Crypto-erase only works if the device was encrypted (iPhones always are; Android since ~6 mostly; old laptops often AREN'T). A factory reset on an UNENCRYPTED device just deletes pointers — data is recoverable with free tools. And always sign out of Apple/Google accounts BEFORE resetting, or activation locks brick the device for the next owner.",
+      "cost": {
+        "money": "none",
+        "friction": "low",
+        "maintenance": "periodic"
+      },
+      "failureMode": "Forgetting the satellites: SD cards and SIMs left in phones, the smart bulb that still holds your Wi-Fi password, the car you sold with your contacts and home address in it, the printer/router with stored documents and configs.",
+      "actionability": "action",
+      "actors": [
+        "criminal",
+        "broker",
+        "acquaintance"
+      ],
+      "researched": true,
+      "sources": [
+        {
+          "title": "NIST SP 800-88 Rev.1 — Guidelines for Media Sanitization (Clear/Purge/Destroy)",
+          "url": "https://csrc.nist.gov/pubs/sp/800/88/r1/final",
+          "kind": "docs"
+        },
+        {
+          "title": "Kingston — securely erasing SSDs (crypto-erase & secure-erase)",
+          "url": "https://www.kingston.com/en/blog/personal-storage/how-to-securely-erase-ssd",
+          "kind": "docs"
+        },
+        {
+          "title": "Privacy4Cars — deleting personal data from vehicles",
+          "url": "https://privacy4cars.com/",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "smart-device-vetting",
+      "label": "Vet smart devices before they move in",
+      "domain": "physical",
+      "tier": 2,
+      "weight": 4,
+      "regionScope": "global",
+      "cadence": {
+        "type": "ongoing"
+      },
+      "summary": "There are millions of smart devices and soon trillions — no guide can cover them all, so learn the RUBRIC instead. Before any connected thing enters your home, score it on six questions: (1) Does it work locally, or is the cloud mandatory? (2) Can you use it without an account? (3) Does the maker commit to security updates, and for how long (an EOL date is a leak date)? (4) Hardware mic/camera switches, or software promises? (5) What does its privacy policy actually let it collect and sell — check Mozilla's *Privacy Not Included reviews. (6) Can it live on an isolated network segment? Local-protocol devices (Zigbee/Z-Wave/Thread via a local hub) beat Wi-Fi-cloud devices on almost every axis.",
+      "caveat": "The rubric filters, it doesn't purify: even a 'good' device is a microphone/sensor you've invited in. The strongest choice is often not buying the connected version at all — a dumb appliance can't betray you.",
+      "cost": {
+        "money": "none",
+        "friction": "low",
+        "maintenance": "ongoing"
+      },
+      "failureMode": "Gifts and impulse buys bypass the rubric; one cloud-dependent hub quietly drags ten 'local' devices online with it.",
+      "actionability": "action",
+      "actors": [
+        "advertiser",
+        "broker",
+        "platform",
+        "criminal"
+      ],
+      "researched": true,
+      "sources": [
+        {
+          "title": "Mozilla — *Privacy Not Included (device-by-device reviews)",
+          "url": "https://foundation.mozilla.org/privacynotincluded/",
+          "kind": "org"
+        },
+        {
+          "title": "Privacy Guides — common threats & device considerations",
+          "url": "https://www.privacyguides.org/en/basics/common-threats/",
+          "kind": "org"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "threat-model",
+      "to": "password-manager",
+      "type": "prereq"
+    },
+    {
+      "from": "threat-model",
+      "to": "exposure-inventory",
+      "type": "prereq"
+    },
+    {
+      "from": "password-manager",
+      "to": "unique-passwords",
+      "type": "prereq"
+    },
+    {
+      "from": "password-manager",
+      "to": "strong-2fa",
+      "type": "prereq"
+    },
+    {
+      "from": "password-manager",
+      "to": "email-aliasing",
+      "type": "prereq"
+    },
+    {
+      "from": "exposure-inventory",
+      "to": "data-broker-removal",
+      "type": "prereq"
+    },
+    {
+      "from": "exposure-inventory",
+      "to": "scrub-public-records",
+      "type": "prereq"
+    },
+    {
+      "from": "strong-2fa",
+      "to": "device-os-hardening",
+      "type": "prereq"
+    },
+    {
+      "from": "email-aliasing",
+      "to": "identity-compartmentalization",
+      "type": "prereq"
+    },
+    {
+      "from": "private-email",
+      "to": "identity-compartmentalization",
+      "type": "prereq"
+    },
+    {
+      "from": "compartmented-phone",
+      "to": "identity-compartmentalization",
+      "type": "prereq"
+    },
+    {
+      "from": "device-os-hardening",
+      "to": "identity-compartmentalization",
+      "type": "prereq"
+    },
+    {
+      "from": "credit-freeze-big3",
+      "to": "secondary-bureau-freezes",
+      "type": "prereq"
+    },
+    {
+      "from": "cmra-mail-decoupling",
+      "to": "domicile-residency",
+      "type": "prereq"
+    },
+    {
+      "from": "cmra-mail-decoupling",
+      "to": "scrub-public-records",
+      "type": "prereq"
+    },
+    {
+      "from": "cmra-mail-decoupling",
+      "to": "property-utilities-entity",
+      "type": "prereq"
+    },
+    {
+      "from": "cmra-mail-decoupling",
+      "to": "delivery-hygiene",
+      "type": "prereq"
+    },
+    {
+      "from": "cmra-mail-decoupling",
+      "to": "home-address-ghost",
+      "type": "prereq"
+    },
+    {
+      "from": "domicile-residency",
+      "to": "home-address-ghost",
+      "type": "prereq"
+    },
+    {
+      "from": "scrub-public-records",
+      "to": "home-address-ghost",
+      "type": "prereq"
+    },
+    {
+      "from": "property-utilities-entity",
+      "to": "home-address-ghost",
+      "type": "prereq"
+    },
+    {
+      "from": "anonymous-llc",
+      "to": "property-utilities-entity",
+      "type": "prereq"
+    },
+    {
+      "from": "anonymous-llc",
+      "to": "asset-income-structuring",
+      "type": "prereq"
+    },
+    {
+      "from": "data-broker-removal",
+      "to": "self-osint-check",
+      "type": "prereq"
+    },
+    {
+      "from": "scrub-public-records",
+      "to": "self-osint-check",
+      "type": "prereq"
+    },
+    {
+      "from": "cmra-mail-decoupling",
+      "to": "credit-freeze-big3",
+      "type": "enables",
+      "crossDomain": true,
+      "guidance": "A non-home address to place on financial accounts."
+    },
+    {
+      "from": "cmra-mail-decoupling",
+      "to": "compartmented-bank",
+      "type": "enables",
+      "crossDomain": true
+    },
+    {
+      "from": "cmra-mail-decoupling",
+      "to": "data-broker-removal",
+      "type": "enables",
+      "crossDomain": true,
+      "guidance": "A substitute address to give brokers and leave on records during removal."
+    },
+    {
+      "from": "cmra-mail-decoupling",
+      "to": "anonymous-llc",
+      "type": "enables",
+      "crossDomain": true,
+      "guidance": "Entity correspondence address."
+    },
+    {
+      "from": "compartmented-phone",
+      "to": "compartmented-bank",
+      "type": "enables",
+      "crossDomain": true
+    },
+    {
+      "from": "compartmented-phone",
+      "to": "masked-cards",
+      "type": "enables",
+      "crossDomain": true
+    },
+    {
+      "from": "compartmented-phone",
+      "to": "delivery-hygiene",
+      "type": "enables",
+      "crossDomain": true
+    },
+    {
+      "from": "email-aliasing",
+      "to": "compartmented-bank",
+      "type": "enables",
+      "crossDomain": true
+    },
+    {
+      "from": "email-aliasing",
+      "to": "masked-cards",
+      "type": "enables",
+      "crossDomain": true
+    },
+    {
+      "from": "browser-hardening",
+      "to": "location-metadata-hygiene",
+      "type": "enables"
+    },
+    {
+      "from": "network-privacy",
+      "to": "location-metadata-hygiene",
+      "type": "enables"
+    },
+    {
+      "from": "location-metadata-hygiene",
+      "to": "travel-privacy",
+      "type": "enables",
+      "crossDomain": true
+    },
+    {
+      "from": "scrub-public-records",
+      "to": "data-broker-removal",
+      "type": "enables",
+      "crossDomain": true,
+      "guidance": "The findability loop: public records are a primary source brokers scrape, so records and brokers must be worked together and repeatedly."
+    },
+    {
+      "from": "data-broker-removal",
+      "to": "search-cache-deindex",
+      "type": "enables"
+    },
+    {
+      "from": "scrub-public-records",
+      "to": "search-cache-deindex",
+      "type": "enables",
+      "crossDomain": true
+    },
+    {
+      "from": "privacy-trust",
+      "to": "anonymous-llc",
+      "type": "enables",
+      "guidance": "Entity owned by the trust adds an ownership layer."
+    },
+    {
+      "from": "domicile-residency",
+      "to": "compartmented-bank",
+      "type": "enables",
+      "crossDomain": true,
+      "guidance": "Supplies the real residential address banks require for KYC."
+    },
+    {
+      "from": "exposure-inventory",
+      "to": "social-media-minimization",
+      "type": "enables"
+    },
+    {
+      "from": "property-utilities-entity",
+      "to": "secondary-bureau-freezes",
+      "type": "sequence",
+      "severity": "warn",
+      "guidance": "Set up new utilities before freezing NCTUE (bundled in secondary-bureau freezes), or be ready to temporarily thaw it — utility and telecom providers screen against NCTUE."
+    },
+    {
+      "from": "compartmented-bank",
+      "to": "secondary-bureau-freezes",
+      "type": "sequence",
+      "severity": "warn",
+      "guidance": "Open any new bank/checking account before freezing ChexSystems, or thaw temporarily — banks screen new-account applications against ChexSystems."
+    },
+    {
+      "from": "cmra-mail-decoupling",
+      "to": "compartmented-bank",
+      "type": "tension",
+      "severity": "warn",
+      "guidance": "A CMRA/PMB is a mailing address only and fails bank residential-address (KYC) checks. Pair it with a real domicile address for onboarding while routing mail through the CMRA."
+    },
+    {
+      "from": "self-custody",
+      "to": "non-kyc-rails",
+      "type": "prereq"
+    },
+    {
+      "from": "self-custody",
+      "to": "privacy-coin",
+      "type": "prereq"
+    },
+    {
+      "from": "self-custody",
+      "to": "bitcoin-privacy-technique",
+      "type": "prereq"
+    },
+    {
+      "from": "non-kyc-rails",
+      "to": "privacy-coin",
+      "type": "enables",
+      "guidance": "Acquiring privately is what keeps a private coin private."
+    },
+    {
+      "from": "cash-sensitive",
+      "to": "non-kyc-rails",
+      "type": "enables",
+      "crossDomain": true
+    },
+    {
+      "from": "cash-sensitive",
+      "to": "bearer-assets",
+      "type": "enables",
+      "crossDomain": true,
+      "guidance": "Private cash purchase under thresholds is the main private on-ramp to metals/stones."
+    },
+    {
+      "from": "compartmented-bank",
+      "to": "non-kyc-rails",
+      "type": "tension",
+      "severity": "warn",
+      "guidance": "The bank account is the KYC linkage the sovereign stack routes around; using both makes the boundary your exposure point."
+    },
+    {
+      "from": "anonymous-llc",
+      "to": "self-custody",
+      "type": "enables",
+      "guidance": "Entity can hold/operate assets, adding an ownership layer; links the two stacks."
+    },
+    {
+      "from": "compartmented-phone",
+      "to": "self-custody",
+      "type": "enables",
+      "crossDomain": true,
+      "guidance": "Less identity leakage opening crypto accounts."
+    },
+    {
+      "from": "email-aliasing",
+      "to": "self-custody",
+      "type": "enables",
+      "crossDomain": true
+    },
+    {
+      "from": "bearer-assets",
+      "to": "home-address-ghost",
+      "type": "tension",
+      "severity": "warn",
+      "guidance": "Home storage ties value to a location; vault storage re-introduces an intermediary."
+    },
+    {
+      "from": "anti-facial-recognition",
+      "to": "gait-obfuscation",
+      "type": "reveals",
+      "guidance": "Defeating the face exposes you to gait recognition; surface gait the moment face-evasion is engaged."
+    },
+    {
+      "from": "identity-compartmentalization",
+      "to": "behavioral-digital-defense",
+      "type": "enables",
+      "guidance": "Separate personas limit cross-account behavioral profile bridging."
+    },
+    {
+      "from": "compartmented-phone",
+      "to": "faraday",
+      "type": "enables",
+      "guidance": "A device you can afford to power off/seal."
+    },
+    {
+      "from": "faraday",
+      "to": "travel-privacy",
+      "type": "enables"
+    },
+    {
+      "from": "vehicle-data-privacy",
+      "to": "home-address-ghost",
+      "type": "enables",
+      "crossDomain": true,
+      "guidance": "The car not reporting your driveway."
+    },
+    {
+      "from": "anti-facial-recognition",
+      "to": "physical-anonymity",
+      "type": "prereq"
+    },
+    {
+      "from": "gait-obfuscation",
+      "to": "physical-anonymity",
+      "type": "prereq"
+    },
+    {
+      "from": "faraday",
+      "to": "physical-anonymity",
+      "type": "prereq"
+    },
+    {
+      "from": "voice-privacy",
+      "to": "physical-anonymity",
+      "type": "prereq"
+    },
+    {
+      "from": "encrypted-messaging",
+      "to": "offline-mesh-messenger",
+      "type": "enables",
+      "guidance": "Escalating infrastructure independence as networks degrade."
+    },
+    {
+      "from": "offline-mesh-messenger",
+      "to": "offgrid-mesh-radio",
+      "type": "enables"
+    },
+    {
+      "from": "compartmented-phone",
+      "to": "offline-mesh-messenger",
+      "type": "enables"
+    },
+    {
+      "from": "offgrid-mesh-radio",
+      "to": "home-address-ghost",
+      "type": "tension",
+      "severity": "warn",
+      "guidance": "RF emission is physically locatable; heavy fixed-node use can betray a decoupled location."
+    },
+    {
+      "from": "faraday",
+      "to": "licensed-radio",
+      "type": "tension",
+      "severity": "info",
+      "guidance": "The RF you rely on to communicate is the RF that locates you; shielding and transmitting are opposite needs."
+    },
+    {
+      "from": "rf-emission-discipline",
+      "to": "offgrid-mesh-radio",
+      "type": "enables",
+      "guidance": "Reduces locatability of the mesh transmitter."
+    },
+    {
+      "from": "rf-emission-discipline",
+      "to": "hf-long-range",
+      "type": "enables"
+    },
+    {
+      "from": "offgrid-mesh-radio",
+      "to": "communications-sovereignty",
+      "type": "prereq"
+    },
+    {
+      "from": "hf-long-range",
+      "to": "communications-sovereignty",
+      "type": "prereq"
+    },
+    {
+      "from": "physical-data-transport",
+      "to": "communications-sovereignty",
+      "type": "enables"
+    },
+    {
+      "from": "device-os-hardening",
+      "to": "physical-data-transport",
+      "type": "enables",
+      "guidance": "Endpoint hygiene for handling untrusted media."
+    },
+    {
+      "from": "encrypted-containers",
+      "to": "physical-data-transport",
+      "type": "enables"
+    },
+    {
+      "from": "network-privacy",
+      "to": "dns-blocking",
+      "type": "enables"
+    },
+    {
+      "from": "dns-blocking",
+      "to": "browser-hardening",
+      "type": "enables"
+    },
+    {
+      "from": "device-os-hardening",
+      "to": "outbound-firewall",
+      "type": "enables"
+    },
+    {
+      "from": "private-email",
+      "to": "local-ai",
+      "type": "enables",
+      "crossDomain": false
+    },
+    {
+      "from": "device-os-hardening",
+      "to": "encrypted-containers",
+      "type": "enables"
+    },
+    {
+      "from": "update-discipline",
+      "to": "device-os-hardening",
+      "type": "enables"
+    },
+    {
+      "from": "password-manager",
+      "to": "update-discipline",
+      "type": "enables"
+    },
+    {
+      "from": "data-broker-removal",
+      "to": "T-BROKER",
+      "type": "counters"
+    },
+    {
+      "from": "exposure-inventory",
+      "to": "T-BROKER",
+      "type": "counters"
+    },
+    {
+      "from": "self-osint-check",
+      "to": "T-BROKER",
+      "type": "counters"
+    },
+    {
+      "from": "scrub-public-records",
+      "to": "T-BROKER",
+      "type": "counters"
+    },
+    {
+      "from": "social-media-minimization",
+      "to": "T-SCRAPE",
+      "type": "counters"
+    },
+    {
+      "from": "location-metadata-hygiene",
+      "to": "T-SCRAPE",
+      "type": "counters"
+    },
+    {
+      "from": "data-broker-removal",
+      "to": "T-SCRAPE",
+      "type": "counters"
+    },
+    {
+      "from": "third-party-leak-awareness",
+      "to": "T-SCRAPE",
+      "type": "counters"
+    },
+    {
+      "from": "private-email",
+      "to": "T-TELEMETRY",
+      "type": "counters"
+    },
+    {
+      "from": "device-os-hardening",
+      "to": "T-TELEMETRY",
+      "type": "counters"
+    },
+    {
+      "from": "outbound-firewall",
+      "to": "T-TELEMETRY",
+      "type": "counters"
+    },
+    {
+      "from": "dns-blocking",
+      "to": "T-TELEMETRY",
+      "type": "counters"
+    },
+    {
+      "from": "browser-hardening",
+      "to": "T-TELEMETRY",
+      "type": "counters"
+    },
+    {
+      "from": "local-ai",
+      "to": "T-TELEMETRY",
+      "type": "counters"
+    },
+    {
+      "from": "home-network-iot-audit",
+      "to": "T-TELEMETRY",
+      "type": "counters"
+    },
+    {
+      "from": "browser-hardening",
+      "to": "T-FINGERPRINT",
+      "type": "counters"
+    },
+    {
+      "from": "network-privacy",
+      "to": "T-FINGERPRINT",
+      "type": "counters"
+    },
+    {
+      "from": "tracking-link-stripping",
+      "to": "T-FINGERPRINT",
+      "type": "counters"
+    },
+    {
+      "from": "behavioral-digital-defense",
+      "to": "T-BEHAVIORAL-DIGITAL",
+      "type": "counters"
+    },
+    {
+      "from": "identity-compartmentalization",
+      "to": "T-BEHAVIORAL-DIGITAL",
+      "type": "counters"
+    },
+    {
+      "from": "cash-sensitive",
+      "to": "T-KYC",
+      "type": "counters"
+    },
+    {
+      "from": "self-custody",
+      "to": "T-KYC",
+      "type": "counters"
+    },
+    {
+      "from": "non-kyc-rails",
+      "to": "T-KYC",
+      "type": "counters"
+    },
+    {
+      "from": "privacy-coin",
+      "to": "T-KYC",
+      "type": "counters"
+    },
+    {
+      "from": "bearer-assets",
+      "to": "T-KYC",
+      "type": "counters"
+    },
+    {
+      "from": "compartmented-bank",
+      "to": "T-KYC",
+      "type": "counters"
+    },
+    {
+      "from": "privacy-coin",
+      "to": "T-LEDGER",
+      "type": "counters"
+    },
+    {
+      "from": "bitcoin-privacy-technique",
+      "to": "T-LEDGER",
+      "type": "counters"
+    },
+    {
+      "from": "non-kyc-rails",
+      "to": "T-LEDGER",
+      "type": "counters"
+    },
+    {
+      "from": "cash-sensitive",
+      "to": "T-CARD",
+      "type": "counters"
+    },
+    {
+      "from": "masked-cards",
+      "to": "T-CARD",
+      "type": "counters"
+    },
+    {
+      "from": "drop-loyalty-programs",
+      "to": "T-CARD",
+      "type": "counters"
+    },
+    {
+      "from": "privacy-coin",
+      "to": "T-CARD",
+      "type": "counters"
+    },
+    {
+      "from": "bearer-assets",
+      "to": "T-CARD",
+      "type": "counters"
+    },
+    {
+      "from": "self-custody",
+      "to": "T-CBDC",
+      "type": "counters"
+    },
+    {
+      "from": "privacy-coin",
+      "to": "T-CBDC",
+      "type": "counters"
+    },
+    {
+      "from": "cash-sensitive",
+      "to": "T-CBDC",
+      "type": "counters"
+    },
+    {
+      "from": "bearer-assets",
+      "to": "T-CBDC",
+      "type": "counters"
+    },
+    {
+      "from": "civic-action",
+      "to": "T-CBDC",
+      "type": "counters"
+    },
+    {
+      "from": "vehicle-data-privacy",
+      "to": "T-ALPR",
+      "type": "counters"
+    },
+    {
+      "from": "anti-facial-recognition",
+      "to": "T-FACE",
+      "type": "counters"
+    },
+    {
+      "from": "gait-obfuscation",
+      "to": "T-GAIT",
+      "type": "counters"
+    },
+    {
+      "from": "faraday",
+      "to": "T-IMSI",
+      "type": "counters"
+    },
+    {
+      "from": "compartmented-phone",
+      "to": "T-IMSI",
+      "type": "counters"
+    },
+    {
+      "from": "anti-facial-recognition",
+      "to": "T-DRONE",
+      "type": "counters"
+    },
+    {
+      "from": "home-network-iot-audit",
+      "to": "T-IOT",
+      "type": "counters"
+    },
+    {
+      "from": "dns-blocking",
+      "to": "T-IOT",
+      "type": "counters"
+    },
+    {
+      "from": "rf-emission-discipline",
+      "to": "T-RF-LOCATE",
+      "type": "counters"
+    },
+    {
+      "from": "faraday",
+      "to": "T-RF-LOCATE",
+      "type": "counters"
+    },
+    {
+      "from": "identity-compartmentalization",
+      "to": "T-FUSION",
+      "type": "counters"
+    },
+    {
+      "from": "offgrid-mesh-radio",
+      "to": "T-LAW",
+      "type": "counters"
+    },
+    {
+      "from": "offline-mesh-messenger",
+      "to": "T-LAW",
+      "type": "counters"
+    },
+    {
+      "from": "hf-long-range",
+      "to": "T-LAW",
+      "type": "counters"
+    },
+    {
+      "from": "physical-data-transport",
+      "to": "T-LAW",
+      "type": "counters"
+    },
+    {
+      "from": "encrypted-messaging",
+      "to": "T-LAW",
+      "type": "counters"
+    },
+    {
+      "from": "data-minimization",
+      "to": "T-FUSION",
+      "type": "counters"
+    },
+    {
+      "from": "data-minimization",
+      "to": "identity-compartmentalization",
+      "type": "enables"
+    },
+    {
+      "from": "threat-model",
+      "to": "data-minimization",
+      "type": "prereq"
+    },
+    {
+      "from": "password-manager",
+      "to": "T-ATO",
+      "type": "counters"
+    },
+    {
+      "from": "unique-passwords",
+      "to": "T-ATO",
+      "type": "counters"
+    },
+    {
+      "from": "strong-2fa",
+      "to": "T-ATO",
+      "type": "counters"
+    },
+    {
+      "from": "update-discipline",
+      "to": "T-ATO",
+      "type": "counters"
+    },
+    {
+      "from": "email-aliasing",
+      "to": "T-ATO",
+      "type": "counters"
+    },
+    {
+      "from": "compartmented-phone",
+      "to": "T-ATO",
+      "type": "counters"
+    },
+    {
+      "from": "encrypted-containers",
+      "to": "T-COERCION",
+      "type": "counters"
+    },
+    {
+      "from": "device-os-hardening",
+      "to": "T-COERCION",
+      "type": "counters"
+    },
+    {
+      "from": "faraday",
+      "to": "T-COERCION",
+      "type": "counters"
+    },
+    {
+      "from": "travel-privacy",
+      "to": "T-COERCION",
+      "type": "counters"
+    },
+    {
+      "from": "data-minimization",
+      "to": "T-COERCION",
+      "type": "counters"
+    },
+    {
+      "from": "data-minimization",
+      "to": "T-INFERENCE",
+      "type": "counters"
+    },
+    {
+      "from": "identity-compartmentalization",
+      "to": "T-INFERENCE",
+      "type": "counters"
+    },
+    {
+      "from": "location-metadata-hygiene",
+      "to": "T-INFERENCE",
+      "type": "counters"
+    },
+    {
+      "from": "behavioral-digital-defense",
+      "to": "T-INFERENCE",
+      "type": "counters"
+    },
+    {
+      "from": "network-privacy",
+      "to": "T-MITM",
+      "type": "counters"
+    },
+    {
+      "from": "dns-blocking",
+      "to": "T-MITM",
+      "type": "counters"
+    },
+    {
+      "from": "browser-hardening",
+      "to": "T-MITM",
+      "type": "counters"
+    },
+    {
+      "from": "encrypted-messaging",
+      "to": "T-MITM",
+      "type": "counters"
+    },
+    {
+      "from": "voice-privacy",
+      "to": "T-IMPERSONATION",
+      "type": "counters"
+    },
+    {
+      "from": "social-media-minimization",
+      "to": "T-IMPERSONATION",
+      "type": "counters"
+    },
+    {
+      "from": "genetic-privacy",
+      "to": "T-GENETIC",
+      "type": "counters"
+    },
+    {
+      "from": "obituary-genealogy-privacy",
+      "to": "T-GENETIC",
+      "type": "counters"
+    },
+    {
+      "from": "household-privacy",
+      "to": "T-INSIDER",
+      "type": "counters"
+    },
+    {
+      "from": "ssn-lock",
+      "to": "T-INSIDER",
+      "type": "counters"
+    },
+    {
+      "from": "address-confidentiality-program",
+      "to": "T-INSIDER",
+      "type": "counters"
+    },
+    {
+      "from": "strong-2fa",
+      "to": "T-INSIDER",
+      "type": "counters"
+    },
+    {
+      "from": "digital-inheritance",
+      "to": "T-INSIDER",
+      "type": "counters"
+    },
+    {
+      "from": "children-privacy",
+      "to": "T-CHILD-DATA",
+      "type": "counters"
+    },
+    {
+      "from": "school-surveillance",
+      "to": "T-CHILD-DATA",
+      "type": "counters"
+    },
+    {
+      "from": "social-graph-privacy",
+      "to": "T-CHILD-DATA",
+      "type": "counters"
+    },
+    {
+      "from": "health-records-privacy",
+      "to": "T-HEALTH-DATA",
+      "type": "counters"
+    },
+    {
+      "from": "health-app-wearable-data",
+      "to": "T-HEALTH-DATA",
+      "type": "counters"
+    },
+    {
+      "from": "reproductive-health-privacy",
+      "to": "T-HEALTH-DATA",
+      "type": "counters"
+    },
+    {
+      "from": "workplace-surveillance",
+      "to": "T-EMPLOYER",
+      "type": "counters"
+    },
+    {
+      "from": "byod-separation",
+      "to": "T-EMPLOYER",
+      "type": "counters"
+    },
+    {
+      "from": "school-surveillance",
+      "to": "T-EMPLOYER",
+      "type": "counters"
+    },
+    {
+      "from": "threat-model",
+      "to": "ssn-lock",
+      "type": "enables"
+    },
+    {
+      "from": "credit-freeze-big3",
+      "to": "ssn-lock",
+      "type": "enables",
+      "guidance": "Complementary anti-fraud locks; freeze stops new credit, SSN-lock stops employment/SSA misuse."
+    },
+    {
+      "from": "exposure-inventory",
+      "to": "address-confidentiality-program",
+      "type": "prereq"
+    },
+    {
+      "from": "address-confidentiality-program",
+      "to": "scrub-public-records",
+      "type": "tension",
+      "severity": "info",
+      "guidance": "ACP shields NEW records but cannot remove existing ones; relocate before enrolling for full effect."
+    },
+    {
+      "from": "address-confidentiality-program",
+      "to": "home-address-ghost",
+      "type": "enables",
+      "crossDomain": true
+    },
+    {
+      "from": "cmra-mail-decoupling",
+      "to": "identity-document-data",
+      "type": "enables"
+    },
+    {
+      "from": "name-variant-control",
+      "to": "home-address-ghost",
+      "type": "enables"
+    },
+    {
+      "from": "domicile-residency",
+      "to": "second-residency",
+      "type": "enables"
+    },
+    {
+      "from": "second-residency",
+      "to": "home-address-ghost",
+      "type": "enables"
+    },
+    {
+      "from": "exposure-inventory",
+      "to": "health-records-privacy",
+      "type": "enables"
+    },
+    {
+      "from": "health-records-privacy",
+      "to": "health-app-wearable-data",
+      "type": "enables"
+    },
+    {
+      "from": "location-metadata-hygiene",
+      "to": "reproductive-health-privacy",
+      "type": "enables",
+      "crossDomain": true
+    },
+    {
+      "from": "address-confidentiality-program",
+      "to": "reproductive-health-privacy",
+      "type": "enables",
+      "crossDomain": true
+    },
+    {
+      "from": "genetic-privacy",
+      "to": "obituary-genealogy-privacy",
+      "type": "enables"
+    },
+    {
+      "from": "data-minimization",
+      "to": "household-privacy",
+      "type": "enables"
+    },
+    {
+      "from": "household-privacy",
+      "to": "children-privacy",
+      "type": "enables"
+    },
+    {
+      "from": "household-privacy",
+      "to": "eldercare-privacy",
+      "type": "enables"
+    },
+    {
+      "from": "self-custody",
+      "to": "digital-inheritance",
+      "type": "prereq"
+    },
+    {
+      "from": "password-manager",
+      "to": "digital-inheritance",
+      "type": "enables"
+    },
+    {
+      "from": "children-privacy",
+      "to": "social-graph-privacy",
+      "type": "enables"
+    },
+    {
+      "from": "threat-model",
+      "to": "workplace-surveillance",
+      "type": "enables"
+    },
+    {
+      "from": "workplace-surveillance",
+      "to": "byod-separation",
+      "type": "enables"
+    },
+    {
+      "from": "byod-separation",
+      "to": "identity-compartmentalization",
+      "type": "enables"
+    },
+    {
+      "from": "school-surveillance",
+      "to": "children-privacy",
+      "type": "enables"
+    },
+    {
+      "from": "third-party-leak-awareness",
+      "to": "social-graph-privacy",
+      "type": "enables"
+    },
+    {
+      "from": "social-media-minimization",
+      "to": "social-graph-privacy",
+      "type": "enables"
+    },
+    {
+      "from": "social-graph-privacy",
+      "to": "obituary-genealogy-privacy",
+      "type": "enables"
+    },
+    {
+      "from": "civic-action",
+      "to": "social-graph-privacy",
+      "type": "enables",
+      "guidance": "Much of this lives in others' behavior and platform/policy design."
+    },
+    {
+      "from": "cmra-mail-decoupling",
+      "to": "T-LOCATE",
+      "type": "counters"
+    },
+    {
+      "from": "scrub-public-records",
+      "to": "T-LOCATE",
+      "type": "counters"
+    },
+    {
+      "from": "address-confidentiality-program",
+      "to": "T-LOCATE",
+      "type": "counters"
+    },
+    {
+      "from": "home-address-ghost",
+      "to": "T-LOCATE",
+      "type": "counters"
+    },
+    {
+      "from": "domicile-residency",
+      "to": "T-LOCATE",
+      "type": "counters"
+    },
+    {
+      "from": "property-utilities-entity",
+      "to": "T-LOCATE",
+      "type": "counters"
+    },
+    {
+      "from": "delivery-hygiene",
+      "to": "T-LOCATE",
+      "type": "counters"
+    },
+    {
+      "from": "name-variant-control",
+      "to": "T-LOCATE",
+      "type": "counters"
+    },
+    {
+      "from": "identity-document-data",
+      "to": "T-LOCATE",
+      "type": "counters"
+    },
+    {
+      "from": "credit-freeze-big3",
+      "to": "T-LOCATE",
+      "type": "counters"
+    },
+    {
+      "from": "device-os-hardening",
+      "to": "compartmentalized-os",
+      "type": "enables",
+      "guidance": "Hardening is the on-ramp to full compartmentalization."
+    },
+    {
+      "from": "identity-compartmentalization",
+      "to": "compartmentalized-os",
+      "type": "enables",
+      "guidance": "OS-level qubes are how persona separation is actually enforced."
+    },
+    {
+      "from": "tor-routed-os",
+      "to": "compartmentalized-os",
+      "type": "enables",
+      "guidance": "Whonix integrates into Qubes for Tor-routed qubes."
+    },
+    {
+      "from": "encrypted-containers",
+      "to": "deniable-encryption",
+      "type": "enables"
+    },
+    {
+      "from": "device-os-hardening",
+      "to": "deniable-encryption",
+      "type": "enables"
+    },
+    {
+      "from": "amnesic-os",
+      "to": "anti-forensics",
+      "type": "enables",
+      "guidance": "Amnesia is anti-forensics by design."
+    },
+    {
+      "from": "encrypted-containers",
+      "to": "anti-forensics",
+      "type": "enables"
+    },
+    {
+      "from": "identity-compartmentalization",
+      "to": "anti-stylometry",
+      "type": "enables",
+      "guidance": "Persona separation is undone if writing style links them."
+    },
+    {
+      "from": "compartmentalized-os",
+      "to": "physical-anonymity",
+      "type": "enables",
+      "crossDomain": true
+    },
+    {
+      "from": "network-privacy",
+      "to": "tor-routed-os",
+      "type": "enables"
+    },
+    {
+      "from": "identity-compartmentalization",
+      "to": "anti-stylometry",
+      "type": "reveals",
+      "guidance": "Separating personas surfaces that writing style can still bridge them."
+    },
+    {
+      "from": "deniable-encryption",
+      "to": "physical-data-transport",
+      "type": "tension",
+      "severity": "info",
+      "guidance": "Carrying a clean device + restore later is often safer than hidden volumes under coercion."
+    },
+    {
+      "from": "civic-foia-transparency",
+      "to": "civic-ban-legislation",
+      "type": "enables",
+      "guidance": "Records expose what to ban."
+    },
+    {
+      "from": "civic-ban-legislation",
+      "to": "civic-litigation-support",
+      "type": "enables"
+    },
+    {
+      "from": "civic-community-defense",
+      "to": "social-graph-privacy",
+      "type": "enables",
+      "crossDomain": true
+    },
+    {
+      "from": "civic-ban-legislation",
+      "to": "T-ALPR",
+      "type": "counters"
+    },
+    {
+      "from": "civic-ban-legislation",
+      "to": "T-FACE",
+      "type": "counters"
+    },
+    {
+      "from": "civic-ban-legislation",
+      "to": "T-GAIT",
+      "type": "counters"
+    },
+    {
+      "from": "civic-ban-legislation",
+      "to": "T-DRONE",
+      "type": "counters"
+    },
+    {
+      "from": "civic-ban-legislation",
+      "to": "T-CBDC",
+      "type": "counters"
+    },
+    {
+      "from": "civic-foia-transparency",
+      "to": "T-ALPR",
+      "type": "counters"
+    },
+    {
+      "from": "civic-foia-transparency",
+      "to": "T-FACE",
+      "type": "counters"
+    },
+    {
+      "from": "civic-litigation-support",
+      "to": "T-FACE",
+      "type": "counters"
+    },
+    {
+      "from": "civic-litigation-support",
+      "to": "T-ALPR",
+      "type": "counters"
+    },
+    {
+      "from": "civic-litigation-support",
+      "to": "T-BROKER",
+      "type": "counters"
+    },
+    {
+      "from": "civic-community-defense",
+      "to": "T-INFERENCE",
+      "type": "counters"
+    },
+    {
+      "from": "civic-community-defense",
+      "to": "T-IMPERSONATION",
+      "type": "counters"
+    },
+    {
+      "from": "compartmentalized-os",
+      "to": "T-FUSION",
+      "type": "counters"
+    },
+    {
+      "from": "compartmentalized-os",
+      "to": "T-TELEMETRY",
+      "type": "counters"
+    },
+    {
+      "from": "compartmentalized-os",
+      "to": "T-BEHAVIORAL-DIGITAL",
+      "type": "counters"
+    },
+    {
+      "from": "amnesic-os",
+      "to": "T-COERCION",
+      "type": "counters"
+    },
+    {
+      "from": "amnesic-os",
+      "to": "T-MITM",
+      "type": "counters"
+    },
+    {
+      "from": "tor-routed-os",
+      "to": "T-MITM",
+      "type": "counters"
+    },
+    {
+      "from": "tor-routed-os",
+      "to": "T-INFERENCE",
+      "type": "counters"
+    },
+    {
+      "from": "deniable-encryption",
+      "to": "T-COERCION",
+      "type": "counters"
+    },
+    {
+      "from": "anti-stylometry",
+      "to": "T-INFERENCE",
+      "type": "counters"
+    },
+    {
+      "from": "anti-stylometry",
+      "to": "T-BEHAVIORAL-DIGITAL",
+      "type": "counters"
+    },
+    {
+      "from": "anti-forensics",
+      "to": "T-COERCION",
+      "type": "counters"
+    },
+    {
+      "from": "anti-forensics",
+      "to": "T-LOCATE",
+      "type": "counters"
+    },
+    {
+      "from": "civic-action",
+      "to": "civic-ban-legislation",
+      "type": "enables"
+    },
+    {
+      "from": "civic-action",
+      "to": "civic-foia-transparency",
+      "type": "enables"
+    },
+    {
+      "from": "civic-action",
+      "to": "civic-litigation-support",
+      "type": "enables"
+    },
+    {
+      "from": "civic-action",
+      "to": "civic-community-defense",
+      "type": "enables"
+    },
+    {
+      "from": "browser-hardening",
+      "to": "T-BIDSTREAM",
+      "type": "counters"
+    },
+    {
+      "from": "dns-blocking",
+      "to": "T-BIDSTREAM",
+      "type": "counters"
+    },
+    {
+      "from": "tracking-link-stripping",
+      "to": "T-BIDSTREAM",
+      "type": "counters"
+    },
+    {
+      "from": "device-os-hardening",
+      "to": "T-BIDSTREAM",
+      "type": "counters"
+    },
+    {
+      "from": "location-metadata-hygiene",
+      "to": "T-BIDSTREAM",
+      "type": "counters"
+    },
+    {
+      "from": "civic-ban-legislation",
+      "to": "T-BIDSTREAM",
+      "type": "counters"
+    },
+    {
+      "from": "location-metadata-hygiene",
+      "to": "T-PATTERN-OF-LIFE",
+      "type": "counters"
+    },
+    {
+      "from": "faraday",
+      "to": "T-PATTERN-OF-LIFE",
+      "type": "counters"
+    },
+    {
+      "from": "compartmented-phone",
+      "to": "T-PATTERN-OF-LIFE",
+      "type": "counters"
+    },
+    {
+      "from": "device-os-hardening",
+      "to": "T-PATTERN-OF-LIFE",
+      "type": "counters"
+    },
+    {
+      "from": "vehicle-data-privacy",
+      "to": "T-PATTERN-OF-LIFE",
+      "type": "counters"
+    },
+    {
+      "from": "ad-id-reset",
+      "to": "T-BIDSTREAM",
+      "type": "counters"
+    },
+    {
+      "from": "ad-id-reset",
+      "to": "T-PATTERN-OF-LIFE",
+      "type": "counters"
+    },
+    {
+      "from": "ad-id-reset",
+      "to": "T-BROKER",
+      "type": "counters"
+    },
+    {
+      "from": "location-metadata-hygiene",
+      "to": "ad-id-reset",
+      "type": "enables"
+    },
+    {
+      "from": "notification-preview-hardening",
+      "to": "T-NOTIF-LEAK",
+      "type": "counters"
+    },
+    {
+      "from": "device-os-hardening",
+      "to": "T-NOTIF-LEAK",
+      "type": "counters"
+    },
+    {
+      "from": "encrypted-messaging",
+      "to": "T-NOTIF-LEAK",
+      "type": "counters"
+    },
+    {
+      "from": "encrypted-messaging",
+      "to": "notification-preview-hardening",
+      "type": "reveals",
+      "guidance": "Turning on encrypted messaging surfaces a non-obvious leak: the OS caches decrypted previews outside the app's control. Harden notifications alongside it."
+    },
+    {
+      "from": "device-os-hardening",
+      "to": "notification-preview-hardening",
+      "type": "enables"
+    },
+    {
+      "from": "notification-preview-hardening",
+      "to": "T-COERCION",
+      "type": "counters"
+    },
+    {
+      "from": "device-os-hardening",
+      "to": "sandbox-bigtech-apps",
+      "type": "enables",
+      "guidance": "Hardening + a hardened OS is what makes real app sandboxing possible."
+    },
+    {
+      "from": "sandbox-bigtech-apps",
+      "to": "de-google-services",
+      "type": "sequence",
+      "guidance": "Sandbox what you can't yet give up; de-Google the rest over time."
+    },
+    {
+      "from": "sandbox-bigtech-apps",
+      "to": "identity-compartmentalization",
+      "type": "enables"
+    },
+    {
+      "from": "sandbox-bigtech-apps",
+      "to": "T-TELEMETRY",
+      "type": "counters"
+    },
+    {
+      "from": "sandbox-bigtech-apps",
+      "to": "T-FUSION",
+      "type": "counters"
+    },
+    {
+      "from": "de-google-services",
+      "to": "T-TELEMETRY",
+      "type": "counters"
+    },
+    {
+      "from": "de-google-services",
+      "to": "T-BIDSTREAM",
+      "type": "counters"
+    },
+    {
+      "from": "de-google-services",
+      "to": "T-FUSION",
+      "type": "counters"
+    },
+    {
+      "from": "private-email",
+      "to": "de-google-services",
+      "type": "prereq"
+    },
+    {
+      "from": "local-ai",
+      "to": "de-google-services",
+      "type": "enables"
+    },
+    {
+      "from": "adversarial-clothing",
+      "to": "anti-facial-recognition",
+      "type": "enables",
+      "guidance": "A wearable expression of anti-FR; pair with IR eyewear for IR-based systems."
+    },
+    {
+      "from": "adversarial-clothing",
+      "to": "T-FACE",
+      "type": "counters"
+    },
+    {
+      "from": "privacy-eyewear",
+      "to": "anti-facial-recognition",
+      "type": "enables"
+    },
+    {
+      "from": "privacy-eyewear",
+      "to": "T-FACE",
+      "type": "counters"
+    },
+    {
+      "from": "signal-blocking-edc",
+      "to": "faraday",
+      "type": "enables",
+      "guidance": "The everyday-carry version of Faraday shielding."
+    },
+    {
+      "from": "signal-blocking-edc",
+      "to": "T-RF-LOCATE",
+      "type": "counters"
+    },
+    {
+      "from": "signal-blocking-edc",
+      "to": "vehicle-data-privacy",
+      "type": "enables"
+    },
+    {
+      "from": "device-disposal",
+      "to": "T-REMANENCE",
+      "type": "counters"
+    },
+    {
+      "from": "device-os-hardening",
+      "to": "T-REMANENCE",
+      "type": "counters"
+    },
+    {
+      "from": "home-network-iot-audit",
+      "to": "T-REMANENCE",
+      "type": "counters"
+    },
+    {
+      "from": "device-os-hardening",
+      "to": "device-disposal",
+      "type": "enables",
+      "guidance": "Full-device encryption is the prerequisite: it turns a free factory reset into NIST-grade crypto-erase."
+    },
+    {
+      "from": "device-disposal",
+      "to": "vehicle-data-privacy",
+      "type": "enables",
+      "guidance": "Selling a car is device disposal too — wipe the infotainment."
+    },
+    {
+      "from": "smart-device-vetting",
+      "to": "home-network-iot-audit",
+      "type": "sequence",
+      "guidance": "Vet what comes in; audit and lock down what's already here."
+    },
+    {
+      "from": "smart-device-vetting",
+      "to": "T-TELEMETRY",
+      "type": "counters"
+    },
+    {
+      "from": "smart-device-vetting",
+      "to": "T-FUSION",
+      "type": "counters"
+    }
+  ],
+  "overlays": [
+    {
+      "nodeId": "data-broker-removal",
+      "region": "US",
+      "status": "harder",
+      "effort": "high",
+      "mechanism": "Opt out broker-by-broker across hundreds of people-search sites; recurring.",
+      "notes": "Roughly half of US states have no comprehensive deletion law. State privacy laws (e.g. Indiana, Kentucky, Rhode Island as of 2026) grant per-company deletion but require contacting each separately.",
+      "lastVerified": "2026-06-01"
+    },
+    {
+      "nodeId": "data-broker-removal",
+      "region": "US-CA",
+      "status": "easier",
+      "effort": "low",
+      "mechanism": "Single DROP (Delete Request and Opt-out Platform) request to all registered brokers at once, free.",
+      "notes": "Consumer submissions live Jan 1 2026; brokers required to honor and re-check every 45 days from Aug 1 2026.",
+      "lastVerified": "2026-06-01"
+    },
+    {
+      "nodeId": "credit-freeze-big3",
+      "region": "US",
+      "status": "available",
+      "effort": "low",
+      "mechanism": "Free online freeze at Equifax, Experian, and TransUnion (free under US federal law since 2018).",
+      "lastVerified": "2026-06-01"
+    },
+    {
+      "nodeId": "secondary-bureau-freezes",
+      "region": "US",
+      "status": "available",
+      "effort": "medium",
+      "mechanism": "Freeze individually: Innovis, NCTUE, ChexSystems, LexisNexis/SageStream, Clarity, TeleCheck, CoreLogic. Many are free; some vary by state.",
+      "lastVerified": "2026-06-01"
+    },
+    {
+      "nodeId": "anonymous-llc",
+      "region": "US",
+      "status": "available",
+      "effort": "high",
+      "mechanism": "Form in NM/WY/DE/NV where members are kept off public filings; registered agent listed instead.",
+      "notes": "Per FinCEN interim rule (Mar 2025), domestic US entities are exempt from beneficial-ownership (BOI) reporting; only foreign entities report. Ownership still disclosed to IRS/banks and via subpoena.",
+      "lastVerified": "2026-06-01"
+    },
+    {
+      "nodeId": "cmra-mail-decoupling",
+      "region": "US",
+      "status": "available",
+      "effort": "medium",
+      "mechanism": "Rent a PMB at a CMRA (e.g. UPS Store, virtual mailbox service) via notarized USPS Form 1583.",
+      "lastVerified": "2026-06-01"
+    },
+    {
+      "nodeId": "domicile-residency",
+      "region": "US",
+      "status": "available",
+      "effort": "high",
+      "mechanism": "Establish domicile in a privacy/tax-favorable state (commonly SD, TX, or FL for nomads).",
+      "lastVerified": "2026-06-01"
+    },
+    {
+      "nodeId": "scrub-public-records",
+      "region": "US",
+      "status": "harder",
+      "effort": "high",
+      "mechanism": "Address-confidentiality programs (varies by state, often for DV survivors), property-record workarounds, voter-record opt-outs where allowed.",
+      "notes": "Availability and method vary substantially by state.",
+      "lastVerified": "2026-06-01"
+    }
+  ],
+  "domains": [
+    {
+      "id": "foundation",
+      "label": "Foundation"
+    },
+    {
+      "id": "digital",
+      "label": "Digital"
+    },
+    {
+      "id": "economic",
+      "label": "Economic"
+    },
+    {
+      "id": "physical",
+      "label": "Physical"
+    },
+    {
+      "id": "biometric",
+      "label": "Biometric",
+      "note": "Cross-cutting: identification by body/behavior; spans digital and physical."
+    },
+    {
+      "id": "comms",
+      "label": "Communications",
+      "note": "Cross-cutting infrastructure-independence pillar."
+    },
+    {
+      "id": "civic",
+      "label": "Civic/Policy",
+      "note": "Collective action where individual technical defense is weak."
+    }
+  ],
+  "axes": [
+    {
+      "id": "threat_tier",
+      "label": "Threat depth",
+      "range": [
+        1,
+        5
+      ],
+      "note": "Adversary sophistication; cumulative."
+    },
+    {
+      "id": "infra_independence",
+      "label": "Infrastructure independence",
+      "range": [
+        0,
+        5
+      ],
+      "note": "0 = fully depends on ISP/carrier; 5 = you own the infrastructure."
+    },
+    {
+      "id": "anonymity",
+      "label": "Anonymity/privacy of the method itself",
+      "range": [
+        0,
+        5
+      ],
+      "note": "Distinct from independence: satellite/ham score high independence, ~0 anonymity."
+    }
+  ],
+  "edgeTypes": [
+    {
+      "id": "prereq",
+      "label": "unlocks (hard prerequisite)"
+    },
+    {
+      "id": "enables",
+      "label": "synergy (often cross-domain)"
+    },
+    {
+      "id": "sequence",
+      "label": "timing hazard (do A before B)"
+    },
+    {
+      "id": "tension",
+      "label": "tradeoff (reconcile, don't 'complete' both)"
+    },
+    {
+      "id": "counters",
+      "label": "defense answers threat"
+    },
+    {
+      "id": "reveals",
+      "label": "addressing A exposes threat B"
+    }
+  ],
+  "threats": [
+    {
+      "id": "T-BROKER",
+      "label": "Data-broker economy",
+      "domain": "digital",
+      "trajectory": "growing",
+      "tier": 2,
+      "counters": [
+        "data-broker-removal",
+        "exposure-inventory",
+        "self-osint-check",
+        "scrub-public-records"
+      ],
+      "residual": "Removal is per-broker and repopulates; you cannot opt out of the government's purchased copy. Documented at length in Tau's 'Means of Control': agencies (DHS via Venntel, FBI, Pentagon, IRS) buy commercial location/identity data without a warrant, an end-run around the Carpenter ruling that warrantless cell-location collection is a search.",
+      "book_grounded": true,
+      "sources": [
+        {
+          "title": "Byron Tau, 'Means of Control' (2024)",
+          "url": "https://en.wikipedia.org/wiki/Means_of_Control",
+          "kind": "reference"
+        }
+      ]
+    },
+    {
+      "id": "T-SCRAPE",
+      "label": "Facial-image & content scraping for AI",
+      "domain": "biometric",
+      "trajectory": "exploding",
+      "tier": 3,
+      "counters": [
+        "social-media-minimization",
+        "location-metadata-hygiene",
+        "data-broker-removal",
+        "third-party-leak-awareness"
+      ],
+      "residual": "Already-scraped images can't be recalled; face is a permanent, unrotatable identifier.",
+      "sources": [
+        {
+          "title": "EFF — Face Recognition (Street Level Surveillance)",
+          "url": "https://sls.eff.org/technologies/face-recognition",
+          "kind": "org"
+        },
+        {
+          "title": "EFF — Clearview AI / scraping",
+          "url": "https://www.eff.org/issues/face-surveillance",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "T-TELEMETRY",
+      "label": "Device/app/OS telemetry",
+      "domain": "digital",
+      "trajectory": "growing",
+      "tier": 1,
+      "counters": [
+        "private-email",
+        "device-os-hardening",
+        "outbound-firewall",
+        "dns-blocking",
+        "browser-hardening",
+        "local-ai",
+        "home-network-iot-audit"
+      ],
+      "residual": "Closed-source firmware/baseband stays opaque even after hardening; and per 'Means of Control', ordinary apps embed location-harvesting SDKs (e.g. X-Mode) that sell your movements into the broker/government data supply chain regardless of OS hardening.",
+      "sources": [
+        {
+          "title": "Byron Tau, 'Means of Control' (2024)",
+          "url": "https://en.wikipedia.org/wiki/Means_of_Control",
+          "kind": "reference"
+        }
+      ]
+    },
+    {
+      "id": "T-FINGERPRINT",
+      "label": "Browser/device fingerprinting",
+      "domain": "digital",
+      "trajectory": "steady",
+      "tier": 2,
+      "counters": [
+        "browser-hardening",
+        "network-privacy",
+        "tracking-link-stripping"
+      ],
+      "residual": "Idiosyncratic hardening can increase fingerprint uniqueness — a tension.",
+      "sources": [
+        {
+          "title": "EFF — Cover Your Tracks (fingerprinting test)",
+          "url": "https://coveryourtracks.eff.org/",
+          "kind": "org"
+        },
+        {
+          "title": "Liu et al. — Browser fingerprinting for ad tracking (arXiv 2024)",
+          "url": "https://arxiv.org/abs/2409.15656",
+          "kind": "research"
+        }
+      ]
+    },
+    {
+      "id": "T-BEHAVIORAL-DIGITAL",
+      "label": "Keystroke/mouse biometrics",
+      "domain": "biometric",
+      "trajectory": "growing",
+      "tier": 4,
+      "counters": [
+        "behavioral-digital-defense",
+        "identity-compartmentalization"
+      ],
+      "residual": "Largely unsolved for consumers.",
+      "sources": [
+        {
+          "title": "EFF — behavioral tracking overview",
+          "url": "https://www.eff.org/issues/privacy",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "T-KYC",
+      "label": "KYC/AML chokepoints & deplatforming",
+      "domain": "economic",
+      "trajectory": "growing",
+      "tier": 2,
+      "counters": [
+        "cash-sensitive",
+        "self-custody",
+        "non-kyc-rails",
+        "privacy-coin",
+        "bearer-assets",
+        "compartmented-bank"
+      ],
+      "residual": "KYC mandatory at regulated on/off-ramps; custodial = freezable.",
+      "sources": [
+        {
+          "title": "FinCEN — Bank Secrecy Act / KYC framework",
+          "url": "https://www.fincen.gov/resources/statutes-regulations/bank-secrecy-act",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "T-LEDGER",
+      "label": "Transparent-ledger chain analysis",
+      "domain": "economic",
+      "trajectory": "growing",
+      "tier": 3,
+      "counters": [
+        "privacy-coin",
+        "bitcoin-privacy-technique",
+        "non-kyc-rails"
+      ],
+      "residual": "Once a wallet links to KYC identity, history is retroactively exposed.",
+      "sources": [
+        {
+          "title": "Bitcoin privacy & chain analysis (Bitcoin Wiki)",
+          "url": "https://en.bitcoin.it/wiki/Privacy",
+          "kind": "reference"
+        }
+      ]
+    },
+    {
+      "id": "T-CARD",
+      "label": "Payment-rail & purchase tracking",
+      "domain": "economic",
+      "trajectory": "steady",
+      "tier": 2,
+      "counters": [
+        "cash-sensitive",
+        "masked-cards",
+        "drop-loyalty-programs",
+        "privacy-coin",
+        "bearer-assets"
+      ],
+      "residual": "Cashless-mandate trends shrink the cash option.",
+      "sources": [
+        {
+          "title": "EPIC — Consumer privacy / purchase tracking",
+          "url": "https://epic.org/issues/consumer-privacy/",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "T-CBDC",
+      "label": "Central-bank digital currency",
+      "domain": "economic",
+      "trajectory": "emerging",
+      "tier": 4,
+      "counters": [
+        "self-custody",
+        "privacy-coin",
+        "cash-sensitive",
+        "bearer-assets",
+        "civic-action"
+      ],
+      "residual": "Largely a policy threat; individual action limited.",
+      "sources": [
+        {
+          "title": "Federal Reserve — CBDC FAQs",
+          "url": "https://www.federalreserve.gov/cbdc-faqs.htm",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "T-ALPR",
+      "label": "Automated license-plate readers",
+      "domain": "physical",
+      "trajectory": "exploding",
+      "tier": 3,
+      "counters": [
+        "vehicle-data-privacy",
+        "civic-action"
+      ],
+      "residual": "Can't lawfully hide a plate; substantially a policy fight.",
+      "sources": [
+        {
+          "title": "EFF — Automated License Plate Readers",
+          "url": "https://sls.eff.org/technologies/automated-license-plate-readers-alprs",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "T-FACE",
+      "label": "Facial recognition in public",
+      "domain": "biometric",
+      "trajectory": "growing",
+      "tier": 3,
+      "counters": [
+        "anti-facial-recognition",
+        "civic-action"
+      ],
+      "residual": "Defeating the face often fails against gait/body recognition.",
+      "sources": [
+        {
+          "title": "EFF — Face Recognition (Street Level Surveillance)",
+          "url": "https://sls.eff.org/technologies/face-recognition",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "T-GAIT",
+      "label": "Gait & body-shape recognition",
+      "domain": "biometric",
+      "trajectory": "emerging",
+      "tier": 4,
+      "counters": [
+        "gait-obfuscation",
+        "civic-action"
+      ],
+      "residual": "Frontier threat with the weakest consumer defenses.",
+      "sources": [
+        {
+          "title": "EFF — Street Level Surveillance (biometric ID at a distance)",
+          "url": "https://sls.eff.org/",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "T-IMSI",
+      "label": "Cell-site simulators (Stingrays)",
+      "domain": "physical",
+      "trajectory": "steady",
+      "tier": 4,
+      "counters": [
+        "faraday",
+        "compartmented-phone"
+      ],
+      "residual": "Any powered radio is detectable; true defense is no device present.",
+      "sources": [
+        {
+          "title": "EFF — Cell-Site Simulators / IMSI Catchers",
+          "url": "https://sls.eff.org/technologies/cell-site-simulators-imsi-catchers",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "T-DRONE",
+      "label": "Aerial & drone surveillance",
+      "domain": "physical",
+      "trajectory": "exploding",
+      "tier": 4,
+      "counters": [
+        "anti-facial-recognition",
+        "civic-action"
+      ],
+      "residual": "Little individual defense in open space.",
+      "sources": [
+        {
+          "title": "EFF — Drones / Unmanned Aerial Vehicles",
+          "url": "https://sls.eff.org/technologies/drones-unmanned-aerial-vehicles",
+          "kind": "org"
+        },
+        {
+          "title": "EPIC — Domestic Drones / aerial surveillance",
+          "url": "https://epic.org/issues/surveillance-oversight/drones/",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "T-IOT",
+      "label": "Always-on home sensing",
+      "domain": "physical",
+      "trajectory": "growing",
+      "tier": 2,
+      "counters": [
+        "home-network-iot-audit",
+        "dns-blocking"
+      ],
+      "residual": "Neighbors' devices/doorbells capture you regardless of your choices.",
+      "sources": [
+        {
+          "title": "Mozilla *Privacy Not Included (IoT)",
+          "url": "https://foundation.mozilla.org/en/privacynotincluded/",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "T-RF-LOCATE",
+      "label": "RF direction-finding & fingerprinting",
+      "domain": "comms",
+      "trajectory": "emerging",
+      "tier": 5,
+      "counters": [
+        "rf-emission-discipline",
+        "faraday"
+      ],
+      "residual": "RF fingerprinting (specific-radio ID) largely unsolved for consumers — radio twin of gait.",
+      "sources": [
+        {
+          "title": "Radio direction finding & RF fingerprinting (overview)",
+          "url": "https://www.offgridweb.com/preparation/radio-direction-finding/",
+          "kind": "reference"
+        }
+      ]
+    },
+    {
+      "id": "T-FUSION",
+      "label": "Data fusion & integrator platforms",
+      "domain": "cross-cutting",
+      "trajectory": "exploding",
+      "tier": 3,
+      "counters": [
+        "identity-compartmentalization",
+        "data-minimization",
+        "civic-action"
+      ],
+      "residual": "A leak in one domain re-links the others — why privacy is a web, not silos.",
+      "sources": [
+        {
+          "title": "Byron Tau, 'Means of Control' (2024)",
+          "url": "https://en.wikipedia.org/wiki/Means_of_Control",
+          "kind": "reference"
+        }
+      ]
+    },
+    {
+      "id": "T-LAW",
+      "label": "Legal/regulatory erosion & internet shutdowns",
+      "domain": "cross-cutting",
+      "trajectory": "variable",
+      "tier": 3,
+      "counters": [
+        "offgrid-mesh-radio",
+        "offline-mesh-messenger",
+        "hf-long-range",
+        "physical-data-transport",
+        "encrypted-messaging",
+        "civic-action"
+      ],
+      "residual": "Shifts the baseline under every node; defenses here are largely civic.",
+      "sources": [
+        {
+          "title": "EFF — Surveillance & the law",
+          "url": "https://www.eff.org/issues",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "T-ATO",
+      "label": "Account takeover (phishing, SIM-swap, credential stuffing)",
+      "domain": "digital",
+      "trajectory": "growing",
+      "tier": 1,
+      "counters": [
+        "password-manager",
+        "unique-passwords",
+        "strong-2fa",
+        "update-discipline",
+        "email-aliasing",
+        "compartmented-phone"
+      ],
+      "residual": "SMS-2FA and account-recovery flows remain social-engineerable; a compromised email is a master key.",
+      "sources": [
+        {
+          "title": "FTC — Identity Theft",
+          "url": "https://consumer.ftc.gov/features/identity-theft",
+          "kind": "org"
+        },
+        {
+          "title": "CISA — Phishing & multi-factor authentication",
+          "url": "https://www.cisa.gov/secure-our-world",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "T-COERCION",
+      "label": "Coercion / compelled access / device seizure",
+      "domain": "physical",
+      "trajectory": "steady",
+      "tier": 4,
+      "counters": [
+        "encrypted-containers",
+        "device-os-hardening",
+        "faraday",
+        "travel-privacy",
+        "data-minimization"
+      ],
+      "residual": "You can be lawfully or unlawfully compelled to unlock; the only full defense is the data/device not being present.",
+      "sources": [
+        {
+          "title": "EFF — Digital Privacy at the U.S. Border",
+          "url": "https://www.eff.org/wp/digital-privacy-us-border-2017",
+          "kind": "org"
+        },
+        {
+          "title": "Deniable encryption / compelled disclosure (overview)",
+          "url": "https://en.wikipedia.org/wiki/Deniable_encryption",
+          "kind": "reference"
+        }
+      ]
+    },
+    {
+      "id": "T-INFERENCE",
+      "label": "Statistical re-identification & pattern-of-life inference",
+      "domain": "cross-cutting",
+      "trajectory": "growing",
+      "tier": 3,
+      "counters": [
+        "data-minimization",
+        "identity-compartmentalization",
+        "location-metadata-hygiene",
+        "behavioral-digital-defense"
+      ],
+      "residual": "Fragments recombine into identity even when each is 'anonymous'; stylometry and timing are hard to suppress.",
+      "sources": [
+        {
+          "title": "Byron Tau, 'Means of Control' (2024)",
+          "url": "https://en.wikipedia.org/wiki/Means_of_Control",
+          "kind": "reference"
+        }
+      ]
+    },
+    {
+      "id": "T-MITM",
+      "label": "Hostile network position (rogue Wi-Fi / ISP / MITM)",
+      "domain": "digital",
+      "trajectory": "steady",
+      "tier": 2,
+      "counters": [
+        "network-privacy",
+        "dns-blocking",
+        "browser-hardening",
+        "encrypted-messaging"
+      ],
+      "residual": "Trust is relocated to your VPN/DNS provider, not eliminated; endpoint compromise defeats transport security.",
+      "sources": [
+        {
+          "title": "EFF SSD — What Should I Know About Encryption?",
+          "url": "https://ssd.eff.org/module/what-should-i-know-about-encryption",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "T-IMPERSONATION",
+      "label": "Deepfakes / synthetic identity / impersonation",
+      "domain": "cross-cutting",
+      "trajectory": "emerging",
+      "tier": 3,
+      "counters": [
+        "voice-privacy",
+        "social-media-minimization",
+        "civic-action"
+      ],
+      "residual": "Being impersonated is largely outside personal technical control; defense is detection, provenance, and policy.",
+      "sources": [
+        {
+          "title": "FTC — Deepfakes & impersonation fraud",
+          "url": "https://www.ftc.gov/news-events/topics/identity-theft",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "T-GENETIC",
+      "label": "Familial genetic exposure & DNA databases",
+      "domain": "biometric",
+      "trajectory": "growing",
+      "tier": 4,
+      "counters": [
+        "genetic-privacy",
+        "obituary-genealogy-privacy"
+      ],
+      "residual": "A relative's DNA test exposes you without your consent; genetic data is permanent and deletion often incomplete.",
+      "sources": [
+        {
+          "title": "EFF — Genetic Information Privacy",
+          "url": "https://www.eff.org/issues/genetic-information-privacy",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "T-INSIDER",
+      "label": "Intimate-partner / insider threat",
+      "domain": "physical",
+      "trajectory": "steady",
+      "tier": 4,
+      "counters": [
+        "household-privacy",
+        "ssn-lock",
+        "address-confidentiality-program",
+        "strong-2fa",
+        "digital-inheritance"
+      ],
+      "residual": "Someone with physical access and shared history defeats most technical defenses; safety planning is human, not technical.",
+      "sources": [
+        {
+          "title": "EFF — intimate partner / stalkerware resources",
+          "url": "https://www.eff.org/issues/stalkerware",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "T-CHILD-DATA",
+      "label": "Children's data exposure",
+      "domain": "digital",
+      "trajectory": "growing",
+      "tier": 2,
+      "counters": [
+        "children-privacy",
+        "school-surveillance",
+        "social-graph-privacy"
+      ],
+      "residual": "Footprint created before a child can consent; school/edtech collection is often mandatory.",
+      "sources": [
+        {
+          "title": "FTC — Children's Online Privacy Protection Rule (COPPA)",
+          "url": "https://www.ftc.gov/legal-library/browse/rules/childrens-online-privacy-protection-rule-coppa",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "T-HEALTH-DATA",
+      "label": "Health-data monetization & disclosure",
+      "domain": "economic",
+      "trajectory": "growing",
+      "tier": 2,
+      "counters": [
+        "health-records-privacy",
+        "health-app-wearable-data",
+        "reproductive-health-privacy"
+      ],
+      "residual": "Most consumer health data sits OUTSIDE HIPAA and is freely sold or subpoenable.",
+      "sources": [
+        {
+          "title": "FTC — Health Breach Notification Rule",
+          "url": "https://www.ftc.gov/business-guidance/resources/complying-ftcs-health-breach-notification-rule",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "T-EMPLOYER",
+      "label": "Employer / institutional surveillance",
+      "domain": "digital",
+      "trajectory": "growing",
+      "tier": 2,
+      "counters": [
+        "workplace-surveillance",
+        "byod-separation",
+        "school-surveillance"
+      ],
+      "residual": "On their device/network you have little privacy; separation is the only reliable defense.",
+      "sources": [
+        {
+          "title": "EFF — Workplace Surveillance",
+          "url": "https://www.eff.org/issues/workplace-surveillance",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "T-LOCATE",
+      "label": "Physical location tracking & stalking",
+      "domain": "physical",
+      "trajectory": "steady",
+      "tier": 3,
+      "counters": [
+        "cmra-mail-decoupling",
+        "scrub-public-records",
+        "address-confidentiality-program",
+        "home-address-ghost",
+        "domicile-residency",
+        "property-utilities-entity",
+        "delivery-hygiene",
+        "name-variant-control",
+        "identity-document-data",
+        "credit-freeze-big3"
+      ],
+      "residual": "Determined trackers combine records, brokers, devices, and acquaintances; full decoupling is slow and never absolute.",
+      "sources": [
+        {
+          "title": "EFF SSD — Manage Your Digital Footprint",
+          "url": "https://ssd.eff.org/module/how-to-manage-your-digital-footprint",
+          "kind": "org"
+        },
+        {
+          "title": "EFF — geofence warrants ruled unconstitutional",
+          "url": "https://www.eff.org/deeplinks/2024/08/federal-appeals-court-finds-geofence-warrants-are-categorically-unconstitutional",
+          "kind": "org"
+        }
+      ]
+    },
+    {
+      "id": "T-BIDSTREAM",
+      "label": "Ad-exchange 'bidstream' data leakage",
+      "domain": "digital",
+      "trajectory": "growing",
+      "tier": 3,
+      "counters": [
+        "browser-hardening",
+        "dns-blocking",
+        "tracking-link-stripping",
+        "device-os-hardening",
+        "location-metadata-hygiene",
+        "civic-ban-legislation"
+      ],
+      "residual": "Every ad auction (real-time bidding) broadcasts device, location, and interest data to many bidders who can retain it; 'Means of Control' shows this 'bidstream' is harvested and resold to brokers and governments. Largely invisible to users and not fixed by any single setting.",
+      "book_grounded": true,
+      "sources": [
+        {
+          "title": "Byron Tau, 'Means of Control' (2024)",
+          "url": "https://en.wikipedia.org/wiki/Means_of_Control",
+          "kind": "reference"
+        }
+      ]
+    },
+    {
+      "id": "T-PATTERN-OF-LIFE",
+      "label": "Pattern-of-life from location/ad-ID",
+      "domain": "physical",
+      "trajectory": "growing",
+      "tier": 3,
+      "counters": [
+        "location-metadata-hygiene",
+        "faraday",
+        "compartmented-phone",
+        "device-os-hardening",
+        "vehicle-data-privacy"
+      ],
+      "residual": "A persistent mobile advertising ID plus app-SDK location data reconstructs your routines, home, work, and associations — 'pattern-of-life analysis', a military intelligence technique now run on commercial data per 'Means of Control'. Resetting/limiting the ad ID helps; leaving the phone behind helps more.",
+      "book_grounded": true,
+      "sources": [
+        {
+          "title": "Byron Tau, 'Means of Control' (2024)",
+          "url": "https://en.wikipedia.org/wiki/Means_of_Control",
+          "kind": "reference"
+        }
+      ]
+    },
+    {
+      "id": "T-NOTIF-LEAK",
+      "label": "Notification-cache content leakage",
+      "domain": "digital",
+      "trajectory": "emerging",
+      "tier": 3,
+      "counters": [
+        "notification-preview-hardening",
+        "device-os-hardening",
+        "encrypted-messaging"
+      ],
+      "residual": "The OS decrypts E2EE message content to render a preview and caches it in an internal notification/telemetry database (iOS BIOME/notification store; Android Notification History on 11+, incl. GrapheneOS). It survives app deletion and disappearing-message timers, is INCOMING-only (outgoing messages never generate an inbound notification), and is forensically recoverable for ~30 days via physical-access tools (Cellebrite/Graykey). Demonstrated in the FBI's 2026 Prairieland case — no encryption broken. Apple's iOS 26.4.2 patched a retention bug, but the architectural side channel (decrypted previews get cached while present) and the Android path remain.",
+      "sources": [
+        {
+          "title": "Schneier on Security — FBI extracts deleted Signal messages from iPhone notification database",
+          "url": "https://www.schneier.com/blog/archives/2026/04/fbi-extracts-deleted-signal-messages-from-iphone-notification-database.html",
+          "kind": "research"
+        },
+        {
+          "title": "9to5Mac — FBI used iPhone notification data; iOS 26.4.2 fix",
+          "url": "https://9to5mac.com/2026/04/09/fbi-used-iphone-notification-data-to-retrieve-deleted-signal-messages/",
+          "kind": "news"
+        },
+        {
+          "title": "Forensic Focus — iOS notification/BIOME databases retain message previews",
+          "url": "https://www.forensicfocus.com/webinars/cracking-the-code-of-ios-messages-a-guide-to-storage-and-analysis-techniques-for-forensic-examiners/",
+          "kind": "research"
+        }
+      ]
+    },
+    {
+      "id": "T-REMANENCE",
+      "label": "Data remanence on discarded devices",
+      "domain": "digital",
+      "trajectory": "steady",
+      "tier": 2,
+      "counters": [
+        "device-disposal",
+        "device-os-hardening",
+        "home-network-iot-audit"
+      ],
+      "residual": "Everything you discard, sell, donate, or trade in carries residue: phones and laptops with recoverable files if they weren't encrypted; smart bulbs, cameras, and routers holding Wi-Fi credentials in plaintext flash; cars retaining contacts, call logs, garage codes, and home location; printers and copiers storing scanned documents. Buyers, dumpster-divers, and refurbishers recover this routinely with free tools. Encryption-before-wipe reduces this to near zero for computers and phones — but IoT gear and vehicles rarely support real sanitization, so the residual is: assume anything 'smart' you give away may still remember you.",
+      "sources": [
+        {
+          "title": "NIST SP 800-88 Rev.1 — media sanitization guidelines",
+          "url": "https://csrc.nist.gov/pubs/sp/800/88/r1/final",
+          "kind": "docs"
+        }
+      ]
+    }
+  ],
+  "actors": [
+    {
+      "id": "advertiser",
+      "label": "Advertiser / surveillance-capitalism",
+      "tierFloor": 1
+    },
+    {
+      "id": "broker",
+      "label": "Data broker / aggregator",
+      "tierFloor": 2
+    },
+    {
+      "id": "acquaintance",
+      "label": "Acquaintance / employer / online mob",
+      "tierFloor": 3
+    },
+    {
+      "id": "stalker",
+      "label": "Stalker / abusive partner / doxxer",
+      "tierFloor": 3
+    },
+    {
+      "id": "criminal",
+      "label": "Fraudster / organized crime",
+      "tierFloor": 2
+    },
+    {
+      "id": "local-le",
+      "label": "Local law enforcement",
+      "tierFloor": 4
+    },
+    {
+      "id": "federal",
+      "label": "Federal / national agency (e.g. ICE, FBI)",
+      "tierFloor": 4
+    },
+    {
+      "id": "state-actor",
+      "label": "Sophisticated / foreign state",
+      "tierFloor": 5
+    },
+    {
+      "id": "platform",
+      "label": "Platform / employer / institution you're inside",
+      "tierFloor": 2
+    }
+  ],
+  "sourceNote": "Each node may carry sources[]: {title, url, kind}. kind in {primary, docs, research, news, org, reference}. These power click-through references in the app so users can verify and self-research."
+}

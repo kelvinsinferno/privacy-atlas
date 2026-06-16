@@ -1,0 +1,7 @@
+# Normalize line endings to LF repo-wide. Prevents the autocrlf CRLF/LF churn
+# (the recurring "LF will be replaced by CRLF" warnings) and keeps bake-written
+# data files (graph.json, community-*.json) producing clean, content-only diffs.
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.ico binary

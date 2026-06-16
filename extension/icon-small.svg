@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
+  <rect width="160" height="160" fill="#0b0e13"/>
+  <!-- Bold small-size globe: brighter ring + 2 meridians + lit path + enlarged domain nodes.
+       Same mark as app/icon.svg, tuned for legibility at 16-32px. Globe scaled up to fill the frame. -->
+  <g transform="translate(80,80) scale(0.92)">
+    <circle cx="0" cy="0" r="78" fill="none" stroke="#5fd3c8" stroke-width="5"/>
+    <ellipse cx="0" cy="0" rx="34" ry="78" fill="none" stroke="#2a5d63" stroke-width="4"/>
+    <ellipse cx="0" cy="0" rx="78" ry="34" fill="none" stroke="#2a5d63" stroke-width="4"/>
+    <line x1="0" y1="-78" x2="60.1" y2="-19.1" stroke="#5fd3c8" stroke-width="5.5"/>
+    <circle cx="0" cy="-78" r="13" fill="#5fd3c8"/>
+    <circle cx="60.1" cy="-19.1" r="11" fill="#f0a868"/>
+    <circle cx="24" cy="55.2" r="10" fill="#8ce29a"/>
+    <circle cx="-51.4" cy="43.6" r="11" fill="#7fb2ff"/>
+  </g>
+</svg>

@@ -1,0 +1,28 @@
+# LOCAL DEV ONLY — a Postgres + a Neon HTTP proxy so the app's Neon serverless
+# driver (which speaks HTTP, not raw Postgres) can run against a local database.
+#   docker compose -f docker-compose.dev.yml up -d
+# Then set DATABASE_URL=postgres://postgres:postgres@db.localtest.me:5432/main and
+# NEON_LOCAL=1 in .env.local. (db.localtest.me resolves to 127.0.0.1.)
+services:
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: main
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d main"]
+      interval: 3s
+      timeout: 3s
+      retries: 10
+  neon-proxy:
+    image: ghcr.io/timowilhelm/local-neon-http-proxy:main
+    environment:
+      PG_CONNECTION_STRING: postgres://postgres:postgres@postgres:5432/main
+    ports:
+      - "4444:4444"
+    depends_on:
+      postgres:
+        condition: service_healthy

@@ -1,0 +1,17 @@
+* { box-sizing: border-box; }
+::-webkit-scrollbar { width: 9px; height: 9px; }
+::-webkit-scrollbar-track { background: #090b10; }
+::-webkit-scrollbar-thumb { background: #232a36; border-radius: 4px; }
+::selection { background: #2a5d63; color: #fff; }
+input::placeholder { color: #7e8798; }
+@media (hover: hover) {
+  button:hover { filter: brightness(1.25); }
+}
+button { touch-action: manipulation; }   /* no 300ms tap delay */
+* { -webkit-tap-highlight-color: rgba(95, 211, 200, 0.15); }
+a:hover { border-color: #2a5d63 !important; }
+[data-pi]:hover { border-left-color: #5fd3c8 !important; background: #10141b !important; }
+.pa-chip { transition: border-color .12s ease, background .12s ease; }
+.pa-chip:hover { border-color: var(--dc) !important; background: #0e1620 !important; }
+.tabs-scroll::-webkit-scrollbar { display: none; }
+.tabs-scroll { -ms-overflow-style: none; scrollbar-width: none; }

@@ -1,0 +1,14 @@
+{
+  "categories": {
+    "advertising": ["T-BIDSTREAM", "T-BROKER", "T-PATTERN-OF-LIFE"],
+    "analytics": ["T-TELEMETRY", "T-INFERENCE"],
+    "fingerprinting": ["T-FINGERPRINT"],
+    "session-replay": ["T-BEHAVIORAL-DIGITAL"],
+    "social": ["T-BROKER", "T-SCRAPE"]
+  },
+  "behavioral": {
+    "canvas.toDataURL": ["T-FINGERPRINT"],
+    "canvas.getImageData": ["T-FINGERPRINT"],
+    "webgl.getParameter": ["T-FINGERPRINT"]
+  }
+}

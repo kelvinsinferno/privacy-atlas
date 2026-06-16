@@ -1,0 +1,12 @@
+<!doctype html>
+<html><head><meta charset="utf-8" /><title>tracker fixture</title></head>
+<body>
+  <h1>fixture</h1>
+  <!-- known tracker hosts from the dataset; requests fail but appear as resource entries -->
+  <img src="https://google-analytics.com/collect?v=1" alt="" />
+  <!-- advertising tracker: adds T-BIDSTREAM, T-BROKER, T-PATTERN-OF-LIFE → ensures >3 distinct threats for cap test -->
+  <img src="https://doubleclick.net/pixel?id=1" alt="" />
+  <script>
+    try { HTMLCanvasElement.prototype.toDataURL.call(document.createElement("canvas")); } catch (e) {}
+  </script>
+</body></html>
