@@ -3,7 +3,7 @@ import { defineConfig } from "wxt";
 export default defineConfig({
   manifest: {
     name: "Privacy Atlas",
-    description: "Privacy Atlas — see what's tracking you on any page and the move that defends it. On-device, no blocking, nothing leaves your browser.",
+    description: "See what's tracking you on any page and the move that defends it. On-device, no blocking, nothing leaves your browser.",
     permissions: ["storage", "scripting"],
     host_permissions: ["<all_urls>"],
     action: {
