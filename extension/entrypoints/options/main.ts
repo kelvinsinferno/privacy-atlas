@@ -10,7 +10,7 @@ async function render() {
   app.innerHTML = `
     <div style="margin-bottom:6px;">${BRAND_HEADER_HTML}</div>
     <div style="font-family:${FONT.mono};font-size:11px;letter-spacing:1.1px;text-transform:uppercase;color:${C.muted2};margin-bottom:14px;">Settings</div>
-    <p style="color:${C.muted};line-height:1.6;">All detection runs on your device. The lens never sends URLs or page content anywhere, keeps no history of the sites you visit, and only opens a page when you click "open in Atlas". <a href="https://github.com/" target="_blank" rel="noopener" style="color:${C.teal};">Source</a>.</p>
+    <p style="color:${C.muted};line-height:1.6;">All detection runs on your device. The lens never sends URLs or page content anywhere, keeps no history of the sites you visit, and only opens a page when you click "open in Atlas". <a href="https://github.com/kelvinsinferno/privacy-atlas" target="_blank" rel="noopener" style="color:${C.teal};">Source</a>.</p>
     <h2 style="font-family:${FONT.mono};font-size:11px;letter-spacing:1.1px;text-transform:uppercase;color:${C.muted2};margin-top:20px;">Alert types</h2>
     ${LEAK_CLASSES.map((lc) => {
       const quieted = (s.dismissals[lc] ?? 0) >= 3;
