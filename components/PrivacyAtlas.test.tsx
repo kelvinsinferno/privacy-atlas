@@ -33,6 +33,12 @@ test("welcome panel renders the stacked logo when nothing is selected", () => {
   expect(screen.getByText(/HOW TO EXPLORE/)).toBeInTheDocument();
 });
 
+test("header statline links to the privacy policy", () => {
+  render(<PrivacyAtlas />);
+  const link = screen.getByRole("link", { name: /privacy policy/i });
+  expect(link).toHaveAttribute("href", "/privacy");
+});
+
 test("tab buttons have role=tab and active tab has aria-selected", () => {
   render(<PrivacyAtlas />);
   const tabs = screen.getAllByRole("tab");

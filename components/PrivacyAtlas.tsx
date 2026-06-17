@@ -384,7 +384,7 @@ export default function PrivacyAtlas() {
           </a>
         </div>
         <div style={S.statline}>
-          {GRAPH.nodes.length} moves · {GRAPH.threats.length} threats · {GRAPH.edges.length} links · seed v{GRAPH.version} · <span style={{ color: "#f0a868" }}>community-editable</span> · <a href="https://github.com/kelvinsinferno/privacy-atlas" target="_blank" rel="noopener noreferrer" style={{ color: "#5fd3c8", textDecoration: "none" }}>source ↗ (AGPL-3.0)</a>
+          {GRAPH.nodes.length} moves · {GRAPH.threats.length} threats · {GRAPH.edges.length} links · seed v{GRAPH.version} · <span style={{ color: "#f0a868" }}>community-editable</span> · <a href="https://github.com/kelvinsinferno/privacy-atlas" target="_blank" rel="noopener noreferrer" style={{ color: "#5fd3c8", textDecoration: "none" }}>source ↗ (AGPL-3.0)</a> · <a href="/privacy" style={{ color: "#5fd3c8", textDecoration: "none" }}>privacy policy</a>
         </div>
       </header>
 
