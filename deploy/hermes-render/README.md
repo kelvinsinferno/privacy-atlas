@@ -18,11 +18,11 @@ Blueprint defaults in this repo:
 - Runtime: Docker
 - Dockerfile path: `deploy/hermes-render/Dockerfile`
 - Docker build context directory: repository root
-- Plan: `starter` so webhook delivery is not lost to free-tier sleeping
+- Plan: `free` in `render.yaml` because the current Render workspace rejected `starter` creation until billing is attached. Upgrade the created service to `starter` in Render after billing is attached if reliable real-time webhooks matter.
 - Health check path: `/health`
 - Custom domain: `hermes.privacyatlas.xyz`
 
-If you intentionally want the free tier, change `plan: starter` to `plan: free` in `render.yaml` before creating the Blueprint. Free tier sleeps and can miss webhook POSTs; queue polling still catches dropped work if polling is enabled and the service is awake.
+Free tier sleeps and can miss webhook POSTs; queue polling still catches dropped work if polling is enabled and the service is awake.
 
 ## Required environment variables
 

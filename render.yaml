@@ -3,7 +3,10 @@ services:
     runtime: docker
     name: privacy-atlas-hermes
     region: oregon
-    plan: starter
+    # Created as free because the Render API returned "Payment information is
+    # required" for starter on this workspace. Upgrade this service to starter
+    # in Render after billing is attached if reliable real-time webhooks matter.
+    plan: free
     branch: main
     dockerfilePath: deploy/hermes-render/Dockerfile
     dockerContext: .
