@@ -10,15 +10,19 @@ https://hermes.privacyatlas.xyz/webhooks/privacy-atlas
 
 ## Render service settings
 
-Create a new Render **Web Service** from this repository.
+Create a new Render **Blueprint** from this repository. The root `render.yaml` defines the service.
 
-Recommended settings:
+Blueprint defaults in this repo:
 
+- Service name: `privacy-atlas-hermes`
 - Runtime: Docker
 - Dockerfile path: `deploy/hermes-render/Dockerfile`
 - Docker build context directory: repository root
-- Plan: paid/starter if real-time webhooks matter. Free tier sleeps and can miss webhook POSTs; queue polling still catches dropped work if polling is enabled and the service is awake.
+- Plan: `starter` so webhook delivery is not lost to free-tier sleeping
 - Health check path: `/health`
+- Custom domain: `hermes.privacyatlas.xyz`
+
+If you intentionally want the free tier, change `plan: starter` to `plan: free` in `render.yaml` before creating the Blueprint. Free tier sleeps and can miss webhook POSTs; queue polling still catches dropped work if polling is enabled and the service is awake.
 
 ## Required environment variables
 

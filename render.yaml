@@ -1,0 +1,27 @@
+services:
+  - type: web
+    runtime: docker
+    name: privacy-atlas-hermes
+    region: oregon
+    plan: starter
+    branch: main
+    dockerfilePath: deploy/hermes-render/Dockerfile
+    dockerContext: .
+    healthCheckPath: /health
+    domains:
+      - hermes.privacyatlas.xyz
+    envVars:
+      - key: MAINTAINER_API_KEY
+        sync: false
+      - key: HERMES_WEBHOOK_SECRET
+        sync: false
+      - key: HERMES_MODEL_PROVIDER
+        value: openrouter
+      - key: HERMES_MODEL
+        value: anthropic/claude-sonnet-4
+      - key: OPENROUTER_API_KEY
+        sync: false
+      - key: ENABLE_MAINTAINER_POLL
+        value: "true"
+      - key: MAINTAINER_POLL_SECONDS
+        value: "1800"
