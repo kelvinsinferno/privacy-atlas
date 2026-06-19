@@ -16,10 +16,10 @@ services:
       - key: HERMES_WEBHOOK_SECRET
         sync: false
       - key: HERMES_MODEL_PROVIDER
-        value: openrouter
+        value: xai
       - key: HERMES_MODEL
-        value: anthropic/claude-sonnet-4
-      - key: OPENROUTER_API_KEY
+        value: grok-4.3
+      - key: XAI_API_KEY
         sync: false
       - key: ENABLE_MAINTAINER_POLL
         value: "true"

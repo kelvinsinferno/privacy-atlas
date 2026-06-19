@@ -31,12 +31,12 @@ Set these in the Render service dashboard:
 ```text
 MAINTAINER_API_KEY=<same key used by /api/maintainer/* and /mcp-maintainer>
 HERMES_WEBHOOK_SECRET=<same secret configured in Vercel>
-HERMES_MODEL_PROVIDER=openrouter
-HERMES_MODEL=anthropic/claude-sonnet-4
-OPENROUTER_API_KEY=<model provider key>
+HERMES_MODEL_PROVIDER=xai
+HERMES_MODEL=grok-4.3
+XAI_API_KEY=*** provider key from .env.vercel>
 ```
 
-You may use another Hermes-supported provider instead, for example `anthropic` with `ANTHROPIC_API_KEY`, but Render cannot use the local desktop's OpenAI Codex OAuth login. A server-side API key or OAuth credential configured for the Render environment is required.
+You may use another Hermes-supported provider instead, for example `openrouter` with `OPENROUTER_API_KEY` or `anthropic` with `ANTHROPIC_API_KEY`, but Render cannot use the local desktop's OpenAI Codex OAuth login. A server-side API key or OAuth credential configured for the Render environment is required.
 
 Optional polling backstop:
 

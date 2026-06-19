@@ -5,8 +5,8 @@ set -euo pipefail
 : "${PORT:=10000}"
 : "${WEBHOOK_PORT:=$PORT}"
 : "${WEBHOOK_HOST:=0.0.0.0}"
-: "${HERMES_MODEL_PROVIDER:=openrouter}"
-: "${HERMES_MODEL:=anthropic/claude-sonnet-4}"
+: "${HERMES_MODEL_PROVIDER:=xai}"
+: "${HERMES_MODEL:=grok-4.3}"
 : "${HERMES_WEBHOOK_SECRET:?HERMES_WEBHOOK_SECRET is required}"
 : "${MAINTAINER_API_KEY:?MAINTAINER_API_KEY is required}"
 
