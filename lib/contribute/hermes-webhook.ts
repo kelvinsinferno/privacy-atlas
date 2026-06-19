@@ -21,9 +21,15 @@ export async function dispatchHermesEvent(event: HermesEvent): Promise<void> {
       method: "POST",
       headers: {
         "content-type": "application/json",
+        // Hermes's generic webhook adapter validates GitHub-style HMAC
+        // signatures, so send the canonical header it already accepts.
+        "x-hub-signature-256": `sha256=${sig}`,
+        // Keep the Atlas-specific headers for audit/debugging and future
+        // custom receivers. The body HMAC is the same value.
         "x-pa-signature": `sha256=${sig}`,
         "x-pa-timestamp": String(ts),
         "x-pa-delivery": deliveryId,
+        "x-request-id": deliveryId,
       },
       body,
     });

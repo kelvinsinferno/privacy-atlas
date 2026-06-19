@@ -29,9 +29,11 @@ describe("dispatchHermesEvent", () => {
     expect(typeof payload.ts).toBe("number");
     expect(typeof payload.deliveryId).toBe("string");
     const expected = "sha256=" + createHmac("sha256", "shh").update(init.body).digest("hex");
+    expect(init.headers["x-hub-signature-256"]).toBe(expected);
     expect(init.headers["x-pa-signature"]).toBe(expected);
     expect(init.headers["x-pa-timestamp"]).toBe(String(payload.ts));
     expect(init.headers["x-pa-delivery"]).toBe(payload.deliveryId);
+    expect(init.headers["x-request-id"]).toBe(payload.deliveryId);
   });
   it("swallows a fetch failure (fire-and-forget)", async () => {
     process.env.HERMES_WEBHOOK_URL = "http://hermes.test/hook";
