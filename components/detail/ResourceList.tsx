@@ -86,7 +86,16 @@ export default function ResourceList({ nodeId, setContributions }: ResourceListP
       {/* seed resources from RESOURCES (static, local-first) — clickable affiliate links + a VoteControl */}
       {seed.map((r: any, i: number) => (
         <div key={"seed-" + i} style={{ ...S.resItem, display: "block" }}>
-          <a href={affiliate(r.url)} target="_blank" rel="noopener noreferrer sponsored" style={{ display: "flex", alignItems: "center", gap: 8, textDecoration: "none" }}>
+          <a href={affiliate(r.url)} target="_blank" rel="noopener noreferrer sponsored" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
+            {r.imageUrl && (
+              // eslint-disable-next-line @next/next/no-img-element -- local SVG thumbnails are tiny decorative resource-card art; next/image adds no value here.
+              <img
+                src={r.imageUrl}
+                alt={r.imageAlt || r.name}
+                loading="lazy"
+                style={{ width: 64, height: 64, objectFit: "cover", borderRadius: 12, border: "1px solid #1d2430", background: "#0b0f16", flexShrink: 0 }}
+              />
+            )}
             <span style={{ ...S.resType, color: RTYPE_C[r.type] || "#9aa0b5", borderColor: "#1d2430" }}>{RTYPE_BADGE[r.type] || "LINK"}{r.price ? " " + r.price : ""}</span>
             <span style={{ flex: 1, minWidth: 0 }}>
               <span style={{ color: "#e4e8f0", fontSize: 12.5 }}>{r.name}</span>
