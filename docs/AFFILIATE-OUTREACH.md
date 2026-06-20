@@ -17,6 +17,16 @@ Affiliate outreach must not change the Atlas recommendation standard:
 5. Prefer programs with transparent pricing, clear cancellation, and no dark patterns.
 6. Keep an audit trail: who was contacted, why they fit, what terms were offered, and whether accepted/rejected.
 
+
+## Active affiliate relationships
+
+### Amazon Associates
+
+- Tracking ID: `privacyatlas-20`
+- Use case: explicit fallback for privacy/security hardware, books, radios, satellite communicators, Faraday gear, hardware keys, and similar tools that support a specific Atlas move.
+- Implementation rule: do **not** blanket-tag all Amazon URLs. The current `data/affiliate.ts` helper only tags Amazon links that intentionally opt in with `pa_affiliate=amazon`; neutral/help links stay untagged.
+- Disclosure: Amazon links must be rendered/disclosed as affiliate links wherever surfaced to readers.
+
 ## Local helper
 
 Use the non-secret helper script:

@@ -68,10 +68,11 @@ I can fill the privacy/site-specific parts once the account/application flow is 
 - Terms noted: Low single-digit % typical for electronics
 - Why queued: likely requires account/admin/tax/payment details or affiliate-network login.
 
-## Amazon Associates (umbrella)
+## Completed: Amazon Associates (umbrella)
 
 - Signup: https://affiliate-program.amazon.com
 - Network/type: Amazon Associates
-- Atlas fit: `strong-2fa` (Add 2FA, passkeys & hardware keys), `faraday` (Block your devices' signals (Faraday)), `satellite-messaging` (Satellite messaging (TRAP)), `home-address-ghost` (Make your home address unfindable), `exposure-inventory` (Map where your data leaks (exposure inventory)), `offgrid-mesh-radio` (Off-grid LoRa mesh (Meshtastic/MeshCore)), `licensed-radio` (Ham / GMRS / CB radio), `hf-long-range` (HF / NVIS long-range radio)
-- Terms noted: ~3–4.5% by category; commission on entire cart
-- Why queued: likely requires account/admin/tax/payment details or affiliate-network login.
+- Tracking ID: `privacyatlas-20`
+- Atlas fit: explicit fallback for privacy/security hardware, books, radios, satellite communicators, Faraday gear, hardware keys, and other concrete tools that support a specific Atlas move.
+- Terms noted: category-dependent Amazon Associates commissions; commission on qualifying purchases under Amazon terms.
+- Status: account/application completed by owner on 2026-06-20. Site integration is opt-in only: Amazon URLs are tagged only when a resource intentionally includes `pa_affiliate=amazon`, so neutral help links remain unmonetized.

@@ -355,7 +355,7 @@
     "Program signup URL": "https://affiliate-program.amazon.com",
     "Contact (if no program)": "Reseller/partner route: yubico.com/support/become-a-partner",
     "Notes / next step": "Yubico officially retired its own affiliate program and points affiliates to Amazon Associates. Verified Jun 2026.",
-    "Status": "",
+    "Status": "amazon_fallback_available privacyatlas-20 2026-06-20",
     "node_ids": [
       "strong-2fa"
     ],
@@ -972,8 +972,8 @@
     "Commission & terms": "~3–4.5% by category; commission on entire cart",
     "Program signup URL": "https://affiliate-program.amazon.com",
     "Contact (if no program)": "",
-    "Notes / next step": "ONE signup covers every product the Atlas links that's also sold on Amazon. Highest-leverage first move.",
-    "Status": "",
+    "Notes / next step": "Amazon Associates account created; tracking ID privacyatlas-20. Use only as an explicit fallback for privacy/security hardware/books/resources, not blanket monetization of all Amazon links.",
+    "Status": "approved tracking_id=privacyatlas-20 2026-06-20",
     "node_ids": [
       "strong-2fa",
       "faraday",

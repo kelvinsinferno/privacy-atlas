@@ -41,3 +41,16 @@ test("affiliate preserves query params and fragments on valid https URLs", () =>
   const url = "https://example.com/page?foo=bar#section";
   expect(affiliate(url)).toBe(url);
 });
+
+test("affiliate leaves ordinary Amazon links untagged unless explicitly opted in", () => {
+  const url = "https://www.amazon.com/alexaprivacy";
+  expect(affiliate(url)).toBe(url);
+});
+
+test("affiliate tags explicit Amazon opt-in links and removes the internal marker", () => {
+  const result = affiliate("https://www.amazon.com/dp/B000000000?pa_affiliate=amazon&foo=bar#details");
+  expect(result).toContain("tag=privacyatlas-20");
+  expect(result).toContain("foo=bar");
+  expect(result).toContain("#details");
+  expect(result).not.toContain("pa_affiliate");
+});

@@ -132,7 +132,7 @@ Pitch hook: Privacy Atlas maps this to **Satellite messaging (TRAP)** — Garmin
 - Terms: ~3–4.5% by category; commission on entire cart
 - Signup URL: https://affiliate-program.amazon.com
 - Contact: TBD
-- Notes: ONE signup covers every product the Atlas links that's also sold on Amazon. Highest-leverage first move.
+- Notes: Amazon Associates account created; tracking ID `privacyatlas-20`. Use as an explicit fallback for relevant privacy/security hardware/books/resources only, not blanket monetization.
 
 Pitch hook: Privacy Atlas maps this to **Add 2FA, passkeys & hardware keys** — Prefer app/hardware factors over SMS, which re-ties the account to a phone number.
 
