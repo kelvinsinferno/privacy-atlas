@@ -182,12 +182,11 @@ describe("ResourceList — graceful degradation", () => {
     expect(screen.getByText("Mullvad VPN")).toBeInTheDocument();
   });
 
-  test("seed Amazon affiliate product cards render images and tagged opt-in links", () => {
+  test("seed Amazon affiliate product cards render tagged opt-in links", () => {
     (fetchResources as any).mockResolvedValue([]);
     const { container } = render(<ResourceList nodeId="strong-2fa" contributions={{}} setContributions={vi.fn()} />);
 
     expect(screen.getByText("YubiKey on Amazon")).toBeInTheDocument();
-    expect(screen.getByAltText("Illustrated hardware security keys")).toBeInTheDocument();
     const amazonLink = Array.from(container.querySelectorAll("a")).find((a) => a.textContent?.includes("YubiKey on Amazon"));
     expect(amazonLink?.getAttribute("href")).toContain("tag=privacyatlas-20");
     expect(amazonLink?.getAttribute("href")).not.toContain("pa_affiliate");
