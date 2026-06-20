@@ -1,0 +1,230 @@
+[
+  {
+    "product": "Privacy.com (masked cards)",
+    "company": "Privacy.com (Lithic consumer arm)",
+    "to": "support@privacy.com",
+    "subject": "Privacy Atlas partnership inquiry — Privacy.com",
+    "body_file": "data\\outreach\\emails\\privacy-com-masked-cards.txt",
+    "node_ids": [
+      "masked-cards"
+    ],
+    "status": "auto_ack_received",
+    "sent_at_utc": "2026-06-20T00:36:33Z",
+    "exit_code": 0,
+    "stdout": "sent_to=support@privacy.com",
+    "stderr": ""
+  },
+  {
+    "product": "SLNT (Silent Pocket faraday gear)",
+    "company": "SLNT (DGS Group)",
+    "to": "info@slnt.com",
+    "subject": "Privacy Atlas partnership inquiry — SLNT",
+    "body_file": "data\\outreach\\emails\\slnt-silent-pocket-faraday-gear.txt",
+    "node_ids": [
+      "faraday",
+      "signal-blocking-edc"
+    ],
+    "status": "sent",
+    "sent_at_utc": "2026-06-20T00:36:38Z",
+    "exit_code": 0,
+    "stdout": "sent_to=info@slnt.com",
+    "stderr": ""
+  },
+  {
+    "product": "Mission Darkness (faraday bags)",
+    "company": "MOS Equipment",
+    "to": "info@mosequipment.com",
+    "subject": "Privacy Atlas partnership inquiry — Mission Darkness",
+    "body_file": "data\\outreach\\emails\\mission-darkness-faraday-bags.txt",
+    "node_ids": [
+      "faraday",
+      "device-disposal"
+    ],
+    "status": "sent",
+    "sent_at_utc": "2026-06-20T00:36:44Z",
+    "exit_code": 0,
+    "stdout": "sent_to=info@mosequipment.com",
+    "stderr": ""
+  },
+  {
+    "product": "OnlyKey",
+    "company": "CryptoTrust LLC",
+    "to": "support@onlykey.io",
+    "subject": "Privacy Atlas partnership inquiry — OnlyKey",
+    "body_file": "data\\outreach\\emails\\onlykey.txt",
+    "node_ids": [
+      "strong-2fa"
+    ],
+    "status": "sent",
+    "sent_at_utc": "2026-06-20T00:36:50Z",
+    "exit_code": 0,
+    "stdout": "sent_to=support@onlykey.io",
+    "stderr": ""
+  },
+  {
+    "product": "Coldcard",
+    "company": "Coinkite Inc.",
+    "to": "support@coinkite.com",
+    "subject": "Privacy Atlas partnership inquiry — Coldcard",
+    "body_file": "data\\outreach\\emails\\coldcard.txt",
+    "node_ids": [
+      "self-custody"
+    ],
+    "status": "auto_ack_received",
+    "sent_at_utc": "2026-06-20T00:36:56Z",
+    "exit_code": 0,
+    "stdout": "sent_to=support@coinkite.com",
+    "stderr": ""
+  },
+  {
+    "product": "MySudo",
+    "company": "Anonyome Labs",
+    "to": "partners@anonyome.com",
+    "subject": "Privacy Atlas partnership inquiry — MySudo",
+    "body_file": "data\\outreach\\emails\\mysudo.txt",
+    "node_ids": [
+      "compartmented-phone",
+      "identity-compartmentalization"
+    ],
+    "status": "bounced",
+    "sent_at_utc": "2026-06-20T00:37:02Z",
+    "exit_code": 0,
+    "stdout": "sent_to=partners@anonyome.com",
+    "stderr": ""
+  },
+  {
+    "product": "Tuta (Tutanota)",
+    "company": "Tutao GmbH",
+    "to": "sales@tuta.com",
+    "subject": "Privacy Atlas partnership inquiry — Tuta",
+    "body_file": "data\\outreach\\emails\\tuta-tutanota.txt",
+    "node_ids": [
+      "private-email"
+    ],
+    "status": "bounced",
+    "sent_at_utc": "2026-06-20T00:37:08Z",
+    "exit_code": 0,
+    "stdout": "sent_to=sales@tuta.com",
+    "stderr": ""
+  },
+  {
+    "product": "NextDNS",
+    "company": "NextDNS Inc.",
+    "to": "hello@nextdns.io",
+    "subject": "Privacy Atlas partnership inquiry — NextDNS",
+    "body_file": "data\\outreach\\emails\\nextdns.txt",
+    "node_ids": [
+      "dns-blocking"
+    ],
+    "status": "bounced",
+    "sent_at_utc": "2026-06-20T00:37:14Z",
+    "exit_code": 0,
+    "stdout": "sent_to=hello@nextdns.io",
+    "stderr": ""
+  },
+  {
+    "product": "addy.io (email aliasing)",
+    "company": "Will Browning (indie)",
+    "to": "support@addy.io",
+    "subject": "Privacy Atlas partnership inquiry — addy.io",
+    "body_file": "data\\outreach\\emails\\addy-io-email-aliasing.txt",
+    "node_ids": [
+      "email-aliasing"
+    ],
+    "status": "bounced",
+    "sent_at_utc": "2026-06-20T00:37:19Z",
+    "exit_code": 0,
+    "stdout": "sent_to=support@addy.io",
+    "stderr": ""
+  },
+  {
+    "product": "Little Snitch",
+    "company": "Objective Development GmbH",
+    "to": "sales@obdev.at",
+    "subject": "Privacy Atlas partnership inquiry — Little Snitch",
+    "body_file": "data\\outreach\\emails\\little-snitch.txt",
+    "node_ids": [
+      "outbound-firewall"
+    ],
+    "status": "bounced",
+    "sent_at_utc": "2026-06-20T00:37:25Z",
+    "exit_code": 0,
+    "stdout": "sent_to=sales@obdev.at",
+    "stderr": ""
+  },
+  {
+    "product": "EasyOptOuts",
+    "company": "EasyOptOuts",
+    "to": "support@easyoptouts.com",
+    "subject": "Privacy Atlas partnership inquiry — EasyOptOuts",
+    "body_file": "data\\outreach\\emails\\easyoptouts.txt",
+    "node_ids": [
+      "data-broker-removal"
+    ],
+    "status": "bounced",
+    "sent_at_utc": "2026-06-20T00:37:31Z",
+    "exit_code": 0,
+    "stdout": "sent_to=support@easyoptouts.com",
+    "stderr": ""
+  },
+  {
+    "product": "Reflectacles (IR-blocking eyewear)",
+    "company": "Reflectacles (Scott Urban)",
+    "to": "info@reflectacles.com",
+    "subject": "Privacy Atlas partnership inquiry — Reflectacles",
+    "body_file": "data\\outreach\\emails\\reflectacles-ir-blocking-eyewear.txt",
+    "node_ids": [
+      "anti-facial-recognition"
+    ],
+    "status": "sent",
+    "sent_at_utc": "2026-06-20T00:37:36Z",
+    "exit_code": 0,
+    "stdout": "sent_to=info@reflectacles.com",
+    "stderr": ""
+  },
+  {
+    "product": "Cap_able (adversarial knitwear)",
+    "company": "Cap_able (Italy)",
+    "to": "info@capable.design",
+    "subject": "Privacy Atlas partnership inquiry — Cap_able",
+    "body_file": "data\\outreach\\emails\\cap-able-adversarial-knitwear.txt",
+    "node_ids": [
+      "anti-facial-recognition"
+    ],
+    "status": "sent",
+    "sent_at_utc": "2026-06-20T00:37:42Z",
+    "exit_code": 0,
+    "stdout": "sent_to=info@capable.design",
+    "stderr": ""
+  },
+  {
+    "product": "Faraday Defense",
+    "company": "Faraday Defense Corp.",
+    "to": "info@faradaydefense.com",
+    "subject": "Privacy Atlas partnership inquiry — Faraday Defense",
+    "body_file": "data\\outreach\\emails\\faraday-defense.txt",
+    "node_ids": [
+      "faraday"
+    ],
+    "status": "sent",
+    "sent_at_utc": "2026-06-20T00:37:47Z",
+    "exit_code": 0,
+    "stdout": "sent_to=info@faradaydefense.com",
+    "stderr": ""
+  },
+  {
+    "product": "Tuta (Tutanota)",
+    "company": "Tutao GmbH",
+    "to": "sales@tutao.de",
+    "subject": "Privacy Atlas partnership inquiry — Tuta",
+    "body_file": "data\\outreach\\emails\tuta-tutanota.txt",
+    "node_ids": [
+      "private-email"
+    ],
+    "sent_at_utc": "2026-06-20T00:41:18Z",
+    "exit_code": 0,
+    "stdout": "sent_to=sales@tutao.de",
+    "stderr": "",
+    "status": "sent_retry_after_bounce"
+  }
+]

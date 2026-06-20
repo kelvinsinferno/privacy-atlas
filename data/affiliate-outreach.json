@@ -196,7 +196,7 @@
     "Program signup URL": "https://www.privacy.com/ (affiliate via support/partnerships)",
     "Contact (if no program)": "partnerships via support@privacy.com",
     "Notes / next step": "Referral verified; formal affiliate terms — confirm directly. Verified Jun 2026 (partial).",
-    "Status": "",
+    "Status": "auto_ack_received support@privacy.com 2026-06-20T00:36:33Z",
     "node_ids": [
       "masked-cards"
     ],
@@ -258,7 +258,7 @@
     "Program signup URL": "https://slnt.com (ask for affiliate program)",
     "Contact (if no program)": "info@slnt.com",
     "Notes / next step": "They demonstrably work with affiliate publishers (Pack Hacker discloses commission + 10% code). Get direct terms.",
-    "Status": "",
+    "Status": "sent info@slnt.com 2026-06-20T00:36:38Z",
     "node_ids": [
       "faraday",
       "signal-blocking-edc"
@@ -293,7 +293,7 @@
     "Program signup URL": "https://missiondarkness.com (affiliate page in footer)",
     "Contact (if no program)": "info@mosequipment.com",
     "Notes / next step": "Affiliate program advertised on their site historically — confirm current status. UNVERIFIED.",
-    "Status": "",
+    "Status": "sent info@mosequipment.com 2026-06-20T00:36:44Z",
     "node_ids": [
       "faraday",
       "device-disposal"
@@ -382,7 +382,7 @@
     "Program signup URL": "",
     "Contact (if no program)": "support@onlykey.io",
     "Notes / next step": "Small vendor; sells via own store + Amazon (Associates fallback). Propose direct deal.",
-    "Status": "",
+    "Status": "sent support@onlykey.io 2026-06-20T00:36:50Z",
     "node_ids": [
       "strong-2fa"
     ],
@@ -409,7 +409,7 @@
     "Program signup URL": "https://coinkite.com (ask re: affiliate)",
     "Contact (if no program)": "support@coinkite.com",
     "Notes / next step": "Coinkite has run an affiliate program; confirm current terms. UNVERIFIED.",
-    "Status": "",
+    "Status": "auto_ack_received support@coinkite.com 2026-06-20T00:36:56Z",
     "node_ids": [
       "self-custody"
     ],
@@ -490,7 +490,7 @@
     "Program signup URL": "",
     "Contact (if no program)": "Partner inquiries: anonyome.com/contact (partners@anonyome.com)",
     "Notes / next step": "Anonyome is B2B-friendly (sells SDKs); a partnership conversation is plausible. Worth direct outreach.",
-    "Status": "",
+    "Status": "bounced partners@anonyome.com 2026-06-20T00:37:02Z",
     "node_ids": [
       "compartmented-phone",
       "identity-compartmentalization"
@@ -525,7 +525,7 @@
     "Program signup URL": "",
     "Contact (if no program)": "sales@tuta.com / press@tuta.com",
     "Notes / next step": "Privacy-purist company; may decline tracking-based affiliate links. Consider asking about untracked discount-code revenue share.",
-    "Status": "",
+    "Status": "bounced sales@tuta.com 2026-06-20T00:37:08Z, sent_retry_after_bounce sales@tutao.de 2026-06-20T00:41:18Z",
     "node_ids": [
       "private-email"
     ],
@@ -552,7 +552,7 @@
     "Program signup URL": "",
     "Contact (if no program)": "hello@nextdns.io",
     "Notes / next step": "Tiny team; direct email is the only route.",
-    "Status": "",
+    "Status": "bounced hello@nextdns.io 2026-06-20T00:37:14Z",
     "node_ids": [
       "dns-blocking"
     ],
@@ -579,7 +579,7 @@
     "Program signup URL": "",
     "Contact (if no program)": "support@addy.io",
     "Notes / next step": "Indie developer; propose simple rev-share or untracked code.",
-    "Status": "",
+    "Status": "bounced support@addy.io 2026-06-20T00:37:19Z",
     "node_ids": [
       "email-aliasing"
     ],
@@ -633,7 +633,7 @@
     "Program signup URL": "",
     "Contact (if no program)": "sales@obdev.at",
     "Notes / next step": "Small Austrian shop; direct outreach.",
-    "Status": "",
+    "Status": "bounced sales@obdev.at 2026-06-20T00:37:25Z",
     "node_ids": [
       "outbound-firewall"
     ],
@@ -722,7 +722,7 @@
     "Program signup URL": "",
     "Contact (if no program)": "support@easyoptouts.com",
     "Notes / next step": "Budget option ($19.99/yr) — thin margins may limit commissions; still worth an email.",
-    "Status": "",
+    "Status": "bounced support@easyoptouts.com 2026-06-20T00:37:31Z",
     "node_ids": [
       "data-broker-removal"
     ],
@@ -749,7 +749,7 @@
     "Program signup URL": "",
     "Contact (if no program)": "info@reflectacles.com",
     "Notes / next step": "Indie maker, mission-aligned; very likely open to a direct arrangement.",
-    "Status": "",
+    "Status": "sent info@reflectacles.com 2026-06-20T00:37:36Z",
     "node_ids": [
       "anti-facial-recognition"
     ],
@@ -803,7 +803,7 @@
     "Program signup URL": "",
     "Contact (if no program)": "info@capable.design",
     "Notes / next step": "Fashion-tech startup; affiliate or lookbook collab both plausible.",
-    "Status": "",
+    "Status": "sent info@capable.design 2026-06-20T00:37:42Z",
     "node_ids": [
       "anti-facial-recognition"
     ],
@@ -884,7 +884,7 @@
     "Program signup URL": "",
     "Contact (if no program)": "info@faradaydefense.com",
     "Notes / next step": "Amazon Associates fallback works today.",
-    "Status": "",
+    "Status": "sent info@faradaydefense.com 2026-06-20T00:37:47Z",
     "node_ids": [
       "faraday"
     ],

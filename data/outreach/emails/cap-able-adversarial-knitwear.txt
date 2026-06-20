@@ -1,0 +1,24 @@
+Hi Cap_able (Italy) team,
+
+I help maintain Privacy Atlas, a public knowledge graph of concrete privacy moves for ordinary users: https://privacyatlas.xyz
+
+I’m reaching out about Cap_able (adversarial knitwear). In the Atlas, it maps most directly to: Defeat facial recognition.
+
+The reason it may be a fit: Occlude or disrupt face capture.
+
+We only pursue affiliate or partner relationships for tools that genuinely fit the graph and that we can recommend honestly alongside free/open alternatives. We also disclose affiliate relationships clearly and keep caveats in place even when a relationship exists.
+
+A few questions before we consider adding any commercial relationship:
+
+1. Do you currently have an affiliate, referral, discount-code, or partner program suitable for a privacy education site?
+2. What tracking parameters, coupon rules, or disclosure language do you require?
+3. Are there any data-sharing or analytics terms we should understand before linking?
+4. Can links point to the normal product page rather than a special landing page?
+5. Do you have a free tier, trial, open-source edition, or user discount we should mention first?
+
+If this is not the right inbox, could you point me to the right partnerships/affiliate contact?
+
+Best,
+Privacy Atlas Partnerships
+partnerships@privacyatlas.xyz
+https://privacyatlas.xyz
