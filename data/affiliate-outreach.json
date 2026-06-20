@@ -1,0 +1,1048 @@
+[
+  {
+    "Product / Service": "Proton Mail / Proton VPN / SimpleLogin",
+    "Company": "Proton AG",
+    "Website": "proton.me",
+    "Recommended for (nodes)": "private-email, network-privacy, email-aliasing",
+    "Affiliate program?": "YES",
+    "Network / type": "Proton Partners Program (CJ Affiliate / Involve Asia)",
+    "Commission & terms": "Up to 100% first month; 40% 1–2yr plans; 30% renewals; 30-day cookie",
+    "Program signup URL": "https://proton.me/partners",
+    "Contact (if no program)": "",
+    "Notes / next step": "One program covers Mail, VPN, Pass, Drive AND SimpleLogin. Influencer contact: influencers@proton.ch. Verified Jun 2026.",
+    "Status": "",
+    "node_ids": [
+      "private-email",
+      "network-privacy",
+      "email-aliasing"
+    ],
+    "node_details": [
+      {
+        "id": "private-email",
+        "label": "Switch to a private email provider",
+        "tier": 3,
+        "domain": "digital",
+        "summary": "Move primary email off ad-funded ecosystems toward a privacy-respecting provider."
+      },
+      {
+        "id": "network-privacy",
+        "label": "Shield your traffic (VPN & DNS)",
+        "tier": 3,
+        "domain": "digital",
+        "summary": "Control who can see your traffic and lookups."
+      },
+      {
+        "id": "email-aliasing",
+        "label": "Mask your email with aliases",
+        "tier": 2,
+        "domain": "digital",
+        "summary": "Use a different email for each service, so your address can't be used to link your accounts. Real aliases beat plus-addressing (name+tag@), which trackers just strip off."
+      }
+    ],
+    "missing_nodes": [],
+    "priority_bucket": "apply_now"
+  },
+  {
+    "Product / Service": "1Password",
+    "Company": "AgileBits Inc.",
+    "Website": "1password.com",
+    "Recommended for (nodes)": "password-manager",
+    "Affiliate program?": "YES",
+    "Network / type": "CJ Affiliate",
+    "Commission & terms": "$2 per signup + 25% of first payment; 45-day cookie",
+    "Program signup URL": "https://1password.com/affiliate/",
+    "Contact (if no program)": "",
+    "Notes / next step": "Apply through CJ. Verified Jun 2026.",
+    "Status": "",
+    "node_ids": [
+      "password-manager"
+    ],
+    "node_details": [
+      {
+        "id": "password-manager",
+        "label": "Password manager",
+        "tier": 1,
+        "domain": "foundation",
+        "summary": "The bedrock. It's also where you safely keep every freeze PIN, alias login, and document the other moves create."
+      }
+    ],
+    "missing_nodes": [],
+    "priority_bucket": "apply_now"
+  },
+  {
+    "Product / Service": "Optery",
+    "Company": "Optery, Inc.",
+    "Website": "optery.com",
+    "Recommended for (nodes)": "data-broker-removal",
+    "Affiliate program?": "YES",
+    "Network / type": "In-house (FirstPromoter-style)",
+    "Commission & terms": "30% commission for 12 months; custom coupon codes",
+    "Program signup URL": "https://www.optery.com/affiliate-program/",
+    "Contact (if no program)": "",
+    "Notes / next step": "Separate casual Referral Program also exists (also 30%). Consumer Reports #1 rated — strong fit. Verified Jun 2026.",
+    "Status": "",
+    "node_ids": [
+      "data-broker-removal"
+    ],
+    "node_details": [
+      {
+        "id": "data-broker-removal",
+        "label": "Remove yourself from people-search sites",
+        "tier": 3,
+        "domain": "digital",
+        "summary": "Remove yourself from people-search sites. Effort varies enormously by jurisdiction."
+      }
+    ],
+    "missing_nodes": [],
+    "priority_bucket": "apply_now"
+  },
+  {
+    "Product / Service": "Trezor",
+    "Company": "SatoshiLabs / Trezor Company",
+    "Website": "trezor.io",
+    "Recommended for (nodes)": "self-custody",
+    "Affiliate program?": "YES",
+    "Network / type": "In-house partner portal",
+    "Commission & terms": "12–15% per sale (tiered, Tier II after 10 conversions); ~30-day cookie; pays EUR/USD/BTC",
+    "Program signup URL": "https://trezor.io/other/partner-portal/for-partners/for-affiliates",
+    "Contact (if no program)": "",
+    "Notes / next step": "Verified Jun 2026.",
+    "Status": "",
+    "node_ids": [
+      "self-custody"
+    ],
+    "node_details": [
+      {
+        "id": "self-custody",
+        "label": "Hold your own crypto keys (self-custody)",
+        "tier": 3,
+        "domain": "economic",
+        "summary": "Hold your own keys; move assets off custodial exchanges. The foundational sovereignty move — without it crypto's privacy ceiling collapses to the custodial (≈ bank) level."
+      }
+    ],
+    "missing_nodes": [],
+    "priority_bucket": "apply_now"
+  },
+  {
+    "Product / Service": "Zenni Optical (IR-blocking glasses)",
+    "Company": "Zenni Optical",
+    "Website": "zennioptical.com",
+    "Recommended for (nodes)": "anti-facial-recognition",
+    "Affiliate program?": "YES",
+    "Network / type": "Impact (Impact Radius)",
+    "Commission & terms": "~3% per sale; 7-day cookie",
+    "Program signup URL": "https://www.zennioptical.com/c/affiliate",
+    "Contact (if no program)": "",
+    "Notes / next step": "Program brought in-house, runs on Impact. Verified Jun 2026.",
+    "Status": "",
+    "node_ids": [
+      "anti-facial-recognition"
+    ],
+    "node_details": [
+      {
+        "id": "anti-facial-recognition",
+        "label": "Defeat facial recognition",
+        "tier": 3,
+        "domain": "biometric",
+        "summary": "Occlude or disrupt face capture. Graded: masks (best) > IR illuminators > subtle landmark makeup > adversarial fashion > CV-dazzle (largely obsolete)."
+      }
+    ],
+    "missing_nodes": [],
+    "priority_bucket": "apply_now"
+  },
+  {
+    "Product / Service": "Anytime Mailbox",
+    "Company": "Anytime Mailbox LLC",
+    "Website": "anytimemailbox.com",
+    "Recommended for (nodes)": "cmra-mail-decoupling, home-address-ghost",
+    "Affiliate program?": "YES",
+    "Network / type": "In-house (Everflow)",
+    "Commission & terms": "$20–25 per renter signup; 30-day cookie",
+    "Program signup URL": "https://www.anytimemailbox.com/affiliate-program",
+    "Contact (if no program)": "",
+    "Notes / next step": "'Highest payouts in the industry' positioning; also a renter referral program. Verified Jun 2026.",
+    "Status": "",
+    "node_ids": [
+      "cmra-mail-decoupling",
+      "home-address-ghost"
+    ],
+    "node_details": [
+      {
+        "id": "cmra-mail-decoupling",
+        "label": "Get a mail address that isn't home (CMRA)",
+        "tier": 2,
+        "domain": "physical",
+        "summary": "A receiving address that isn't your home. The single highest-leverage cross-domain hub."
+      },
+      {
+        "id": "home-address-ghost",
+        "label": "Make your home address unfindable",
+        "tier": 5,
+        "domain": "physical",
+        "summary": "The deep end: no public record, account, or delivery resolves to where you actually sleep."
+      }
+    ],
+    "missing_nodes": [],
+    "priority_bucket": "apply_now"
+  },
+  {
+    "Product / Service": "Privacy.com (masked cards)",
+    "Company": "Privacy.com (Lithic consumer arm)",
+    "Website": "privacy.com",
+    "Recommended for (nodes)": "masked-cards",
+    "Affiliate program?": "YES",
+    "Network / type": "In-house + referral",
+    "Commission & terms": "Referral: $5/$5; affiliate program listed via aggregators",
+    "Program signup URL": "https://www.privacy.com/ (affiliate via support/partnerships)",
+    "Contact (if no program)": "partnerships via support@privacy.com",
+    "Notes / next step": "Referral verified; formal affiliate terms — confirm directly. Verified Jun 2026 (partial).",
+    "Status": "",
+    "node_ids": [
+      "masked-cards"
+    ],
+    "node_details": [
+      {
+        "id": "masked-cards",
+        "label": "Pay with masked / virtual cards",
+        "tier": 2,
+        "domain": "economic",
+        "summary": "Single-use or per-merchant card numbers limit breach blast radius and cross-merchant tracking."
+      }
+    ],
+    "missing_nodes": [],
+    "priority_bucket": "apply_now"
+  },
+  {
+    "Product / Service": "Bitwarden",
+    "Company": "Bitwarden Inc.",
+    "Website": "bitwarden.com",
+    "Recommended for (nodes)": "password-manager (generator)",
+    "Affiliate program?": "YES",
+    "Network / type": "Partner program (affiliate tier reported ~20% first payment)",
+    "Commission & terms": "~20% first payment (aggregator-reported)",
+    "Program signup URL": "https://bitwarden.com/partners/become-a-partner/",
+    "Contact (if no program)": "",
+    "Notes / next step": "Official page emphasizes MSP/reseller; affiliate tier reported by directories — confirm on application. Verified Jun 2026 (partial).",
+    "Status": "",
+    "node_ids": [
+      "password-manager",
+      "unique-passwords"
+    ],
+    "node_details": [
+      {
+        "id": "password-manager",
+        "label": "Password manager",
+        "tier": 1,
+        "domain": "foundation",
+        "summary": "The bedrock. It's also where you safely keep every freeze PIN, alias login, and document the other moves create."
+      },
+      {
+        "id": "unique-passwords",
+        "label": "Unique passwords everywhere",
+        "tier": 1,
+        "domain": "foundation",
+        "summary": "A different random password per account so one breach can't cascade."
+      }
+    ],
+    "missing_nodes": [],
+    "priority_bucket": "apply_now"
+  },
+  {
+    "Product / Service": "SLNT (Silent Pocket faraday gear)",
+    "Company": "SLNT (DGS Group)",
+    "Website": "slnt.com",
+    "Recommended for (nodes)": "faraday, signal-blocking-edc",
+    "Affiliate program?": "YES (unconfirmed terms)",
+    "Network / type": "Affiliate publishers active (Pack Hacker etc.); historically AvantLink",
+    "Commission & terms": "Unknown — negotiate",
+    "Program signup URL": "https://slnt.com (ask for affiliate program)",
+    "Contact (if no program)": "info@slnt.com",
+    "Notes / next step": "They demonstrably work with affiliate publishers (Pack Hacker discloses commission + 10% code). Get direct terms.",
+    "Status": "",
+    "node_ids": [
+      "faraday",
+      "signal-blocking-edc"
+    ],
+    "node_details": [
+      {
+        "id": "faraday",
+        "label": "Block your devices' signals (Faraday)",
+        "tier": 3,
+        "domain": "physical",
+        "summary": "Block device radio emanation (cell/GPS/Wi-Fi/BT/NFC) for phones, key fobs, passports — defeats location broadcast and IMSI-catcher harvesting."
+      },
+      {
+        "id": "signal-blocking-edc",
+        "label": "Signal-blocking everyday carry",
+        "tier": 2,
+        "domain": "physical",
+        "summary": "Wallets, card sleeves, key-fob cases and bags with built-in Faraday/RFID shielding — the wearable, everyday version of the Faraday move. Blocks RFID/NFC skimming of cards & passports and stops key-fob relay theft; phone sleeves cut cellular/GPS/Bluetooth when you want to go dark."
+      }
+    ],
+    "missing_nodes": [],
+    "priority_bucket": "review"
+  },
+  {
+    "Product / Service": "Mission Darkness (faraday bags)",
+    "Company": "MOS Equipment",
+    "Website": "missiondarkness.com",
+    "Recommended for (nodes)": "faraday, device-disposal (transport)",
+    "Affiliate program?": "LIKELY YES",
+    "Network / type": "Advertised on site (Refersion-style)",
+    "Commission & terms": "Unknown — typically 10%+",
+    "Program signup URL": "https://missiondarkness.com (affiliate page in footer)",
+    "Contact (if no program)": "info@mosequipment.com",
+    "Notes / next step": "Affiliate program advertised on their site historically — confirm current status. UNVERIFIED.",
+    "Status": "",
+    "node_ids": [
+      "faraday",
+      "device-disposal"
+    ],
+    "node_details": [
+      {
+        "id": "faraday",
+        "label": "Block your devices' signals (Faraday)",
+        "tier": 3,
+        "domain": "physical",
+        "summary": "Block device radio emanation (cell/GPS/Wi-Fi/BT/NFC) for phones, key fobs, passports — defeats location broadcast and IMSI-catcher harvesting."
+      },
+      {
+        "id": "device-disposal",
+        "label": "Wipe devices before they leave you",
+        "tier": 2,
+        "domain": "digital",
+        "summary": "Get rid of devices without giving away your life. Devices leave with far more than photos: logged-in accounts, saved Wi-Fi passwords, browser sessions, eSIMs, message databases, and — in smart gear and cars — your network credentials, contacts, and location history. The good news: on an ENCRYPTED device, a factory reset destroys the encryption key (crypto-erase), making the data permanently unreadable — free, fast, and NIST-recognized. The whole game is encryption-before-wipe and sign-out-before-reset."
+      }
+    ],
+    "missing_nodes": [],
+    "priority_bucket": "direct_outreach_or_confirm"
+  },
+  {
+    "Product / Service": "Garmin (inReach)",
+    "Company": "Garmin Ltd.",
+    "Website": "garmin.com",
+    "Recommended for (nodes)": "satellite-messaging",
+    "Affiliate program?": "YES",
+    "Network / type": "Network (Impact/Partnerize) + Amazon",
+    "Commission & terms": "Low single-digit % typical for electronics",
+    "Program signup URL": "https://www.garmin.com/en-US/company/affiliate-program/",
+    "Contact (if no program)": "",
+    "Notes / next step": "Big-brand program via network; Amazon Associates fallback. UNVERIFIED terms.",
+    "Status": "",
+    "node_ids": [
+      "satellite-messaging"
+    ],
+    "node_details": [
+      {
+        "id": "satellite-messaging",
+        "label": "Satellite messaging (TRAP)",
+        "tier": 3,
+        "domain": "comms",
+        "summary": "Garmin inReach / phone-to-satellite: terrestrial-independent and excellent for emergencies."
+      }
+    ],
+    "missing_nodes": [],
+    "priority_bucket": "apply_now"
+  },
+  {
+    "Product / Service": "YubiKey",
+    "Company": "Yubico AB",
+    "Website": "yubico.com",
+    "Recommended for (nodes)": "strong-2fa",
+    "Affiliate program?": "NO (direct program retired)",
+    "Network / type": "Route = Amazon Associates",
+    "Commission & terms": "Amazon: up to ~3–4% electronics; commission on whole cart",
+    "Program signup URL": "https://affiliate-program.amazon.com",
+    "Contact (if no program)": "Reseller/partner route: yubico.com/support/become-a-partner",
+    "Notes / next step": "Yubico officially retired its own affiliate program and points affiliates to Amazon Associates. Verified Jun 2026.",
+    "Status": "",
+    "node_ids": [
+      "strong-2fa"
+    ],
+    "node_details": [
+      {
+        "id": "strong-2fa",
+        "label": "Add 2FA, passkeys & hardware keys",
+        "tier": 1,
+        "domain": "foundation",
+        "summary": "Prefer app/hardware factors over SMS, which re-ties the account to a phone number."
+      }
+    ],
+    "missing_nodes": [],
+    "priority_bucket": "do_not_pitch_affiliate"
+  },
+  {
+    "Product / Service": "OnlyKey",
+    "Company": "CryptoTrust LLC",
+    "Website": "onlykey.io",
+    "Recommended for (nodes)": "strong-2fa",
+    "Affiliate program?": "UNKNOWN",
+    "Network / type": "—",
+    "Commission & terms": "—",
+    "Program signup URL": "",
+    "Contact (if no program)": "support@onlykey.io",
+    "Notes / next step": "Small vendor; sells via own store + Amazon (Associates fallback). Propose direct deal.",
+    "Status": "",
+    "node_ids": [
+      "strong-2fa"
+    ],
+    "node_details": [
+      {
+        "id": "strong-2fa",
+        "label": "Add 2FA, passkeys & hardware keys",
+        "tier": 1,
+        "domain": "foundation",
+        "summary": "Prefer app/hardware factors over SMS, which re-ties the account to a phone number."
+      }
+    ],
+    "missing_nodes": [],
+    "priority_bucket": "direct_outreach_or_confirm"
+  },
+  {
+    "Product / Service": "Coldcard",
+    "Company": "Coinkite Inc.",
+    "Website": "coldcard.com",
+    "Recommended for (nodes)": "self-custody",
+    "Affiliate program?": "LIKELY YES",
+    "Network / type": "In-house (Coinkite affiliates)",
+    "Commission & terms": "Historically % or store credit",
+    "Program signup URL": "https://coinkite.com (ask re: affiliate)",
+    "Contact (if no program)": "support@coinkite.com",
+    "Notes / next step": "Coinkite has run an affiliate program; confirm current terms. UNVERIFIED.",
+    "Status": "",
+    "node_ids": [
+      "self-custody"
+    ],
+    "node_details": [
+      {
+        "id": "self-custody",
+        "label": "Hold your own crypto keys (self-custody)",
+        "tier": 3,
+        "domain": "economic",
+        "summary": "Hold your own keys; move assets off custodial exchanges. The foundational sovereignty move — without it crypto's privacy ceiling collapses to the custodial (≈ bank) level."
+      }
+    ],
+    "missing_nodes": [],
+    "priority_bucket": "direct_outreach_or_confirm"
+  },
+  {
+    "Product / Service": "Mullvad VPN",
+    "Company": "Mullvad VPN AB",
+    "Website": "mullvad.net",
+    "Recommended for (nodes)": "network-privacy",
+    "Affiliate program?": "NO — by policy",
+    "Network / type": "Mullvad refuses affiliate marketing on principle",
+    "Commission & terms": "—",
+    "Program signup URL": "",
+    "Contact (if no program)": "Business/press: support@mullvad.net",
+    "Notes / next step": "Do NOT pitch affiliate — they publicly reject it. Listing them anyway is a credibility asset for the Atlas; consider asking about a flat sponsorship/no-strings support instead.",
+    "Status": "",
+    "node_ids": [
+      "network-privacy"
+    ],
+    "node_details": [
+      {
+        "id": "network-privacy",
+        "label": "Shield your traffic (VPN & DNS)",
+        "tier": 3,
+        "domain": "digital",
+        "summary": "Control who can see your traffic and lookups."
+      }
+    ],
+    "missing_nodes": [],
+    "priority_bucket": "do_not_pitch_affiliate"
+  },
+  {
+    "Product / Service": "IVPN",
+    "Company": "IVPN (Privatus Ltd, Gibraltar)",
+    "Website": "ivpn.net",
+    "Recommended for (nodes)": "network-privacy",
+    "Affiliate program?": "NO — by policy",
+    "Network / type": "Publicly ENDED its affiliate program on ethics grounds (2019)",
+    "Commission & terms": "—",
+    "Program signup URL": "",
+    "Contact (if no program)": "info via ivpn.net contact form",
+    "Notes / next step": "Same situation as Mullvad: recommend without monetizing; it signals integrity.",
+    "Status": "",
+    "node_ids": [
+      "network-privacy"
+    ],
+    "node_details": [
+      {
+        "id": "network-privacy",
+        "label": "Shield your traffic (VPN & DNS)",
+        "tier": 3,
+        "domain": "digital",
+        "summary": "Control who can see your traffic and lookups."
+      }
+    ],
+    "missing_nodes": [],
+    "priority_bucket": "do_not_pitch_affiliate"
+  },
+  {
+    "Product / Service": "MySudo",
+    "Company": "Anonyome Labs",
+    "Website": "mysudo.com",
+    "Recommended for (nodes)": "compartmented-phone, identity-compartmentalization",
+    "Affiliate program?": "UNKNOWN",
+    "Network / type": "No public consumer program found",
+    "Commission & terms": "—",
+    "Program signup URL": "",
+    "Contact (if no program)": "Partner inquiries: anonyome.com/contact (partners@anonyome.com)",
+    "Notes / next step": "Anonyome is B2B-friendly (sells SDKs); a partnership conversation is plausible. Worth direct outreach.",
+    "Status": "",
+    "node_ids": [
+      "compartmented-phone",
+      "identity-compartmentalization"
+    ],
+    "node_details": [
+      {
+        "id": "compartmented-phone",
+        "label": "Get a second phone number",
+        "tier": 3,
+        "domain": "digital",
+        "summary": "A secondary VoIP/eSIM number for accounts, 2FA, and deliveries, decoupled from your real SIM. A cross-domain hub."
+      },
+      {
+        "id": "identity-compartmentalization",
+        "label": "Run separate identities (compartmentalization)",
+        "tier": 5,
+        "domain": "digital",
+        "summary": "Distinct personas with no shared phone, email, payment, or device fingerprint. The deep end of digital."
+      }
+    ],
+    "missing_nodes": [],
+    "priority_bucket": "direct_outreach_or_confirm"
+  },
+  {
+    "Product / Service": "Tuta (Tutanota)",
+    "Company": "Tutao GmbH",
+    "Website": "tuta.com",
+    "Recommended for (nodes)": "private-email",
+    "Affiliate program?": "UNKNOWN",
+    "Network / type": "No public affiliate program found",
+    "Commission & terms": "—",
+    "Program signup URL": "",
+    "Contact (if no program)": "sales@tuta.com / press@tuta.com",
+    "Notes / next step": "Privacy-purist company; may decline tracking-based affiliate links. Consider asking about untracked discount-code revenue share.",
+    "Status": "",
+    "node_ids": [
+      "private-email"
+    ],
+    "node_details": [
+      {
+        "id": "private-email",
+        "label": "Switch to a private email provider",
+        "tier": 3,
+        "domain": "digital",
+        "summary": "Move primary email off ad-funded ecosystems toward a privacy-respecting provider."
+      }
+    ],
+    "missing_nodes": [],
+    "priority_bucket": "direct_outreach_or_confirm"
+  },
+  {
+    "Product / Service": "NextDNS",
+    "Company": "NextDNS Inc.",
+    "Website": "nextdns.io",
+    "Recommended for (nodes)": "dns-blocking",
+    "Affiliate program?": "UNKNOWN",
+    "Network / type": "No public program found",
+    "Commission & terms": "—",
+    "Program signup URL": "",
+    "Contact (if no program)": "hello@nextdns.io",
+    "Notes / next step": "Tiny team; direct email is the only route.",
+    "Status": "",
+    "node_ids": [
+      "dns-blocking"
+    ],
+    "node_details": [
+      {
+        "id": "dns-blocking",
+        "label": "Block trackers network-wide (DNS)",
+        "tier": 2,
+        "domain": "digital",
+        "summary": "Network-wide tracker/ad blocking and encrypted DNS (Pi-hole, NextDNS) to stop ISP snooping and cross-app tracking."
+      }
+    ],
+    "missing_nodes": [],
+    "priority_bucket": "direct_outreach_or_confirm"
+  },
+  {
+    "Product / Service": "addy.io (email aliasing)",
+    "Company": "Will Browning (indie)",
+    "Website": "addy.io",
+    "Recommended for (nodes)": "email-aliasing",
+    "Affiliate program?": "UNKNOWN",
+    "Network / type": "No public program",
+    "Commission & terms": "—",
+    "Program signup URL": "",
+    "Contact (if no program)": "support@addy.io",
+    "Notes / next step": "Indie developer; propose simple rev-share or untracked code.",
+    "Status": "",
+    "node_ids": [
+      "email-aliasing"
+    ],
+    "node_details": [
+      {
+        "id": "email-aliasing",
+        "label": "Mask your email with aliases",
+        "tier": 2,
+        "domain": "digital",
+        "summary": "Use a different email for each service, so your address can't be used to link your accounts. Real aliases beat plus-addressing (name+tag@), which trackers just strip off."
+      }
+    ],
+    "missing_nodes": [],
+    "priority_bucket": "direct_outreach_or_confirm"
+  },
+  {
+    "Product / Service": "Cryptomator",
+    "Company": "Skymatic GmbH",
+    "Website": "cryptomator.org",
+    "Recommended for (nodes)": "encrypted-containers",
+    "Affiliate program?": "UNKNOWN",
+    "Network / type": "No public program (open source + paid unlock)",
+    "Commission & terms": "—",
+    "Program signup URL": "",
+    "Contact (if no program)": "hello@skymatic.de",
+    "Notes / next step": "Open-source; sponsorship may fit better than affiliate.",
+    "Status": "",
+    "node_ids": [
+      "encrypted-containers"
+    ],
+    "node_details": [
+      {
+        "id": "encrypted-containers",
+        "label": "Lock files in encrypted containers",
+        "tier": 3,
+        "domain": "digital",
+        "summary": "VeraCrypt-style encrypted volumes for selective file encryption, distinct from full-disk encryption."
+      }
+    ],
+    "missing_nodes": [],
+    "priority_bucket": "direct_outreach_or_confirm"
+  },
+  {
+    "Product / Service": "Little Snitch",
+    "Company": "Objective Development GmbH",
+    "Website": "obdev.at",
+    "Recommended for (nodes)": "outbound-firewall",
+    "Affiliate program?": "UNKNOWN",
+    "Network / type": "No public program",
+    "Commission & terms": "—",
+    "Program signup URL": "",
+    "Contact (if no program)": "sales@obdev.at",
+    "Notes / next step": "Small Austrian shop; direct outreach.",
+    "Status": "",
+    "node_ids": [
+      "outbound-firewall"
+    ],
+    "node_details": [
+      {
+        "id": "outbound-firewall",
+        "label": "Stop apps phoning home (firewall)",
+        "tier": 3,
+        "domain": "digital",
+        "summary": "Block apps/programs from phoning home (e.g. Little Snitch). Controls telemetry at the egress point."
+      }
+    ],
+    "missing_nodes": [],
+    "priority_bucket": "direct_outreach_or_confirm"
+  },
+  {
+    "Product / Service": "Fing",
+    "Company": "Fing Ltd",
+    "Website": "fing.com",
+    "Recommended for (nodes)": "home-network-iot-audit",
+    "Affiliate program?": "UNKNOWN",
+    "Network / type": "No public consumer program found",
+    "Commission & terms": "—",
+    "Program signup URL": "",
+    "Contact (if no program)": "Via fing.com contact / partnerships",
+    "Notes / next step": "Has B2B side; partnership conversation possible.",
+    "Status": "",
+    "node_ids": [
+      "home-network-iot-audit"
+    ],
+    "node_details": [
+      {
+        "id": "home-network-iot-audit",
+        "label": "Audit what's watching inside your home",
+        "tier": 2,
+        "domain": "physical",
+        "summary": "Inventory what watches and listens inside your walls and what it phones home."
+      }
+    ],
+    "missing_nodes": [],
+    "priority_bucket": "direct_outreach_or_confirm"
+  },
+  {
+    "Product / Service": "Privacy4Cars",
+    "Company": "Privacy4Cars, Inc.",
+    "Website": "privacy4cars.com",
+    "Recommended for (nodes)": "vehicle-data-privacy, device-disposal",
+    "Affiliate program?": "UNKNOWN",
+    "Network / type": "B2B-focused; no consumer affiliate found",
+    "Commission & terms": "—",
+    "Program signup URL": "",
+    "Contact (if no program)": "privacy4cars.com contact form",
+    "Notes / next step": "Their consumer app is free-ish; partnership likely framed as referral/co-marketing.",
+    "Status": "",
+    "node_ids": [
+      "vehicle-data-privacy",
+      "device-disposal"
+    ],
+    "node_details": [
+      {
+        "id": "vehicle-data-privacy",
+        "label": "Stop your car reporting on you",
+        "tier": 3,
+        "domain": "physical",
+        "summary": "Cars as surveillance devices: disable/remove the car's cellular modem, wipe paired-phone data before sale. Distinct from ALPR (the plate) — this is the car itself reporting."
+      },
+      {
+        "id": "device-disposal",
+        "label": "Wipe devices before they leave you",
+        "tier": 2,
+        "domain": "digital",
+        "summary": "Get rid of devices without giving away your life. Devices leave with far more than photos: logged-in accounts, saved Wi-Fi passwords, browser sessions, eSIMs, message databases, and — in smart gear and cars — your network credentials, contacts, and location history. The good news: on an ENCRYPTED device, a factory reset destroys the encryption key (crypto-erase), making the data permanently unreadable — free, fast, and NIST-recognized. The whole game is encryption-before-wipe and sign-out-before-reset."
+      }
+    ],
+    "missing_nodes": [],
+    "priority_bucket": "direct_outreach_or_confirm"
+  },
+  {
+    "Product / Service": "EasyOptOuts",
+    "Company": "EasyOptOuts",
+    "Website": "easyoptouts.com",
+    "Recommended for (nodes)": "data-broker-removal",
+    "Affiliate program?": "UNKNOWN",
+    "Network / type": "No public program found",
+    "Commission & terms": "—",
+    "Program signup URL": "",
+    "Contact (if no program)": "support@easyoptouts.com",
+    "Notes / next step": "Budget option ($19.99/yr) — thin margins may limit commissions; still worth an email.",
+    "Status": "",
+    "node_ids": [
+      "data-broker-removal"
+    ],
+    "node_details": [
+      {
+        "id": "data-broker-removal",
+        "label": "Remove yourself from people-search sites",
+        "tier": 3,
+        "domain": "digital",
+        "summary": "Remove yourself from people-search sites. Effort varies enormously by jurisdiction."
+      }
+    ],
+    "missing_nodes": [],
+    "priority_bucket": "direct_outreach_or_confirm"
+  },
+  {
+    "Product / Service": "Reflectacles (IR-blocking eyewear)",
+    "Company": "Reflectacles (Scott Urban)",
+    "Website": "reflectacles.com",
+    "Recommended for (nodes)": "anti-facial-recognition",
+    "Affiliate program?": "UNKNOWN",
+    "Network / type": "No public program",
+    "Commission & terms": "—",
+    "Program signup URL": "",
+    "Contact (if no program)": "info@reflectacles.com",
+    "Notes / next step": "Indie maker, mission-aligned; very likely open to a direct arrangement.",
+    "Status": "",
+    "node_ids": [
+      "anti-facial-recognition"
+    ],
+    "node_details": [
+      {
+        "id": "anti-facial-recognition",
+        "label": "Defeat facial recognition",
+        "tier": 3,
+        "domain": "biometric",
+        "summary": "Occlude or disrupt face capture. Graded: masks (best) > IR illuminators > subtle landmark makeup > adversarial fashion > CV-dazzle (largely obsolete)."
+      }
+    ],
+    "missing_nodes": [],
+    "priority_bucket": "direct_outreach_or_confirm"
+  },
+  {
+    "Product / Service": "Solir Optics",
+    "Company": "Solir",
+    "Website": "soliroptics.com",
+    "Recommended for (nodes)": "anti-facial-recognition",
+    "Affiliate program?": "UNKNOWN",
+    "Network / type": "No public program",
+    "Commission & terms": "—",
+    "Program signup URL": "",
+    "Contact (if no program)": "via soliroptics.com contact",
+    "Notes / next step": "Small vendor; direct outreach.",
+    "Status": "",
+    "node_ids": [
+      "anti-facial-recognition"
+    ],
+    "node_details": [
+      {
+        "id": "anti-facial-recognition",
+        "label": "Defeat facial recognition",
+        "tier": 3,
+        "domain": "biometric",
+        "summary": "Occlude or disrupt face capture. Graded: masks (best) > IR illuminators > subtle landmark makeup > adversarial fashion > CV-dazzle (largely obsolete)."
+      }
+    ],
+    "missing_nodes": [],
+    "priority_bucket": "direct_outreach_or_confirm"
+  },
+  {
+    "Product / Service": "Cap_able (adversarial knitwear)",
+    "Company": "Cap_able (Italy)",
+    "Website": "capable.design",
+    "Recommended for (nodes)": "anti-facial-recognition (OUTFITTED)",
+    "Affiliate program?": "UNKNOWN",
+    "Network / type": "No public program",
+    "Commission & terms": "—",
+    "Program signup URL": "",
+    "Contact (if no program)": "info@capable.design",
+    "Notes / next step": "Fashion-tech startup; affiliate or lookbook collab both plausible.",
+    "Status": "",
+    "node_ids": [
+      "anti-facial-recognition"
+    ],
+    "node_details": [
+      {
+        "id": "anti-facial-recognition",
+        "label": "Defeat facial recognition",
+        "tier": 3,
+        "domain": "biometric",
+        "summary": "Occlude or disrupt face capture. Graded: masks (best) > IR illuminators > subtle landmark makeup > adversarial fashion > CV-dazzle (largely obsolete)."
+      }
+    ],
+    "missing_nodes": [],
+    "priority_bucket": "direct_outreach_or_confirm"
+  },
+  {
+    "Product / Service": "Adversarial Apparel",
+    "Company": "Adversarial Apparel",
+    "Website": "adversarialapparel.com",
+    "Recommended for (nodes)": "anti-facial-recognition (OUTFITTED)",
+    "Affiliate program?": "UNKNOWN",
+    "Network / type": "No public program",
+    "Commission & terms": "—",
+    "Program signup URL": "",
+    "Contact (if no program)": "via site contact",
+    "Notes / next step": "Small shop.",
+    "Status": "",
+    "node_ids": [
+      "anti-facial-recognition"
+    ],
+    "node_details": [
+      {
+        "id": "anti-facial-recognition",
+        "label": "Defeat facial recognition",
+        "tier": 3,
+        "domain": "biometric",
+        "summary": "Occlude or disrupt face capture. Graded: masks (best) > IR illuminators > subtle landmark makeup > adversarial fashion > CV-dazzle (largely obsolete)."
+      }
+    ],
+    "missing_nodes": [],
+    "priority_bucket": "direct_outreach_or_confirm"
+  },
+  {
+    "Product / Service": "AntiAI Clothing",
+    "Company": "AntiAI",
+    "Website": "antiai.biz",
+    "Recommended for (nodes)": "anti-facial-recognition (OUTFITTED)",
+    "Affiliate program?": "UNKNOWN",
+    "Network / type": "No public program",
+    "Commission & terms": "—",
+    "Program signup URL": "",
+    "Contact (if no program)": "via site contact",
+    "Notes / next step": "Small shop.",
+    "Status": "",
+    "node_ids": [
+      "anti-facial-recognition"
+    ],
+    "node_details": [
+      {
+        "id": "anti-facial-recognition",
+        "label": "Defeat facial recognition",
+        "tier": 3,
+        "domain": "biometric",
+        "summary": "Occlude or disrupt face capture. Graded: masks (best) > IR illuminators > subtle landmark makeup > adversarial fashion > CV-dazzle (largely obsolete)."
+      }
+    ],
+    "missing_nodes": [],
+    "priority_bucket": "direct_outreach_or_confirm"
+  },
+  {
+    "Product / Service": "Faraday Defense",
+    "Company": "Faraday Defense Corp.",
+    "Website": "faradaydefense.com",
+    "Recommended for (nodes)": "faraday",
+    "Affiliate program?": "UNKNOWN",
+    "Network / type": "No public program found; heavy Amazon presence",
+    "Commission & terms": "—",
+    "Program signup URL": "",
+    "Contact (if no program)": "info@faradaydefense.com",
+    "Notes / next step": "Amazon Associates fallback works today.",
+    "Status": "",
+    "node_ids": [
+      "faraday"
+    ],
+    "node_details": [
+      {
+        "id": "faraday",
+        "label": "Block your devices' signals (Faraday)",
+        "tier": 3,
+        "domain": "physical",
+        "summary": "Block device radio emanation (cell/GPS/Wi-Fi/BT/NFC) for phones, key fobs, passports — defeats location broadcast and IMSI-catcher harvesting."
+      }
+    ],
+    "missing_nodes": [],
+    "priority_bucket": "direct_outreach_or_confirm"
+  },
+  {
+    "Product / Service": "Meshtastic hardware (LilyGo/RAK/Heltec boards)",
+    "Company": "Various manufacturers (project is open source)",
+    "Website": "meshtastic.org",
+    "Recommended for (nodes)": "offgrid-mesh-radio",
+    "Affiliate program?": "N/A project; YES for hardware via Amazon/retailers",
+    "Network / type": "Amazon Associates / Rokland affiliate (Rokland has one)",
+    "Commission & terms": "Varies",
+    "Program signup URL": "https://affiliate-program.amazon.com",
+    "Contact (if no program)": "",
+    "Notes / next step": "Monetize the HARDWARE links (Rokland, Amazon), not the open-source project.",
+    "Status": "",
+    "node_ids": [
+      "offgrid-mesh-radio"
+    ],
+    "node_details": [
+      {
+        "id": "offgrid-mesh-radio",
+        "label": "Off-grid LoRa mesh (Meshtastic/MeshCore)",
+        "tier": 3,
+        "domain": "comms",
+        "summary": "Encrypted text/GPS device-to-device over unlicensed LoRa — no internet or cell towers, self-routing mesh, several km/hop. Meshtastic (floods, plug-and-play) vs MeshCore (routes, scales)."
+      }
+    ],
+    "missing_nodes": [],
+    "priority_bucket": "hardware_fallback"
+  },
+  {
+    "Product / Service": "Extreme Privacy (book)",
+    "Company": "Michael Bazzell / IntelTechniques",
+    "Website": "inteltechniques.com",
+    "Recommended for (nodes)": "exposure-inventory, home-address-ghost",
+    "Affiliate program?": "VIA AMAZON",
+    "Network / type": "Amazon Associates (book sales)",
+    "Commission & terms": "~4.5% books",
+    "Program signup URL": "https://affiliate-program.amazon.com",
+    "Contact (if no program)": "",
+    "Notes / next step": "Bazzell runs no affiliate program; link the book through Amazon Associates.",
+    "Status": "",
+    "node_ids": [
+      "exposure-inventory",
+      "home-address-ghost"
+    ],
+    "node_details": [
+      {
+        "id": "exposure-inventory",
+        "label": "Map where your data leaks (exposure inventory)",
+        "tier": 1,
+        "domain": "foundation",
+        "summary": "Map where your name, home address, phone, email, and SSN already appear. Almost every removal task depends on this first."
+      },
+      {
+        "id": "home-address-ghost",
+        "label": "Make your home address unfindable",
+        "tier": 5,
+        "domain": "physical",
+        "summary": "The deep end: no public record, account, or delivery resolves to where you actually sleep."
+      }
+    ],
+    "missing_nodes": [],
+    "priority_bucket": "review"
+  },
+  {
+    "Product / Service": "Amazon Associates (umbrella)",
+    "Company": "Amazon.com, Inc.",
+    "Website": "amazon.com",
+    "Recommended for (nodes)": "fallback for ALL hardware: YubiKey, faraday bags, GPS units, books, radios",
+    "Affiliate program?": "YES",
+    "Network / type": "Amazon Associates",
+    "Commission & terms": "~3–4.5% by category; commission on entire cart",
+    "Program signup URL": "https://affiliate-program.amazon.com",
+    "Contact (if no program)": "",
+    "Notes / next step": "ONE signup covers every product the Atlas links that's also sold on Amazon. Highest-leverage first move.",
+    "Status": "",
+    "node_ids": [
+      "strong-2fa",
+      "faraday",
+      "satellite-messaging",
+      "home-address-ghost",
+      "exposure-inventory",
+      "offgrid-mesh-radio",
+      "licensed-radio",
+      "hf-long-range"
+    ],
+    "node_details": [
+      {
+        "id": "strong-2fa",
+        "label": "Add 2FA, passkeys & hardware keys",
+        "tier": 1,
+        "domain": "foundation",
+        "summary": "Prefer app/hardware factors over SMS, which re-ties the account to a phone number."
+      },
+      {
+        "id": "faraday",
+        "label": "Block your devices' signals (Faraday)",
+        "tier": 3,
+        "domain": "physical",
+        "summary": "Block device radio emanation (cell/GPS/Wi-Fi/BT/NFC) for phones, key fobs, passports — defeats location broadcast and IMSI-catcher harvesting."
+      },
+      {
+        "id": "satellite-messaging",
+        "label": "Satellite messaging (TRAP)",
+        "tier": 3,
+        "domain": "comms",
+        "summary": "Garmin inReach / phone-to-satellite: terrestrial-independent and excellent for emergencies."
+      },
+      {
+        "id": "home-address-ghost",
+        "label": "Make your home address unfindable",
+        "tier": 5,
+        "domain": "physical",
+        "summary": "The deep end: no public record, account, or delivery resolves to where you actually sleep."
+      },
+      {
+        "id": "exposure-inventory",
+        "label": "Map where your data leaks (exposure inventory)",
+        "tier": 1,
+        "domain": "foundation",
+        "summary": "Map where your name, home address, phone, email, and SSN already appear. Almost every removal task depends on this first."
+      },
+      {
+        "id": "offgrid-mesh-radio",
+        "label": "Off-grid LoRa mesh (Meshtastic/MeshCore)",
+        "tier": 3,
+        "domain": "comms",
+        "summary": "Encrypted text/GPS device-to-device over unlicensed LoRa — no internet or cell towers, self-routing mesh, several km/hop. Meshtastic (floods, plug-and-play) vs MeshCore (routes, scales)."
+      },
+      {
+        "id": "licensed-radio",
+        "label": "Ham / GMRS / CB radio",
+        "tier": 3,
+        "domain": "comms",
+        "summary": "Two-way radio for grid-independent voice/reach, especially emergencies."
+      },
+      {
+        "id": "hf-long-range",
+        "label": "HF / NVIS long-range radio",
+        "tier": 4,
+        "domain": "comms",
+        "summary": "HF (esp. NVIS) gives regional-to-worldwide range with no infrastructure; modern data modes (VARA/JS8Call/Winlink) move email/files over RF."
+      }
+    ],
+    "missing_nodes": [],
+    "priority_bucket": "apply_now"
+  }
+]
