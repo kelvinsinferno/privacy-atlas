@@ -88,7 +88,7 @@ export default function ResourceList({ nodeId, setContributions }: ResourceListP
         <div key={"seed-" + i} style={{ ...S.resItem, display: "block" }}>
           <a href={affiliate(r.url)} target="_blank" rel="noopener noreferrer sponsored" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
             {r.imageUrl && (
-              // eslint-disable-next-line @next/next/no-img-element -- local SVG thumbnails are tiny decorative resource-card art; next/image adds no value here.
+              // eslint-disable-next-line @next/next/no-img-element -- resource thumbnails may be externally hosted Amazon product images; next/image would require broad remote host config.
               <img
                 src={r.imageUrl}
                 alt={r.imageAlt || r.name}

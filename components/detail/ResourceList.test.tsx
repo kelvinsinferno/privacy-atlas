@@ -186,10 +186,11 @@ describe("ResourceList — graceful degradation", () => {
     (fetchResources as any).mockResolvedValue([]);
     const { container } = render(<ResourceList nodeId="strong-2fa" contributions={{}} setContributions={vi.fn()} />);
 
-    expect(screen.getByText("YubiKey on Amazon")).toBeInTheDocument();
+    expect(screen.getByText("YubiKey 5C NFC")).toBeInTheDocument();
+    expect(screen.getByText("OnlyKey FIDO2")).toBeInTheDocument();
     const yubiImage = screen.getByAltText("Amazon product image of YubiKey 5C NFC security key") as HTMLImageElement;
     expect(yubiImage.src).toContain("m.media-amazon.com/images/I/41DkFsG8yEL.jpg");
-    const amazonLink = Array.from(container.querySelectorAll("a")).find((a) => a.textContent?.includes("YubiKey on Amazon"));
+    const amazonLink = Array.from(container.querySelectorAll("a")).find((a) => a.textContent?.includes("YubiKey 5C NFC"));
     expect(amazonLink?.getAttribute("href")).toContain("tag=privacyatlas-20");
     expect(amazonLink?.getAttribute("href")).not.toContain("pa_affiliate");
   });
